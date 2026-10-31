@@ -1,0 +1,594 @@
+Full length article
+
+# Acoustic emission source localization in arbitrary anisotropic plates: Equation error and Bayesian inference approaches
+
+![](images/137aadfd39ad61088e2b71fae2e807c68db35444307675b8bf0e2602a48c8d61.jpg)
+
+Siddhesh Raorane <sup>a</sup> , Costas Papadimitriou <sup>b</sup> , Pawel Packo <sup>a</sup> <sup>,∗</sup>
+
+<sup>a</sup> Faculty of Mechanical Engineering and Robotics, AGH University of Krakow, Krakow, 30-059, Poland <sup>b</sup> Department of Mechanical Engineering, University of Thessaly, Pedion Areos, Volos, 38344, Greece
+
+A R T I C L E I N F O
+
+Communicated by W.-X. Ren
+
+Keywords: AE source localization Wavefront shape-based technique Bayesian inference Anisotropic plate h d l Axes of material symmetry
+
+## A B S T R A C T
+
+In this paper, we propose two new approaches for acoustic emission (AE) source localization in highly anisotropic plates without the need for apriori knowledge of their material properties or the orientation of the axes of symmetry. These approaches, namely the equation error approach (EEA) and Bayesian inference approach (BIA), offer significant improvements over the latest wavefront shape-based techniques reported in the literature. In particular, the EEA requires constrained optimization of only two parameters, eliminating the reliance on initial guess quality. The BIA, on the other hand, provides the added advantage of uncertainty quantification for the predicted source locations, enhancing the reliability of the results. In the work presented here, the effectiveness of the two proposed approaches is investigated first using idealized data, followed by numerical studies involving models of plates with varying degrees of anisotropy. Additionally, experimental validation of the approaches is presented. The results show that both the EEA and BIA are well-suited for practical applications of AE source localization in anisotropic plates.
+
+## 1. Introduction
+
+Non-destructive testing (NDT) and structural health monitoring (SHM) techniques utilizing acoustic emission (AE) are widely employed for ensuring the safety of various engineering structures such as bridges, pipelines, wind turbines, pressure vessels, aircraft and buildings [1,2]. Since AE sources typically correspond to potential damage sites, their localization facilitates real-time monitoring, allowing for timely and targeted maintenance interventions to mitigate further degradation and ensure structural safety. AE source localization requires the analysis of AE signals captured by a network of sensors spatially distributed on the structure. Key signal parameters like amplitude, frequency content and event clustering provide insights into the nature and extent of the damage, making AE valuable not only for source localization but also for evaluating the integrity of engineering structures.
+
+In recent years, structural damage localization based on ultrasonic waves has gained popularity. Cantero-Chinchilla et al. [3] proposed a Bayesian methodology for damage localization using guided waves by accounting for multiple sources of uncertainty. h l d l d d b d d l l h d b b l l l f l and Wigner–Ville distribution methods to enhance accuracy. Zhou et al. [5] presented a technique for localizing multiple damage in plate-like structures without apriori knowledge of the material properties. Recently, Lomazzi et al. [6] introduced a data-driven approach for damage localization using ultrasonic guided waves, where convolutional autoencoders extract signal features and an imaging algorithm generates damage probability maps. While these ultrasonic wave-based methods have shown promising results with controlled excitation, AE-based techniques have emerged as a powerful alternative by enabling passive, real-time monitoring over large structural areas without requiring active excitation. As a result, AE source localization has gained increasing attention, with numerous methodologies developed over the years to effectively localize AE sources. For source localizaton in isotropic plates, a triangulation method based on the time difference of arrival (TDOA) of the AE signals at AE sensors was proposed by Tobias [7] Source localization in anisotropic plates, however, presents greater challenges due to the varying propagation speeds of elastic waves in different directions. To address this, Meo et al. [8] proposed an AE source localization technique for anisotropic plates by estimating wave propagation speeds in various directions. Kundu et al. [9,10] proposed an approach based on solving a system of non-linear equations using an optimization algorithm for source localization in anisotropic plates. For the same purpose, Nakatan et al. [11] proposed an improved beamforming method by incorporating the direction-dependent wave speed in the formulation. All these methods rely on the apriori knowledge of the plate material properties, which is not always readily available. To address that difficulty, Kundu et al. [12] proposed an AE source localization method using an L-shaped sensor cluster arrangement for anisotropic plates with unknown material properties. Ciampa et al. [13.14] proposed a source localization technique for anisotropic plates with unknown material properties by utilizing continuous wavelet transform to estimate the time of arrival (TOA). Later, Kundu et al. [15] proposed a hybrid technique that uses the source location determined by the method described in [12] as an initial guess. This guess is then refined by minimizing an objective function to achieve a more accurate prediction. A method based on a beamforming approach was proposed in Xiao et al. [16]. Jang and Kim [17] enhanced the triangulation method [7] to make it applicable to anisotropic plates by incorporating neural network training, which takes sensor signal magnitudes as input and gives the distances between the sensors and the sources as output. However, none of these methods explicitly account for the deviation between the directions of the wave vector and the group velocity vector when predicting the location of the AE source. This assumption, while valid and accurate for isotropic homogeneous media, might lead to significant inaccuracies when applied to complex and highly anisotropic structures [18].
+
+Over the years, several localization methods that explicitly address the different directions of the wave vector and the group velocity vector have been developed for structures with unknown material properties. Baxter et al. [19] proposed an AE source localization method for complex structures, where wave propagation paths are non-linear due to the structural complexity, offering a more accurate approach for such environments. Hensman et al. [20] improved the method reported in [19] by using Gaussian process (GP) regression. Jones et al. [21] extended the application of GP regression by introducing a Bayesian methodology for AE source localization in complex structures.
+
+AE source localization techniques that do not rely on straight-line wave propagation, applied for highly anisotropic plates with unknown material properties have also gained significant attention. Park et al. [18] utilized the L-shaped sensor cluster arrangement reported in [12] along with a wavefront shape-based approach. analyzing two specific wavefront shapes, namely, rhombus and ellipse, to localize AE sources in highly anisotropic plates with unknown material properties. In a subsequent study, Sen and Kundu [22] modified the elliptical wavefront-based approach from [18] to relate the wavefront geometry with the recorded signa data, and also proposed a more general parametric curve-based approach. The wavefront shape-based techniques proposed in [22] were enhanced by Sen and Kundu [23]. allowing the modified methods to be applied in situations where the orientation of the axes of symmetry of the anisotropic plate is not known apriori. Consequently. the methods outlined in [23] represent the most advanced versions of the wavefront shape-based techniques till date. To offer a better alternative to L-shaped sensor clusters, Sen et al. [24] explored the use of square-shaped sensor clusters with the wavefront shape-based methods reported in [23]. More recently, Ma et al. [25] combined the wavefront shape-based source localization technique reported in [23] with the theory of secondary acoustic source and the baseline technique. This combined approach allows for the active detection and localization of existing damage in anisotropic plates where the orientation of the axes of symmetry is known. Among the latest versions of the wavefront shapebased techniques, the ellipse-based method demonstrates slightly better predictive accuracy compared to the parametric curve-based technique, as it employs one less unknown parameter [23]. However, the current ellipse-based technique requires unconstrained optimization of four unknown parameters with at least five initial guesses for each. Variations in these initial guesses can lead to significantly different source location predictions, making the method highly dependent on selecting initial guesses for reliable results.
+
+In this paper, we propose two source localization techniques, namely, the equation error approach (EEA) and the Bayesian inference approach (BIA) $[ 2 6 , 2 7 ]$ , for anisotropic plates with unknown material properties and orientations of the axes of symmetry. The EEA improves upon the current ellipse-based wavefront method by utilizing constrained optimization of only two parameters, thereby eliminating the dependence of source location predictions on the quality of the initial guesses. The BIA, on the other hand, provides source localization within a Bayesian framework, requiring unconstrained optimization of four parameters. However, unlike the current ellipse-based method, both BIA and EEA need only one initial guess for each parameter. Furthermore, the BIA provides uncertainty estimates for the source location predictions, thus enhancing the ability to assess the reliability of the predicted source locations. This capability allows for more informed decision-making in evaluating the accuracy and confidence of AE source localization results.
+
+The remainder of the paper is organized as follows. Section 2 provides a brief overview of the L-shaped sensor cluster configuration used to estimate the arrival angle for source localization. In Section 3, the formulations of the EEA and BIA are presented. Section 4 provides analysis of the proposed EEA and BIA using idealized data. Next, in Section 5, the proposed EEA and BIA are investigated through numerical studies. These studies were performed for 60 plates with varying degrees of anisotropy. Section 6 presents experimental validation of EEA and BIA. Finally. conclusions are drawn in Section 7
+
+![](images/ba5aaf185810c0f5c90380c7f6fd6ec92d43754714ef04cd214f82962a5c2f4d.jpg)  
+Fig. 1. Configuration of L-shaped triangular cluster with the three senor being placed orthogonally at points $O , P _ { 1 }$ and $P _ { 2 } .$
+
+## 2. Estimation of arrival angle using L-shaped triangular cluster of three sensors
+
+The employment of L-shaped triangular sensor clusters for AE source localization is attractive due to their advantage of identifving the direction of arrival of the wave without requiring knowledge of the material properties of the medium [18.23.28]. These clusters entail three sensors to be placed orthogonally at points $O , P _ { 1 }$ and $P _ { 2 }$ with a distance � from the middle sensor located at $^ { O , }$ as shown in Fig. 1. In practice, the distance � should be much smaller than the distance between the AE source and the cluster, ensuring that the wavefront passing through the cluster can be assumed a plane wave, as shown in Fig. 1. Additionally, � should be small enough so that the dispersion-induced signal distortion over that propagation distance can be neglected.
+
+For estimating the angle of arrival, it is assumed that a plane wave arrives at the �th cluster from the direction indicated in Fig. 1 by the red arrow. Then, the direction of arrival can be determined from the four-quadrant inverse tangent, with the difference between the time-of-arrivals (TOAs), as
+
+$$
+\tan \theta_ {\alpha} = \frac {\sin \theta_ {\alpha}}{\cos \theta_ {\alpha}} = \frac {v \Delta t _ {\alpha 2} / B}{v \Delta t _ {\alpha 1} / B} = \frac {\Delta t _ {\alpha 2}}{\Delta t _ {\alpha 1}} = \frac {t _ {\alpha 2} - t _ {\alpha 0}}{t _ {\alpha 1} - t _ {\alpha 0}},\tag{1}
+$$
+
+where $t _ { \alpha 0 } , t _ { \alpha 1 }$ and $t _ { \alpha 2 }$ are the TOAs of the signals at points $O , P _ { 1 }$ and $P _ { 2 } ,$ , respectively, $\varDelta t _ { \alpha 1 }$ and $\varDelta t _ { \alpha 2 }$ are the time difference of arrivals (TDOAs), and � is the wave velocity. It is important to note that, due to the geometry of the cluster, the angle estimate is independent of the wave velocity � and, consequently, the material properties of the medium through which the waves propagate. As a result, the angle $\theta _ { \alpha }$ can be determined using measurements alone, without the need for prior knowledge of the medium’s properties. The TOAs (or TDOAs directly) can be computed using various different techniques [29–31].
+
+Despite the complex relationship between the wavevector and the group velocity vector, we assume that the direction of wave propagation is perpendicular to the tangent of the wavefront (please note that the accuracy of this assumption also relies on the size of the cluster with respect to the wavelength). We name this direction to be the slope at the cluster, $m _ { \alpha } ,$ and compute it as [23]
+
+$$
+m _ {\alpha} = - \frac {1}{\tan (\theta_ {\alpha})}.\tag{2}
+$$
+
+In this paper, the slopes of the sensor clusters are utilized in two distinct AE source localization methods, as described below.
+
+## 3. AE source localization approaches
+
+In this section we introduce two AE source localization approaches for possibly highly anisotropic plates. In both methods, no apriori knowledge of material properties of the plate is required.
+
+## 3.1. Equation error approach for AE source localization
+
+The equation error approach for AE source localization proposed here builds upon the modified elliptical wavefront shape-based method described in [23]. The EEA simplifies the objective function from [23], reducing the optimization to a problem of two constrained unknowns (instead of four in [23]).
+
+Assuming that $x y$ and $x ^ { \prime } y ^ { \prime }$ are the axes of the coordinate system of the plate and the axes of the plate material symmetry, respectively, � is the angle between them, as shown in Fig. 2. Noting that the major and minor axes of an elliptical wavefront are parallel to the $x ^ { \prime }$ and $y ^ { \prime }$ axes, respectively, the equation describing this wavefront is
+
+$$
+\frac {(x ^ {\prime} - x _ {S} ^ {\prime}) ^ {2}}{a ^ {2}} + \frac {(y ^ {\prime} - y _ {S} ^ {\prime}) ^ {2}}{b ^ {2}} = 1,\tag{3}
+$$
+
+![](images/52d50546762c42405d1e6458c99e4533ec23a31050971b671b5a7112845c9ca1.jpg)  
+Fig. 2. Elliptical wavefront generated by the AE source. The semi-major and semi-minor axes of the ellipse are give � and �, respectively. The plate coordinate system is represented by $x y$ while the axes of symmetry are given by $x ^ { \prime } y ^ { \prime } .$ . The angle between $x y$ and $x ^ { \prime } y ^ { \prime }$ is given by $\eta .$ The source coordinates in $x y$ and $x ^ { \prime } y ^ { \prime }$ are given by $( x _ { S } , y _ { S } )$ and $( x _ { S } ^ { \prime } , y _ { S } ^ { \prime } ) ,$ respectively.
+
+where – in the $x ^ { \prime } y ^ { \prime }$ coordinate system $- \left( x ^ { \prime } , y ^ { \prime } \right)$ represent the coordinates of a point on the ellipse, $( x _ { S } ^ { \prime } , y _ { S } ^ { \prime } )$ denote the coordinates of the acoustic emission source, and � and � are the semi-major and semi-minor lengths of the ellipse, respectively. The transformation between �� and $x ^ { \prime } y ^ { \prime }$ systems is
+
+$$
+\begin{array}{l} x ^ {\prime} = x \cos (\eta) + y \sin (\eta), \\ y ^ {\prime} = - x \sin (\eta) + y \cos (\eta), \\ x _ {S} ^ {\prime} = x _ {S} \cos (\eta) + y _ {S} \sin (\eta), \\ y _ {S} ^ {\prime} = - x _ {S} \sin (\eta) + y _ {S} \cos (\eta). \end{array}\tag{4}
+$$
+
+d i [ ] h i f $b ^ { 2 } / a ^ { 2 }$ can be considered as a constant (�) since the elliptical wavefronts can be assumed concentric. Then, substituting Eq. (4) into Eq. (3) and multiplying by $b ^ { 2 }$ gives
+
+$$
+\lambda (x \cos (\eta) + y \sin (\eta) - x _ {S} \cos (\eta) - y _ {S} \sin (\eta)) ^ {2} + (- x \sin (\eta) + y \cos (\eta) + x _ {S} \sin (\eta) - y _ {S} \cos (\eta)) ^ {2} = b ^ {2}.\tag{5}
+$$
+
+Differentiating Eq. (5) with respect to � and evaluating for the �th sensor cluster located at a position with coordinates $( x _ { \alpha } , y _ { \alpha } ) _ { : }$ results in
+
+$$
+\begin{array}{l} \lambda (\cos (\eta) + m _ {\alpha} \sin (\eta)) (x _ {\alpha} \cos (\eta) + y _ {\alpha} \sin (\eta) - x _ {S} \cos (\eta) - y _ {S} \sin (\eta)) \\ + (- \sin (\eta) + m _ {\alpha} \cos (\eta)) (- x _ {\alpha} \sin (\eta) + y _ {\alpha} \cos (\eta) + x _ {S} \sin (\eta) - y _ {S} \cos (\eta)) = 0, \end{array}\tag{6}
+$$
+
+where $m _ { \alpha } = \mathrm { d } y _ { \alpha } / \mathrm { d } x _ { \alpha } \left( \mathrm { E q . ~ ( 2 ) } \right)$ represents the slope at the øth cluster. Note that $\operatorname { E q . } \left( 1 \right)$ is used to determine $\theta _ { \alpha }$ in $\operatorname { E q . } \left( 2 \right) . \operatorname { E q . } \left( 6 \right)$ has symmetries that can be used to constrain the range of variation of λ and $\eta .$ Specifically. for a solution (λ, n). Eq. (6) is also satisfied by $( \lambda , \eta + \pi )$ and $( 1 / \lambda , \eta + \pi / 2 )$ . This symmetry constrains the range of values of � and � to be $\lambda \in [ 0 , 1 ]$ and $\eta \in [ 0 , \pi ]$
+
+For � number of sensor clusters employed, a set of � nonlinear equations follow from Eq. (6). For the elliptical wavefront to pass through all the clusters, each must satisfy Eq. (6). Therefore, the source localization technique involves minimizing an objective function �(�), constructed by summing Eq. (6) for � sensor clusters, as
+
+$$
+\begin{array}{c} \phi (\underline {{\varphi}}) = \phi (\lambda , x _ {S}, y _ {S}, \eta) = \sum_ {\alpha = 1} ^ {n} [ \lambda (\cos (\eta) + m _ {\alpha} \sin (\eta)) (x _ {\alpha} \cos (\eta) + y _ {\alpha} \sin (\eta) - x _ {S} \cos (\eta) - y _ {S} \sin (\eta)) + \\ (- \sin (\eta) + m _ {\alpha} \cos (\eta)) (- x _ {\alpha} \sin (\eta) + y _ {\alpha} \cos (\eta) + x _ {S} \sin (\eta) - y _ {S} \cos (\eta)) ] ^ {2}. \end{array}\tag{7}
+$$
+
+Note that as we have four unknowns, included in the parameter set $\varphi = ( \lambda , x _ { S } , y _ { S } , \eta )$ , at least four clusters have to be used, $n \geq 4 .$ To solve the optimization problem defined by the obiective function Eq. (7). we apply the stationarity conditions to find the equations that have to be satisfied by the two variables $x _ { S }$ and $y _ { S }$ . Due to the fact that $\phi ( \lambda , x _ { S } , y _ { S } , \eta )$ in $\operatorname { E q . } \ ( 7 )$ is quadratic in $x _ { S }$ and $y _ { S }$ , this will be a system of two linear algebraic equations for $x _ { S }$ and $y _ { S }$ , obtained by setting
+
+$$
+\frac {\partial \phi (\lambda , x _ {S} , y _ {S} , \eta)}{\partial x _ {S}} = 0,\tag{8}
+$$
+
+$$
+\frac {\partial \phi (\lambda , x _ {S} , y _ {S} , \eta)}{\partial y _ {S}} = 0.\tag{9}
+$$
+
+The solution results in obtaining $x _ { S } ( \eta , \lambda )$ and $y _ { S } ( \eta , \lambda )$ as functions of $\eta$ and �. Letting $y ( \eta , \lambda ) = [ x _ { S } ( \eta , \lambda ) , y _ { S } ( \eta , \lambda ) ] ^ { T }$ , the system of linear equations can be written in the form
+
+$$
+\left[ \sum_ {\alpha = 1} ^ {n} \underline {{c}} _ {\alpha} (\eta , \lambda) \underline {{c}} _ {\alpha} ^ {T} (\eta , \lambda) \right] \underline {{y}} (\eta , \lambda) = \sum_ {\alpha = 1} ^ {n} \underline {{c}} _ {\alpha} (\eta , \lambda) b _ {\alpha} (\eta , \lambda),\tag{10}
+$$
+
+where
+
+$$
+\underline {{c}} _ {\alpha} (\eta , \lambda) = \lambda A _ {\alpha} (\eta) \underline {{\gamma}} (\eta) + A _ {\alpha} ^ {\prime} (\eta) \underline {{\gamma}} ^ {\prime} (\eta)\tag{11}
+$$
+
+and
+
+$$
+b _ {\alpha} (\eta , \lambda) = \lambda A _ {\alpha} (\eta) B _ {\alpha} (\eta) + A _ {\alpha} ^ {\prime} (\eta) B _ {\alpha} ^ {\prime} (\eta),\tag{12}
+$$
+
+with
+
+$$
+\begin{array}{l} A _ {\alpha} (\eta) = \cos (\eta) + m _ {\alpha} \sin (\eta), \\ \tilde {A} _ {\alpha} (\eta) = - \sin (\eta) + m _ {\alpha} \cos (\eta) = A _ {\alpha} ^ {\prime} (\eta), \\ B _ {\alpha} (\eta) = x _ {\alpha} \cos (\eta) + y _ {\alpha} \sin (\eta), \\ \tilde {B} _ {\alpha} (\eta) = - x _ {\alpha} \sin (\eta) + y _ {\alpha} \cos (\eta) = B _ {\alpha} ^ {\prime} (\eta), \\ \underline {{\gamma}} (\eta) = \left[ \begin{array}{c} \cos (\eta) \\ \sin (\eta) \end{array} \right], \end{array}\tag{13}
+$$
+
+and the prime $( ) ^ { \prime }$ denoting derivative with respect to $\eta .$ Substituting the two components $x _ { S } ( \eta , \lambda )$ and $y _ { S } ( \eta , \lambda )$ of the solution �(�, �) of the algebraic linear system Eq. (10) into Eq. (7), we obtain a new goal function
+
+$$
+\tilde {\phi} (\lambda . \eta) = \phi (\lambda , x _ {S} (\lambda , \eta), y _ {S} (\lambda , \eta), \eta),\tag{14}
+$$
+
+to be optimized with respect to the remaining two variables � and $\eta .$ Next, a two-variable minimization with constraints on the involved variables is performed. The optimal values of � and � are substituted to Eq. (10) to obtain the optimal values of $x _ { S }$ and $y _ { S } .$
+
+## 3.2. Bayesian Inference Approach (BIA) for AE source localization
+
+In this approach, Bayesian inference is used to estimate the values of the parameter set $\varphi = ( \lambda , x _ { S } , y _ { S } , \eta )$ of the acoustic emission source characteristic and their uncertainties based on the collected data from the sensor clusters placed on the structure. For this, let $\hat { \varDelta t _ { \alpha 2 } } ( k )$ and $\hat { \varDelta t _ { \alpha 1 } } ( k )$ be the measured time differences of wave arrivals defined in $\operatorname { E q . }$ . (1) for a sensor cluster � corresponding to location $( x _ { \alpha } , y _ { \alpha } ) _ { i }$ , and let $\hat { \theta } _ { \alpha } ( k ) = \tan ^ { - 1 } [ \Delta \hat { t } _ { \alpha 2 } ( k ) / \Delta \hat { t } _ { \alpha 1 } ( k ) ]$ ] be the corresponding arrival angles computed from the measured time differences, where � denotes the sample of data. The Bayesian formulation is built on the arrival angles data $D = \{ \hat { \theta } _ { \alpha } ( k ) , k = 1 , \dots , n _ { 0 } ,$ $\alpha \in \{ 1 , 2 , \ldots , n \} \}$ , where $n _ { 0 }$ is the total number of samples in the data measured from a certain location and � is the number of sensor clusters.
+
+Let $\theta _ { \alpha } ( \varphi )$ be the arrival angle predicted from the model at the sensor cluster � using the procedure outlined in Section 2. Specifically, the slope $m _ { \alpha }$ at the sensor cluster $\alpha ,$ denoted by $m _ { \alpha } ( \varphi )$ , is first obtained by solving Eq. (6) with respect to $m _ { \alpha } ( \varphi )$ to yield
+
+$$
+m _ {\alpha} (\underline {{\varphi}}) = \frac {f _ {\alpha} (\underline {{\varphi}})}{g _ {\alpha} (\varphi)},\tag{15}
+$$
+
+where
+
+$$
+f _ {\alpha} (\underline {{\varphi}}) = - (\lambda - 1) (y _ {\alpha} - y _ {S}) \sin \eta \cos \eta - (x _ {\alpha} - x _ {S}) \sin^ {2} \eta - \lambda (x _ {\alpha} - x _ {S}) \cos^ {2} \eta ,\tag{16}
+$$
+
+and
+
+$$
+g _ {\alpha} (\underline {{\varphi}}) = (\lambda - 1) (x _ {\alpha} - x _ {S}) \sin \eta \cos \eta + \lambda (y _ {\alpha} - y _ {S}) \sin^ {2} \eta + (y _ {\alpha} - y _ {S}) \cos^ {2} \eta .\tag{17}
+$$
+
+Using (2), the arrival angle is
+
+$$
+\theta_ {\alpha} (\underline {{\varphi}}) = - \tan^ {- 1} \left[ \frac {1}{m _ {\alpha} (\underline {{\varphi}})} \right],\tag{18}
+$$
+
+where $m _ { \alpha } ( \varphi )$ is given from Eqs. (15)–(17).
+
+Bayesian inference proceeds with the estimation of the model parameters $\underline { { \boldsymbol { \varphi } } }$ given the measured data $D ,$ as follows. First, to account for the measurement and model error, the discrepancy between the measurement and the model prediction for �th cluster is expressed as
+
+$$
+\hat {\theta} _ {\alpha} (k) = \theta_ {\alpha} (\underline {{\varphi}}) + e _ {a} (k),\tag{19}
+$$
+
+where $e _ { a } ( k ) \sim N ( 0 , \sigma _ { \alpha } ^ { 2 } )$ is a zero-mean Gaussian variable with variance equal to $\sigma _ { \alpha } ^ { 2 }$
+
+The Gaussian model for the prediction error term $\boldsymbol { e } _ { a } ( \boldsymbol { k } )$ is theoretically justified using information theory [32]. According to the principle of maximum entropy, among all possible probability distributions that can be assigned to the error term $e _ { a } ( k )$ , the Gaussian distribution has the maximum entropy for a given mean and variance, making it the least biased estimate when no other information is available [26].
+
+The value of the prediction error parameter $\sigma _ { \alpha }$ accounts for the level of model and measurement errors for a sensor cluster �. Herein, it is selected to be $\sigma _ { \alpha } = \widehat { \theta } ( k ) \ \sigma _ { e } ,$ a fraction $\sigma _ { e }$ of the measured arrival angle value.
+
+Assuming independent data for each sensor cluster and the fact that the error term $e _ { a }$ is Gaussian so that $\widehat { \theta } _ { \alpha } ( k )$ from the prediction equation, Eq. (19), follows a Gaussian distribution with mean $\theta _ { \alpha } ( \varphi )$ and variance $\sigma _ { a } ^ { 2 } ,$ h f ll l k l h d f f h d parameter set � and the prediction error parameter $\sigma _ { e }$ is obtained [26]
+
+$$
+p (D | \underline {{\varphi}}, \sigma_ {e}) \sim \frac {1}{\sigma_ {e} ^ {n n _ {0}}} \times \exp \left[ - \frac {n n _ {0}}{2 \sigma_ {e} ^ {2}} J (\underline {{\varphi}} | D) \right],\tag{20}
+$$
+
+where
+
+$$
+J (\underline {{\varphi}} | D) = \frac {1}{n n _ {0}} \sum_ {\alpha = 1} ^ {n} \sum_ {k = 1} ^ {n _ {0}} \frac {[ \theta (\underline {{\varphi}}) - \hat {\theta} _ {\alpha} (k) ] ^ {2}}{[ \hat {\theta} _ {\alpha} (k) ] ^ {2}},\tag{21}
+$$
+
+quantifies the discrepancy between the measured and model predicted arrival angles, averaged over all data.
+
+In the absence of data, the uncertainty in the values of the parameter set � and $\sigma _ { e }$ are quantified by the prior probability density functions (PDF) $\pi ( \underline { { \varphi } } )$ and $\pi ( \sigma _ { e } ) _ { : }$ , respectively. Using the Bayesian inference methodology [33,34], the prior PDF in the model parameters is updated using the data � to the posterior PDF
+
+$$
+p (\underline {{\varphi}}, \sigma_ {e} | D) \sim p (D | \underline {{\varphi}}, \sigma_ {e}) \pi (\underline {{\varphi}}) \pi (\sigma_ {e}).\tag{22}
+$$
+
+The updated (posterior) PDF, $p ( \varphi , \sigma _ { e } | D )$ , in Eq. (22) quantifies the uncertainty in the parameter values � and $\sigma _ { e }$ given the information in the measured data.
+
+To proceed with the analysis we assume that the prior PDF $\pi ( \varphi )$ follows a uniform distribution with sufficiently wide bounds so that they do not affect inference, and that the prior distribution for $\sigma _ { e } ~ ( \sigma _ { e } > 0 )$ is also uniform with zero lower bound and sufficiently wide upper bound. The most probable value of the model parameter set $\{ \underline { { \varphi } } , \sigma _ { e } \}$ is obtained by maximizing the posterior PDF in Eq. (22) or, equivalently, minimizing the function
+
+$$
+L (\underline {{\varphi}}, \sigma_ {e}) = - l n p (\underline {{\varphi}}, \sigma_ {e} | D) = n n _ {0} \ln \sigma_ {e} + \frac {n n _ {0}}{2 \sigma_ {e} ^ {2}} J (\underline {{\varphi}} | D),\tag{23}
+$$
+
+with respect to model parameter set $\varphi$ and $\sigma _ { e } .$ Using the structure of $L ( \varphi , \sigma _ { e } )$ in Eq. (23), the most probable value $\hat { \varphi }$ of the mode parameter set $\varphi$ is given by [35]
+
+$$
+\underline {{\hat {\varphi}}} = \underset {\underline {{\varphi}}} {\operatorname{argmin}} \left[ J (\underline {{\varphi}} | D) \right],\tag{24}
+$$
+
+while the most probable value of the prediction error parameters simplifies to
+
+$$
+\hat {\sigma} _ {e} ^ {2} = J (\underline {{\hat {\varphi}}} | D).\tag{25}
+$$
+
+The spread of uncertainty in the values of the parameters in $\varphi$ and � around the most probable value $\sigma _ { e }$ $\underline { { \hat { \boldsymbol { \varphi } } } }$ is provided by the posterior PDF $p ( \varphi , \sigma _ { e } | D )$ . For large number of data, the posterior PDF can be approximated by a multi-variable Gaussian PDF [35] centered at the most probable value $( \hat { \varphi } , \hat { \sigma } _ { e } )$ and posterior covariance Σ equal to the inverse of the Hessian $H ( \varphi , \sigma _ { e } )$ of the function $L ( \varphi , \sigma _ { e } )$ with respect to � and $\sigma _ { e }$ evaluated at the most probable value $( \hat { \varphi } , \hat { \sigma } _ { e } ) .$ . Using the structure of $L ( \varphi , \sigma _ { e } )$ in Eq. (23), the Hessian partition $H _ { \varphi \varphi } ( \varphi , \sigma _ { e } )$ of the Hessian of $L ( \varphi , \sigma _ { e } )$ with respect to the parameters $\underline { { \varphi } } ,$ evaluated at the most probable values $\hat { \varphi }$ and $\hat { \sigma } _ { e } ^ { 2 } ,$ takes the form
+
+$$
+H _ {\underline {{\varphi}} \underline {{\varphi}}} (\underline {{\hat {\varphi}}}, \hat {\sigma} _ {e}) = H _ {\underline {{\varphi}} \underline {{\varphi}}} (\underline {{\hat {\varphi}}}, \hat {\sigma} _ {e}) = \left[ \underline {{\nabla_ {\underline {{\varphi}}}}} \underline {{\nabla_ {\underline {{\varphi}}}}} ^ {T} L (\underline {{\varphi}}, \sigma_ {e}) \right] _ {\underline {{\varphi}} = \underline {{\hat {\varphi}}}, \sigma_ {e} = \hat {\sigma} _ {e}} = \frac {n n _ {0}}{2 \hat {\sigma} _ {e} ^ {2}} \left[ \underline {{\nabla_ {\underline {{\varphi}}}}} \underline {{\nabla_ {\underline {{\varphi}}}}} ^ {T} J (\underline {{\varphi}} | D) \right] _ {\underline {{\varphi}} = \underline {{\hat {\varphi}}}},\tag{26}
+$$
+
+where $\nabla _ { \varphi } = [ \partial / \partial \lambda , \partial / \partial x _ { S } , \partial / \partial y _ { S } , \partial / \partial \eta ] ^ { T }$ is the gradient operator, which is a vector of dimension four, while using Eq. (25) the uncertainty in the prediction error parameter $\sigma _ { e }$ is given by
+
+$$
+H _ {\sigma_ {e} \sigma_ {e}} (\underline {{\hat {\varphi}}}, \hat {\sigma} _ {e}) = \left[ \frac {\partial^ {2} L (\underline {{\varphi}} , \sigma_ {e})}{\partial \sigma_ {e} ^ {2}} \right] _ {\varphi = \hat {\varphi}, \sigma_ {e} = \hat {\sigma} _ {e}} = \left[ - \frac {n n _ {0}}{\sigma_ {e} ^ {2}} + \frac {3 n n _ {0}}{\sigma_ {e} ^ {4}} J (\underline {{\varphi}} | D) \right] _ {\varphi = \hat {\varphi}, \sigma_ {e} = \hat {\sigma} _ {e}} = \frac {2 n n _ {0}}{\hat {\sigma} _ {e} ^ {2}},\tag{27}
+$$
+
+namely. the inverse of the second derivative of the function $L ( \varphi , \sigma _ { e } )$ with respect to $\sigma _ { e } ^ { 2 } ,$ , evaluated at the most probable value $( \hat { \varphi } , \hat { \sigma } _ { e } )$ ). To complete the formulation for the covariance matrix $\Sigma = \overline { { H ^ { - 1 } } } ( \hat { \varphi } , \hat { \sigma } _ { e } )$ , one requires the Hessian partition $H _ { \varphi \sigma _ { e } } ( \underline { { \hat { \varphi } } } , \hat { \sigma } _ { e } )$ ) readily b d h f
+
+$$
+H _ {\underline {{\varphi}} \sigma_ {e}} (\underline {{\hat {\varphi}}}, \hat {\sigma} _ {e}) = \left[ \underline {{\nabla_ {\underline {{\varphi}}}}} \frac {\partial L (\underline {{\varphi}} , \sigma_ {e})}{\partial \sigma_ {e}} \right] _ {\underline {{\varphi}} = \underline {{\hat {\varphi}}}, \sigma_ {e} = \hat {\sigma} _ {e}} = - \frac {n n _ {0}}{2 \hat {\sigma} _ {e} ^ {3}} \left[ \underline {{\nabla_ {\underline {{\varphi}}}}} J (\underline {{\varphi}} | D) \right] _ {\underline {{\varphi}} = \underline {{\hat {\varphi}}}} = 0,\tag{28}
+$$
+
+due to Eq. (24), signifying that the � and $\sigma _ { e }$ are uncorrelated given the data.
+
+![](images/cbe96d262c13364651c375a0d611cfb6afe6f48ab6773c2a3a5ad167194d06de.jpg)  
+Fig. 3. The positions of the actual AE source and the 6 triangular clusters used in the analyses reported in this paper. Note that selection of both the number and positions of the sensor clusters and the AE source aligns directly with the prior studies on AE source localization reported in [18,22–24].
+
+The gradients
+
+$$
+\underline {{\nabla}} _ {\underline {{\varphi}}} L (\underline {{\varphi}}, \sigma_ {e}) = \frac {n n _ {0}}{2 \hat {\sigma} _ {e} ^ {2}} \underline {{\nabla}} _ {\underline {{\varphi}}} J (\underline {{\varphi}} | D),\tag{29}
+$$
+
+and
+
+$$
+\frac {\partial L (\underline {{\varphi}} , \sigma_ {e})}{\partial \sigma_ {e}} = \frac {n n _ {0}}{\sigma_ {e}} \left[ 1 - \frac {J (\underline {{\varphi}} | D)}{\sigma_ {e} ^ {2}} \right],\tag{30}
+$$
+
+of the objective function $L ( \varphi , \sigma _ { e } )$ , required in numerically carrying out the optimization and accelerating convergence to the optimum using gradient-based optimization algorithms, as well as the Hessian of the function $L ( \varphi , \sigma _ { e } ) ,$ required in estimating the uncertainty in the model parameters, can readily be computed analytically using the formulation for $m _ { \alpha }$ and $\theta _ { \alpha }$ in Eqs. (15) to (18), respectively.
+
+## 4. Ideal data studies
+
+To verify the effectiveness of the two procedures proposed above – the EEA (Section 3.1) and the BIA (Section 3.2) – we perform source localization using idealized data generated with analytical formulas, assuming ideal non-dispersive elastic wave propagation in an isotropic plate. This study serves as an intermediary step, isolating the effects of sensor positioning and cluster geometry before introducing real-world complexities like dispersion and anisotropy in the later sections. By first analyzing an idealized scenario, we establish a baseline understanding that helps interpret errors observed in practical cases.
+
+## 4.1. Point sensor cluster
+
+In this study, we consider an AE source localization on a $5 0 0 \times 5 0 0 \times 2$ mm aluminum plate. To maintain consistency with prior studies on AE source localization, we limited the number and positioning of the sensor clusters. Specifically, as in the previously reported studies [18,22–24], we adopt a set of six L-shaped clusters positioned at various locations, with the source placed at the center, i.e. (250, 250) mm, as illustrated in Fig. 3.
+
+In the following analysis, we model the triangular clusters as point sensors (located at the right-angle vertex of each cluster), hence removing the cluster-related variables, e.g. the cluster size. from the localization problem. Assuming that the clusters estimate the arrival angles perfectly and that, as in isotropic plates, these angles point to the AE source, the slope $m _ { \alpha }$ for the �th cluster was calculated (see Eq. (2)) by taking $\theta _ { \alpha }$ to represent the geometrical angle between the cluster � and the AE source. The influence of noise and inaccuracies in TOA estimations affecting the arrival angle, $\theta _ { \alpha } ,$ was included by adding random artificial error using the formula $\theta _ { \alpha } ^ { \prime } = \theta _ { \alpha } + r \sigma _ { e } \theta _ { \alpha }$ , where $\theta _ { \alpha }$ and $\theta _ { \alpha } ^ { \prime }$ represent the data without and with the added error, respectively. In the above formula, � is a normally distributed random number with zero mean and unit variance, and $\sigma _ { e }$ is the magnitude of the added error. Subsequently, the slopes, i.e. $m _ { \alpha } ^ { \prime }$ values were determined by using Eq. (2) for the error induced arrival angles $\theta _ { \alpha } ^ { \prime }$
+
+Knowing the locations of the clusters and their corresponding slopes, the source location was predicted by minimizing Eqs. (14) (for the EEA - Section 3.1) and (21) (for the BIA - Section 3.2). For the EEA, the initial guesses of � and $\eta$ were taken as 0.5 and $\tau / 4 ,$ respectively, and a constrained optimization method, using gradient-based techniques for nonlinear problems with bounds [36], was employed to perform the minimization by constraining $\lambda \in [ 0 ,$ , 1] and $\eta \in [ 0 ,$ , �]. Then, the obtained optimal values of � and � were used in $\operatorname { E q . }$ (10) to predict the source coordinates. For the BIA, arbitrary initial guesses within the range of variation of the parameters are used in a gradient-based algorithm to solve the unconstrained nonlinear optimization problem [37] and estimate the most probable source coordinates, as shown in Table A.6 of Appendix. For the case where the EEA solution is available. reasonable initial guesses are taken to be the optimal values of $( \lambda , x _ { S } , y _ { S } , \eta )$ obtained from the EEA. Subsequently, the error associated with the source coordinates’ prediction � was computed for both the EEA and BIA as
+
+Table 1  
+Error associated with the source coordinates predicted using EEA and BIA with 4, 5 and 6 point sensor cluster configurations, using ideal data
+
+<table><tr><td rowspan="2">Number of clusters</td><td rowspan="2">Clusters</td><td colspan="2"> $E_{\sigma_c=0}$  [mm]</td><td colspan="2"> $E_{\sigma_c=0.05}$  [mm]</td><td colspan="2"> $E_{\sigma_c=0.1}$  [mm]</td><td colspan="2"> $E_{\sigma_c=0.15}$  [mm]</td></tr><tr><td>EEA</td><td>BIA</td><td>EEA</td><td>BIA</td><td>EEA</td><td>BIA</td><td>EEA</td><td>BIA</td></tr><tr><td>6</td><td>1, 2, 3, 4, 5 and 6</td><td>0</td><td>0</td><td>5.25</td><td>3.57</td><td>6.13</td><td>9.08</td><td>18.76</td><td>17.66</td></tr><tr><td>5</td><td>1, 2, 3, 4 and 5</td><td>0</td><td>0</td><td>4.69</td><td>2.69</td><td>17.52</td><td>17.41</td><td>28.11</td><td>20.00</td></tr><tr><td>4</td><td>1, 2, 3 and 4</td><td>0</td><td>0</td><td>3.42</td><td>3.42</td><td>23.92</td><td>23.92</td><td>59.72</td><td>59.72</td></tr></table>
+
+$$
+E = \sqrt {(x _ {S , a c t u a l} - x _ {S}) ^ {2} + (y _ {S , a c t u a l} - y _ {S}) ^ {2}},\tag{31}
+$$
+
+where $x _ { S , a c t u a l }$ and $y _ { S , a c t u a l }$ represent the x and y coordinates of the actual source, respectively. i.e $( x _ { S , a c t u a l } , y _ { S , a c t u a l } ) = ( 2 5 0 , 2 5 0 )$ mm, while $x _ { S }$ and $y _ { S }$ denote the predicted source coordinates. Table 1 presents the values of � for source localizations derived from idealized data, using various $\sigma _ { e }$ values, for both the EEA and BIA. These � values were determined for the placement of 4, 5 and 6 point clusters. It should be noted that for the placement of 4 and 5 clusters, there are 15 and 6 distinct combinations, respectively, f h il bl i i ill d i i h l h i bl b d i l bi i d il d analysis of all potential cluster combinations is presented later in this paper. It can be observed from Table 1 that the � values for both EEA and BIA are exactly the same for 4 clusters. The reason for this is the fact that with 4 clusters, there are 4 equations of Eq. (6) with 4 unknowns that are satisfied exactly during the optimization process — leading to the same source predictions for the EEA and BIA. For 5 and 6 clusters the � values for both EEA and BIA are close but present $\sigma _ { e }$ -dependent differences. In particular, BIA tends to perform better on average with 5 clusters, while EEA yields better results with 6 clusters. As shown in Table 1, an increase in $\sigma _ { e }$ corresponds to an increase in the value of �. For $\sigma _ { e } = 0 ,$ , the arrival angle estimation is exact and the prediction indicates the exact source location. Moreover, for $\sigma _ { e } > 0 ;$ , increasing the number of clusters from 4 to 6 reduces the � values, as ll d bl h l f h f $\sigma _ { e }$ on source localization is important for practical reasons. as it accounts for possible errors of the cluster-based approach for predicting the arrival angle. These errors may arise from noise and measurement system capabilities, e.g. the accuracy of the TOA estimation.
+
+Using the source coordinates predicted by the BIA along with the covariance matrix (i.e., inverse of the Hessian — Eq. (26)), the uncertainty in the predicted source location, $( x _ { S } , y _ { S } )$ , can be determined. Fig. 4 shows the uncertainty in the source locations predicted with idealized data of varying $\sigma _ { e }$ values for the placement of 6 (Figs. 4(a)–4(c)) and 5 (Fig. 4(d)) point clusters. Each contour line represents a specific probability level (e.g., 75%, 50%, 25% and 5%), indicating uncertainty regions for the predicted source location. Higher probability contours enclose areas where the source is most likely to be located, while lower probability contours extend into regions of greater uncertainty. The center of the contours represents the most probable source location corresponding to the source coordinates predicted by the BIA. It can be observed from Figs. 4(a)–4(c) that an increase in $\sigma _ { e }$ leads to greater uncertainty in the source location, as indicated by the expansion of the contour regions. Moreover, these figures show that the highest probable source location (i.e., the predicted source location) shifts farther from the actual source location (marked by a red asterisk) with increasing $\sigma _ { e } .$ . Note that a smaller uncertainty in the source coordinates indicates a more reliable prediction. Consequently, for $\sigma _ { e } = 0$ (which gives exact results, as observed in Table 1), the uncertainty is 0, with the most probable source location coinciding with the exact source location
+
+From Figs. 4(c) and 4(d) it can be observed that the uncertainty in source location predictions decreases significantly when using l d l d h d ff b h l d b bl l (d d b � Table 1) being similar. However, in the case of 4 clusters the uncertainty is 0, with the most probable source location coinciding exactly with the actual source location. Thus, the uncertainty for 4 clusters’ predictions with $\sigma _ { e } \neq 0$ d d l h f $\sigma _ { e } = 0$ . This should not be possible because as Table 1 clearly shows that the source locations predicted using 4 clusters for $\sigma _ { e } > 0$ deviate significantly from the true values. As mentioned previously, the scenario with 4 clusters results in 4 equations from Eq. (6) with 4 unknowns, which are satisfied exactly. However, this exact solution holds irrespective of the errors present in the $\theta _ { \alpha }$ (or $m _ { \alpha } )$ values. For each $m _ { \alpha } , x _ { \alpha } ,$ , and $y _ { \alpha } { } _ { i }$ , there exists a corresponding solution for $\lambda , x _ { S } , y _ { S }$ , and �. Consequently, the objective functions (as described in Eqs. (14) and (21) for EEA and BIA, respectively) reach a minimum value of zero. As a result, $\hat { \sigma } _ { e }$ in $\operatorname { E q } .$ . (25) becomes zero, leading to an infinite Hessian in $\operatorname { E q . }$ (26) (numerically, a very large value), since the Hessian is inversely proportional to $\hat { \sigma } _ { e }$ However, the source predictions are dependent on the error in $\theta _ { \alpha }$ . In the absence of error in $\theta _ { \alpha } ,$ the source prediction will be exact for 4 clusters. Conversely, in the presence of error, the predictions degrade. Increasing the number of sensor clusters from 4 can improve the source location estimate when errors are present in $\theta _ { \alpha }$
+
+Therefore, we conclude that the results with 4 clusters are unreliable, and a minimum of 5 clusters is required for practica and reliable source localizations. Furthermore, the uncertainty in source localization is highly dependent on the error in the arriva angles and the number of sensor clusters used.
+
+Table 2  
+Error associated with the source coordinates predicted using EEA and BIA with 5 and 6 triangular sensor cluste configurations using ideal data with no noise and accurate TOA estimations.
+
+<table><tr><td rowspan="2">Number of clusters</td><td rowspan="2">Clusters</td><td colspan="2">E [mm]</td></tr><tr><td>EEA</td><td>BIA</td></tr><tr><td>6</td><td>1, 2, 3, 4, 5 and 6</td><td>8.50</td><td>9.34</td></tr><tr><td>5</td><td>1, 2, 3, 4 and 5</td><td>8.95</td><td>9.89</td></tr></table>
+
+![](images/74a1b269a211489c93751a697a6d51530c22ed083da1a1f7db20622b88a9539c.jpg)  
+(a)
+
+![](images/ad1587dd147b4528f8cba3a6b1334c0e0c649852126b3c5212bfa0be4f07babc.jpg)  
+(b)
+
+![](images/7f3a98085b37e5257be5f6ba3922e1eef5795a94de478b90337d2d6c34af6bf8.jpg)  
+(c)
+
+![](images/d7dac6f30d8669b515361f4e383a2b4cda03061b313447c62615fe2929a5145c.jpg)  
+(d)  
+Fig. 4. Contour plots illustrating uncertainty in the source coordinates $x _ { S }$ and $y _ { S }$ predicted with configuration of 6 (a–c) and 5 (d) point sensor clusters using d l d d h $\sigma _ { e } = 0 . 0 5 ~ ( \mathrm { a } ) , \sigma _ { e } = 0 . 1$ (b) and $\sigma _ { e } = 0 . 1 5 ~ ( $ ( d d) h l b b l ( ) l l d f for the predicted source location. Higher probability contours denote regions where the source is more likely to be located. while lower probability contours represent areas of greater uncertainty. Note that these contours depict prediction uncertainty and should not be mistaken for positioning errors.
+
+## 4.2. Triangular cluster
+
+Contrary to the analysis shown in Section 4.1, where the clusters were assumed to be point sensors, here the triangular geometry of the clusters is taken into account. In particular, the influence of the distance between each sensor within the cluster (denoted by � in Fig. 1), is investigated
+
+Recalling the assumption from Section 2 that � is small compared to the distance between the cluster and the source, we consider the wavefront to be planar at the cluster location. Then, for non-dispersive ideal wave propagation, the arrival angle of the cluster (see Eq. (1)) can be calculated as $\varDelta D _ { \alpha 2 } / \varDelta D _ { \alpha 1 } ,$ , where $\varDelta D _ { \alpha 2 }$ and $\Delta D _ { \alpha 1 }$ are the differences in distances of sensors $P _ { 2 }$ and �, and $P _ { 1 }$ and � (see Fig. 1) from the source, respectively. As the distances were accurate, this approach ensured that TOA estimations did not introduce errors in the arrival angle calculation. Note that the velocity of the wave is not required in the arrival angle calculation — making the triangular clusters to be applied when material properties of the plates are unknown.
+
+To investigate the influence of the distance between the cluster and the source – represented by � – as well as the � parameter, arrival angles were predicted using the above procedure for an arbitrary cluster. Note that cluster’s position was denoted by the position of its sensor at the right-angle vertex. The arrival angles were calculated for a range of geometrical angles between the cluster and the source, spanning from 0 to 2�, for various values of � and �. Since � and � exhibit a linear dependence in the arrival angle calculation (see Eq. (1), where $v t _ { \alpha i }$ represents the distance between the sensor and the source), their ratio $\left( D / B \right)$ serves as a practical metric for the analyses involving L-shaped triangular clusters [28]. Fig. 5 shows the average and maximum differences between the actual (geometrical) and predicted arrival angles for different $D / B$ ratios. As shown in ${ \mathrm { F i g . ~ } } 5 ,$ it is evident that as the ratio of $D / B$ increases, the discrepancy between the predicted and arrival angles decreases. This finding directly supports the guideline that the length � should be significantly smaller than the distance between the cluster and the source in triangular cluster arrangements [28].
+
+![](images/81b655c9deb5b10e7abf707ae5f8f3401aad997072d9ad278d8edceb201aaed4.jpg)  
+Fig. 5. Average and maximum difference between the actual (geometrical) and predicted arrival angles for different distances between the cluster and the source – denoted by D – for varying � lengths. Note that � represents the distance between the individual sensors of the cluster, as shown in Fig. 1.
+
+![](images/e9c7e98357e88209db8cdc01bbb57020f724ece0d2174f9ff36274a9950b59bc.jpg)  
+(a)
+
+![](images/531154fb923fc5c29558bbc7b5841865fb96dfa68cf97363c70b1a57c48e8eb2.jpg)  
+(b)  
+Fig. 6. Contour plots illustrating uncertainty in the source coordinates $x _ { S }$ and $y _ { S }$ predicted with configuration of 5 (a) and 6 (b) triangular sensor clusters using idealized data with no noise and accurate TOA estimations. The contour lines represent the spread of uncertainty in the parameter space around the mos probable value, indicating regions of increasing uncertainty as the probability (p) decreases.
+
+Next, we utilize the 6 clusters from Fig. 3 with � = 15 mm to predict the acoustic emission source coordinates. Similar to the cluster and source positions. this choice of B is based on previously reported studies $[ 1 8 , 2 2 - 2 4 ]$ . Note that sensor clusters $4 , 5$ and 6 in Fig. 3 are obtained by rotating the configuration shown in Fig. 1 by 90<sup>◦</sup>. The arrival angles for each cluster were determined using the differences in distances, as discussed above. Then, by determining the respective slopes, the source coordinates were predicted using the EEA and BIA, and the corresponding error associated with the predictions. $E ,$ was determined, as outlined in Section 4.1.
+
+Table 2 shows the values of � for EEA and BIA with the placement of 5 and 6 clusters, while Fig. 6 shows the corresponding uncertainty in the source location predictions. Note that unlike in the previous analysis, with the assumption of a point cluster (Section 4.1), no artificial error (owing to noise and inaccuracies in TOA estimations) was added to the arrival angle calculations. It can be observed from Table 2 that values of � are similar for both the methods. Additionally, the respective values of � remain nearly identical regardless of the number of clusters used. Similarly. from Fig. 6. it can be observed that the uncertainty and the most probable source locations are very similar for 5 and 6 clusters. The reason for this latter effect is that in triangular clusters, the error associated with the source location predictions follows directly from the geometry of the cluster, in particular from the ratio $D / B .$ Some of the analyzed clusters, namely, cluster numbers 2, 3 and 4, have relatively low $D / B$ ratios that introduce an error in the arrival angle predictions, subsequently affecting the source predictions whenever these clusters are employed. Thus, although triangular clusters offer the advantage of determining the arrival angle without needing to know the material properties of the structure and facilitate source predictions using different approaches, the cluster geometry and relative position from the source – specifically the $D / B$ ratio – significantly impact the accuracy of source predictions.
+
+Table 3  
+Material properties of the plate used in the analysis (transversally isotropic material symmetry).
+
+<table><tr><td>Material property</td><td>Parameter</td><td>Value</td></tr><tr><td rowspan="3">Young&#x27;s modulus [GPa]</td><td> $E_x$ </td><td>10ζ</td></tr><tr><td> $E_y$ </td><td>10</td></tr><tr><td> $E_z$ </td><td>10</td></tr><tr><td rowspan="3">Poisson&#x27;s ratio [-]</td><td> $v_{xy}$ </td><td>0.0667ζ</td></tr><tr><td> $v_{yz}$ </td><td>0.4</td></tr><tr><td> $v_{xz}$ </td><td>0.0667ζ</td></tr><tr><td rowspan="3">Shear modulus [GPa]</td><td> $G_{xy}$ </td><td> $\frac{10\zeta}{0.1334\zeta^2+\zeta+1}$ </td></tr><tr><td> $G_{yz}$ </td><td>3.57</td></tr><tr><td> $G_{xz}$ </td><td> $\frac{10\zeta}{0.1334\zeta^2+\zeta+1}$ </td></tr><tr><td>Mass density [kg/m3]</td><td>ρ</td><td>1500</td></tr></table>
+
+The findings from the ideal data study provide a fundamental understanding of localization performance under simplified conditions. Next, we extend this analysis using numerical simulations, incorporating real-world factors such as wave dispersion and material anisotropy, to assess the robustness of the proposed methods.
+
+## 5. Numerical studies
+
+In this section, we analyze the AE source localization methodologies outlined in Sections 3.1 and 3.2 through numerica simulations. In this regard, anisotropic plates with different material properties were modeled using a finite element (FE) solver. To maintain consistency with the previously reported studies on AE source localization [18,22,23] and the ideal data studies reported in Section 4, the plate dimensions $( 5 0 0 \times 5 0 0 \times 2 \mathrm { m m } )$ , the locations of the AE source and sensor clusters (with � = 15 mm), and the number of clusters follow the setup shown in Fig. 3. A similar setup was investigated in [24], but with different plate dimensions alon the � axis. Althou h the plate dimensions used in the numerical simulations presented here differ from those emplo ed in the experimental studies discussed later in Section 6, this does not impact the analysis, as only the waves propagating directly from the source are analyzed—excluding any contributions from edge reflections. In the numerical simulations, the edges of the plate were modeled as stress-free, and the material of the plate was assumed to be transversally isotropic, with the � axis being the axis normal to the isotropic plane. The degree of the in-plane anisotropy was controlled through a scaling parameter, �, for the Young’s modulus measured along the � axis (see Table 3). For $\zeta = 1$ , the isotropic plate case is recovered, while for $\zeta > 1$ the plate becomes anisotropic with waves propagating faster along the � direction. All other elastic constants are scaled accordingly and consistently with the transversally isotropic material symmetry, and shown in Table 3.
+
+In the anal ses presented in this work, we investi ate $\zeta \in \langle 1 , 1 5 . 7 5 \rangle$ and analyze 60 plate models within this range (i.e. $ { \Delta \zeta } = 0 . 2 5 )$ Note that for � exceeding a critical value, i.e. $\zeta > \zeta _ { c r } ,$ material properties of the plate may become non-feasible or non-physical. Considering that composite plates typically exhibit a Poisson’s ratio of 0.45 or lower, we assumed this value to be the feasibility threshold. In the study outlined here this threshold corresponds to $\zeta > \zeta _ { c r } = 6 . 7 5$
+
+h l d l f h l l d d d l l l f d h l h arrangement, to minimize numerical dispersion for the considered frequency range [38]. This setup resulted in the total of 6M DOFs. The simulation time was 250 μs, with a constant time step �� = 0.5 μs to ensure the stability of the explicit time integration scheme [39]. The AE source was modeled as an out-of-plane point force with the time-profile described by a Hann-modulated two-period sine signal of 120 kHz. For each plate’s simulation, the time histories of the out-of-plane displacement were recorded by all the 18 sensors of the 6 sensor clusters positioned at different locations, as shown in Fig. 3
+
+h l h d l d h f l h h f h ( ll l) wavefront generated by the AE source were different for each plate. Using numerical simulation results, these characteristics were evaluated to quantify each plate’s anisotropy through the wavefront shape measurement. Consequently, the square of the ratio between the minor and major axes of the generated elliptical wavefronts (denoted by $\lambda ;$ see Section 2) was measured for each plate. This measurement was conducted by fitting an ellipse onto the wavefront. This procedure was repeated to determine � values for all 60 plates. Fig. 7 displays superimposed ellipses (in red) for three plates with $\zeta$ values of 1 (Fig. 7(a)), 2 (Fig. 7(b)), and 6.75 (Fig. 7(c)), resulting in � values of 1, 0.74 and 0.48, respectively. Note that the most anisotropic plate analyzed in this study, with $\zeta = 1 5 . 7 5$ , results in $\lambda = 0 . 3 4 ,$ , and the feasibility threshold indicated by $\zeta _ { c r } = 6 . 7 5$ corresponds to $\lambda _ { c r } = 0 . 4 8 .$
+
+In order to perform localization studies for plates with various degrees of anisotropy, time signals recorded at different sensors were used to estimate the arrival angle. As discussed in Section $^ { 4 , }$ the accuracy of the arrival angle estimation, calculated using the TDOA and. consequently. TOA of the signals. is crucial for precise AE source localization. The Akaike information criterion (AIC) [40.411 is commonly emploved to predict TOA in source localization studies due to its precise detection of initial impact: induced signal alterations [22–24]. However, AIC selects TOAs for the 60 plates in a discontinuous, irregular manner. This irregularity is illustrated in Fig. 7(d). where the red asterisk markers indicate the TOAs picked by the AIC for the sensor located at the right-angle vertex of cluster number 1. This selection of TOAs leads to inconsistencies in source predictions across different plates, in particular for material properties corresponding to � close to the discontinuity. In this study, to achieve a smooth transition in source location predictions for plates with varying anisotropy $( \mathrm { i . e . , }$ for various λ values). we selected $( \mathrm { i . e . , }$ , manually picked) a smooth path of arrival times of a specific signal peak as the TOA. Fig. 7(d) illustrates the picked peaks (TOAs) for cluster number h l h bl k l k h d f k k l d ll ll l resulted in a smooth TOA transition from isotropic plates $( \lambda = 1 )$ to highly anisotropic plates $\left( \lambda = 0 . 3 4 \right)$ . It is important to note that the accuracy of the arrival angle predictions is highly sensitive to the choice of the signal peak used as the TOA. We found that l i k h i l i i i h i l i l l di i d di i b the sensors within a cluster. This increase in the arrival angle prediction error subsequently leads to loss of accuracy in the source localization as observed in Section 4
+
+![](images/ece02710d471656898bfcdcfdbf3061b31060e1e2063e52cedc4e83ceb40ffa3.jpg)  
+(a)
+
+![](images/3a0e0d3f81cee53b93973b60c58f441618a7cfa354185857d6ff6ccd0708a21b.jpg)  
+(b)
+
+![](images/d218c8f1e8d52a1b8d63e8c056cf41253a2fefd8cf3f03fad13a1499a8a71f94.jpg)  
+(c)
+
+![](images/50b8a3c21240133170754fddec201da44daf4ab2eb51bfad39b5e1e6e6291678.jpg)  
+(d)  
+Fig. 7. (a)–(c) Measurement of � values by superimposing an ellipse onto the wavefront generated for plates corresponding to $\zeta = 1 \ ( { \mathrm { a } } ) , \ \zeta = 2 \ ( { \mathrm { b } } ) .$ d $\zeta = 6 . 7 5$ (c). (d) TOAs picked by the AIC technique (red asterisk marker) and manually (black circular marker) for the sensor located at the right-angle vertex of clusters 1. Note that in order to visualize the peaks in $\mathrm { F i g . ~ } 7 ( \mathrm { d } ) .$ , minimum and maximum amplitude limits were adjusted.
+
+Subsequently, the picked TOAs from the three sensors of each cluster were used in Eq. (1) to calculate the arrival angle for the 6 clusters, followed by determining their slopes using Eq. (2). Finally, similar to the procedure in Section $^ { 4 , }$ the known locations of the clusters and the calculated slopes were used to predict the source location through Eqs. (14) (for the EEA, Section 3.1) and (21) (for the BIA, Section 3.2). For EEA, the initial values of � and � were set to 0.5 and $\pi / 4 ,$ , respectively. A constrained gradient-based optimization method for solving nonlinear problems was employed to minimize the error while ensuring $\lambda \in [ 0 , 1 ]$ and $\eta \in [ 0 , \pi ] .$ The obtained optimal values of � and � were then used in Eq. (10) to predict the source coordinates. For the $\mathrm { B I A } ,$ , the optimal $( \lambda , x _ { S } ,$ $y _ { S } , \eta )$ values obtained from EEA were provided as initial guesses in a gradient-based algorithm to solve the unconstrained nonlinear optimization problem and estimate the most probable source coordinates. Finally, the error associated with the source coordinate predictions, $E ,$ was determined using $\operatorname { E q . }$ (31).
+
+Fig. 8(a) shows the source coordinates predicted by the two approaches for the 60 different plates considered in this study, while Fig. 8(b) provides a close-up view of Fig. 8(a), highlighting the predicted coordinates for the feasible $( \lambda \ge 0 . 4 8 )$ and nonf bl ( ) l d d b l d l k l ( ) d (b) h d predicted by the EEA and BIA are similar across different plates, with the EEA providing slightly more accurate results compared to the BIA. In particular, the coordinates predicted by the EEA are closer to the actual source location than those predicted by the BIA. Consequently, the circular dashed lines, which represent the average distance between the predicted and actual source locations (i.e., the error � as defined in Eq. (31)), have a smaller radius for the EEA compared to the BIA. Furthermore, Fig. 8(b) reveals that the source coordinates predicted for feasible plates follow a circular pattern at a certain distance from the exact source, whereas the predicted source coordinates for the non-feasible plates deviate further from the exact source.
+
+![](images/ce6600d145ea9d68e438c42cf9a25cc4174a9e8c1291f712f9fa221ef20150d8.jpg)  
+(a)
+
+![](images/4f88269bbd95489d74d3ba0de05e7e512e1c880af2ca8a735fec09ca45842afc.jpg)  
+(b)
+
+![](images/3fdecebc5a34865ae460f00bbf68e7e69d466bec442d36e5127bf84df519c82c.jpg)  
+(c)  
+Fig. 8. (a) The actual and predicted source coordinates determined by the EEA and BIA for the 60 different plates used in the numerical studies. (b) Close-up view of Fig. 8(a) highlighting the source coordinates predicted for physical (� ≥ 0.34) and non-feasible (� < 0.34) plates, represented by different markers and varying transparency. (c) Variation of the error associated with source prediction for the 60 different plates, denoted by different � values.
+
+Fig. 8(c) shows the error in the source coordinates predicted using the EEA and BIA for the different plates, represented by their � values. The vertical solid black line marks the last plate with feasible material properties $( \mathrm { i . e . , } \ \lambda = 0 . 4 8 )$ . Plates to the left of this vertical line have non-feasible material properties. It can be observed from Fig. 8(c) that the error patterns associated with the EEA and BIA are similar; however, the error for the BIA is slightly higher than that for the EEA in most cases. As shown in Fig. 8(c), the error in the predicted source coordinates remains almost consistent for physically appealing plate structures, while for non-feasible plates, the error increases almost linearly with decreasing λ. This trend suggests that the proposed approaches are reliable for practical applications of AE source localization in anisotropic plates.
+
+It is important to emphasize that the accuracy of source predictions is highly dependent on the estimation of the slopes (Eq. (2)) and, consequently, the arrival angles (Eq. (1)) at the sensor clusters. In the studies presented here, discretization in both space and time introduces modeling errors within the numerical models, while TOA inaccuracies – arising from the estimation method – and the cluster's geometric configuration relative to its distance from the source (D/B ratio — see Fig. 5) contribute to measurement errors. Here, TOA is determined by manually picking the arrival time of a specific signal peak (see Fig. 7(d)), ensuring a smooth TOA selection and source location prediction across plates with varving anisotropy. However, this approach increases measurement errors, particularly for clusters 2, 3, and 4, which are closer to the source, and consequently have a low �∕� ratio. The combined impact of modeling and measurement errors affects slope calculations, ultimately influencing the accuracy of source localization using EEA and BIA.
+
+![](images/cf7aabd5aef448e678f1452ad677bf5b02ac7d8eb2aed7945f0bcb363b0660b9.jpg)  
+(a)
+
+![](images/6c92d6c9ea6c756e39c12c0d90245d44e3b949a462e24902c54bfd3d4715c13a.jpg)  
+(b)  
+Fig. 9. (a) The source coordinates predicted by the EEA and BIA for plates with $\lambda = \{ 1 , 0 . 7 4 , 0 . 4 8 \} _ { \mathrm { { ; } } }$ , using different combinations of 5 clusters and the 6-cluster configuration. (b) Variation of the error associated with source prediction for plates with $\lambda = \{ 1 , 0 . 7 4 , 0 . 4 8 \}$ , using different combinations of 5 clusters. In Fig. 9(a), the non-filled markers and dashed lines/circles represent EEA, while the filled markers and solid lines/circles represent BIA.
+
+Cluster combinations for the placement of 5 clusters and the corresponding prediction errors averaged across three plates with � = 1, 0.74, 0.48. Note that the last row of this table gives the prediction error for the 6-cluster configuration averaged across the three plates.
+
+<table><tr><td>Cluster combination</td><td>Clusters</td><td> $Error_{EEA}$  [mm]</td><td> $Error_{BIA}$  [mm]</td></tr><tr><td>I</td><td>1, 2, 3, 4 and 5</td><td>48.48</td><td>63.42</td></tr><tr><td>II</td><td>1, 2, 3, 4 and 6</td><td>44.30</td><td>64.53</td></tr><tr><td>III</td><td>1, 2, 3, 5 and 6</td><td>90.02</td><td>91.31</td></tr><tr><td>IV</td><td>1, 2, 4, 5 and 6</td><td>107.22</td><td>94.43</td></tr><tr><td>V</td><td>1, 3, 4, 5 and 6</td><td>32.95</td><td>32.70</td></tr><tr><td>VI</td><td>2, 3, 4, 5 and 6</td><td>53.40</td><td>53.27</td></tr><tr><td>-</td><td>1, 2, 3, 4, 5 and 6</td><td>41.55</td><td>56.20</td></tr></table>
+
+Next, we study the influence of the number and combination of sensor clusters on AE source localization using EEA and BIA. We vary the number and selection of the clusters among the 6 available sensor clusters depicted in Fig. 3. In this study we select three representative plates of isotropic, moderately anisotropic, and highly anisotropic properties corresponding to $\lambda = \{ 1 , 0 . 7 4 , 0 . 4 8 \}$
+
+From the 6 available cluster positions, 6 different combinations of 5 clusters and 16 different combinations of 4 clusters are possible. However, as discussed in Section 4, the 4-cluster configuration produces unreliable results, and a minimum of 5 clusters are required for practical and reliable source localizations. Therefore, only the different 5-cluster combinations were investigated. For each combination, the acoustic source coordinates were predicted and the error associated with these predictions was determined for all three types of plates.
+
+Fig. 9(a) illustrates the source coordinates predicted by the EEA and BIA for plates with $\lambda \ = \ \{ 1 , 0 . 7 4 , 0 . 4 8 \}$ , using different b f l d h l f h d d d b d d b f ll d and filled markers, respectively. Note that the coordinates predicted by 5 cluster combination IV (see Table 2) for the plate with $\lambda = 0 . 4 8$ have not been included in Fig. 9(a) because they are significantly far from the actual source location. As observed in all the previously discussed results, Fig. 9(a) shows that the predictions by the EEA and BIA are similar. Additionally, the average distance between the actual and predicted source locations – denoted by dashed and solid lines/circles for EEA and BIA, respectively – increases when the number of clusters is reduced from 6 to 5. This observation corroborates the discussion in Section 4.1, where it was noted that reducing the number of clusters from 6 to 5 resulted in increased error in the source predictions (see Table 1). On the contrary, it is clear that adding clusters to the setup supplies information on the acoustic source that can be used to improve the localization process.
+
+Fig. 9(b) shows the error associated with the source predictions for all combinations of 5 clusters for the three plates investigated. It can be observed that for certain combinations of 5 clusters, the error is significantly higher. This indicates that not only the number of clusters but also their positions are crucial for accurate source localization, as reported in [28].
+
+![](images/ed3f24dbc0aebc14d956b6d5866fd3cc980878b25ae2b374bb86923f9874520d.jpg)  
+(a)
+
+![](images/382d805fc163bb7cb3c0481377dc9a3d3514cbf5a4fbe67928feb3c24633b169.jpg)  
+(b)
+
+![](images/ac6329a731effa85ca72fbda26f786467d0b1ef129a22e734325995c3d12b6f5.jpg)  
+(c)
+
+Fig. 10. Contour plots of the uncertainty in the source coordinates $x _ { S }$ and $y _ { S }$ predicted with configuration of 6 clusters on plates with varying anisotropy. The plots correspond to plates with � = 1 (isotropic) in (a), � = 0.74 (moderately anisotropic) in (b), and � = 0.48 (highly anisotropic) in (c). The contour lines represent the spread of uncertainty in the parameter space around the most probable value, indicating regions of higher and lower uncertainty in the predicted source locations.  
+![](images/e927ebce5207c7a93a1d0dae09de149d6b8344fdcad0bb2a2cde1effdb051b7e.jpg)
+
+![](images/4612428182a18881f6d5b337455bc1d6149f2beeb465de745f9bb7c3e77c0f2f.jpg)  
+(a)  
+(b)
+
+![](images/ec94a6b16f4770fd28955e42a866556278cf59436e0e1b514ff4f69b280b759b.jpg)  
+(c)
+
+![](images/66e98888a2eef4e731142734a46e6164c3deab2191f97fe177b569954751d4d4.jpg)  
+(d)
+
+![](images/7826178b96e16a44a89caa759e6991f44e9909178365f27fdad89b674bcf92ec.jpg)  
+(e)
+
+![](images/0ca9e60bc03729e75eb04481dcf1ff94187f394dce90d1a04dc9e245e0a299c0.jpg)  
+(f)  
+Fig. 11. Contour plots of uncertainty in the source coordinates $x _ { S }$ and $y _ { S }$ predicted with configuration of 5 clusters on plates with varying anisotropy. The best combination (V - see Table 4 and Fig. 9(b)) is shown in (a–c) and the worst combination (IV - see Table 4 and Fig. 9(b)) is shown in (d-f). The plots correspond to plates with � = 1 (isotropic) in (a) and (c), � = 0.74 (moderately anisotropic) in (b) and (d), and � = 0.48 (highly anisotropic) in (c) and (f). The contour lines h d f h d h b bl l d f h h d l h d d source locations, Note that Figs. 11(d)–11(f) have significantly higher axis limits than Figs, 11(a)–11(c), indicating greater uncertainty in the source predictions In Fig. 11(f), the contour lines extend beyond the plate boundaries.
+
+In Table 4. the average error in source predictions for each combination of 5 clusters is shown. Note that the last row in the table represents the average error across the three plates for the 6-cluster configuration. It is evident from Table 4 that, except for one combination (V), all other 5-cluster combinations result in higher errors compared to the 6-cluster configuration, with combination IV yielding the highest error.
+
+Similar to the analysis reported in Section 4. the source coordinates predicted by the BIA and the covariance matrix were used to determine the uncertainty in the predicted source location for the plates with $\lambda \ = \ \{ 1 , 0 . 7 4 , 0 . 4 8 \}$ . Figs. 10 and 11 show the uncertainty in the source coordinates’ prediction with configuration of $6 , 5$ (with the best combination number V) and 5 (with the worst combination number IV) clusters, respectively, for the three plates. Notice the different axis limits in these figures. It can be observed from Figs. 10 and 11(a)–11(c) that contours for the 6-cluster configuration spread over a larger area. This indicates h h h d f ll h l l h h b b f l d h l configuration, even when the distance between the actual (denoted by red asterisk) and the most probable source locations is similar — resulting in comparable error value (see Table 4). This suggests that the 5-cluster configuration with the best combination is more reliable than the 6-cluster configuration, provided the specific geometrical setup investigated. In contrast, Figs. 11(d)–11(f) show that the uncertainty in source predictions for the worst combination of 5 clusters is significantly larger for all plates, rendering the predictions less reliable. Additionally, for the plate with $\lambda = 0 . 4 8$ , we can see from Fig. 11(f) that the most probable source location is predicted significantly farther from the actual source (with the contour lines of uncertainty extending beyond the plate boundaries), a result consistent with the errors plotted in Fig. 9(b).
+
+![](images/405f6700919da2d6965c1016ef3f220db22a70ae714f2e4aea665597900204f3.jpg)  
+(a)
+
+![](images/7ee3b1eaa27f1c246132f850588fb5c134218010c82311cc043e42f7fb11fe09.jpg)  
+(b)  
+Fig. 12. (a) Modified cluster arrangement (combination I'’) used in numerical studies and experimental validation, In numerical studies, the clusters were mounted on $5 0 0 \times 5 0 0 \times 2$ mm plates, whereas in experiments, they were mounted on an 800 $\times 2 8 6 \times 2$ plate. The coordinate origin of the plates was set at (250, 250) mm. (b) Variation of source localization error for plates with $\lambda = 1 , 0 . 7 4 , 0 . 4 8$ , using cluster combinations V (see Fig. 3 and Table 5) and I<sup>′</sup> (Fig. 12(a)), with TOA estimated via either manual picking or the AIC technique
+
+Prediction errors for cluster combinations V (Fig. 3) and I<sup>′</sup> (Fig. 12(a)), averaged across three plates with $\lambda = 1 , 0 . 7 4 , 0 . 4 8 ,$ using either manual picking or the AIC technique to estimate the TOA.
+
+<table><tr><td>Cluster combination</td><td>Clusters</td><td> $Error_{EEA}$  [mm]</td><td> $Error_{BIA}$  [mm]</td></tr><tr><td>V (Manual picking)</td><td>1, 3, 4, 5 and 6</td><td>32.95</td><td>32.70</td></tr><tr><td>V (AIC)</td><td>1, 3, 4, 5 and 6</td><td>14.03</td><td>14.73</td></tr><tr><td>I&#x27; (AIC)</td><td>1&#x27;, 2&#x27;, 3&#x27;, 4&#x27; and 5&#x27;</td><td>11.67</td><td>14.5</td></tr></table>
+
+Thus, it is evident that the 5-cluster configuration with combination V provides the most accurate AE source localization results for the analyzed plates. However, the prediction errors associated with this combination remain relatively high. These errors, as discussed previously, primarily stem from the manual picking of the arrival time of a specific signal peak as the TOA (ensuring a smooth transition — see Fig. 7(d)) at each sensor within the clusters, as well as the positioning of certain clusters (namely, 3 and 4), which contribute to significant measurement errors due to their relatively low $D / B$ ratio (see Fig. 5).
+
+To improve source localization accuracy, we now predict source coordinates for cluster combination V using the AIC technique for TOA estimation. Fig. 12(b) presents the error associated with source localization (using both the EEA and BIA) across the plates with $\lambda = \{ 1 , 0 . 7 4 , 0 . 4 8 \}$ for cluster combination V with AIC-based TOA estimation. For reference, the errors associated with combination V when using manual picking of TOA (shown in Fig. 9(b)) are also plotted in Fig. 12(b). Furthermore, Table 5 summarizes the average source localization errors for combination V with AIC and manual picking. It can be clearly observed from Fig. 12(b) and Table 5 that employing AIC for TOA estimation significantly reduces localization errors.
+
+Next, to further enhance the accuracy, a modified 5-cluster arrangement, denoted as combination I<sup>′</sup> (see Fig. 12(a)), is introduced. In this combination, the clusters – with a relatively high average �∕� ratio – are arbitrarily placed around the source. Note that, as before, B = 15 mm for all the clusters, and AIC is emploved for TOA estimation. The source localization error (using both the EEA and BIA) for cluster combination I<sup>′</sup> across the plates with $\lambda = \{ 1 , 0 . 7 4 , 0 . 4 8 \}$ is presented in Fig. 12(b), with the corresponding averaged error provided in Table 5.
+
+From Fig. 12(b) and Table $^ { 5 , }$ it is evident that employing a more accurate TOA estimation technique, such as AIC, significantly reduces localization errors by improving the accuracy of TOA estimations. Additionally, using cluster combination I<sup>′</sup> – which features a relatively high average D/B ratio of the clusters – further improves the localization results by reducing the average errors across all plates, as shown in Table 5. This suggests that optimizing the sensor cluster network, with respect to predefined AE source hotspot regions, can be approached systematically to enhance source localization accuracy [28], thereby presenting a promising direction for future research.
+
+In the next section, experimental validation of the proposed methods is presented using the cluster combination that provided h b l b <sup>′</sup>
+
+![](images/0c5f5b0411e98264461a733f0c6e53289c85d114f27b9e2ba7f88a3dca6d7c9f.jpg)
+
+![](images/050aa7f10f83497a4af1bb84a15029ce9993417862b6e137662c30291f966564.jpg)  
+(b)
+
+(a)  
+![](images/3e44a5015f344b191656b49612b5ed8acd5bf2ff3f9297bdb8c9411d00477db2.jpg)  
+(c)
+
+![](images/c9187a6226401977296fa71174450bb2e7e1f26af70a9760f4af2bed0fc3dc1b.jpg)  
+(d)  
+Fig. 13. (a) The 800 × 286 × 2 mm composite plate used for the experimental validation reported in Section 6. (b) AE signals recorded by the three sensors of L-shaped cluster 1’ (placed according to Fig. 1) – of cluster combination I<sup>′</sup> (Fig. 12(a)) – during the experiments, with the corresponding TOAs determined by the AIC. (c) The source coordinates predicted by the EEA, BIA and the method from [23] for the plate shown in Fig. 13(a), using the modified 5-cluster arrangement — combination I<sup>′</sup>- illustrated in Fig. 12(a). The black dashed lines indicate the distance between the actual and predicted source locations, with � specifying this distance. (d) Contour plots illustrating uncertainty in the source coordinates $x _ { S }$ and $y _ { S }$ predicted using experimental data with the modified 5-cluster arrangement shown in Fig. 12(a). The contour lines represent the spread of uncertainty in the parameter space around the most probable value, indicating regions of higher and lower uncertainty in the predicted source location.
+
+## 6. Experimental validation
+
+This section presents the experimental validation of the AE source localization methodologies – EEA (Section 3.1) and BIA (Section 3.2) – proposed in this paper. The experiment was conducted on an $8 0 0 \times 2 8 6 \times 2$ mm composite plate, as shown in Fig 13(a). This plate consists of carbon fiber reinforced composite arranged in a symmetric [0/45/90] ply layup, resulting in distinct wave propagation characteristics along the 0<sup>◦</sup>, 45<sup>◦</sup> and 90<sup>◦</sup> directions, consequently exhibiting a highly anisotropic response, as reported in [42]. Consistent with the numerical studies presented earlier, the AE source location was set at the center of the plate, as shown in Fig. 12(a). The measurement system for acquiring AE signals comprised an acquisition unit, AE sensors and preamplifiers, manufactured by Vallen Systeme GmbH. The AE signals were recorded using VS 150-M passive piezoelectric AE sensors (diameter 20.33 mm), arranged in an L-shaped triangular cluster configuration and positioned according to cluster combination $\Gamma ^ { \prime } ,$ , as shown in Fig. 12(a). The distance between each sensor within a cluster was � = 30 mm (see Fig. 1). The excitation was applied by a pencil lead break, which is popularly used to simulate AEs in experiments. The AE signals generated by the pencil lead break were recorded by the clusters at a sampling frequency of 5 MHz. Appropriate threshold values and trigger conditions were configured in the data acquisition system to ensure that all three sensors within a cluster recorded signals simultaneously when any one of them exceeded the threshold.
+
+The recorded AE signals were analyzed to estimate the TOA at each sensor using the AIC. Fig. 13(b) shows the AE signals recorded by the three sensors of cluster 1’ (of cluster combination I<sup>′</sup> - Fig. 12(a)) placed according to Fig. 1 during the experiments, with the corresponding TOAs marked by vertical dashed lines. The estimated TOAs for the three sensors in each cluster were then used in Eq. (1) to compute the arrival angle for each of the 5 clusters, followed by determining their respective slopes using Eq. (2). Subsequently, using the known cluster positions and their corresponding slopes, the source location was predicted using the EEA and BIA. as described in Sections 4 and 5. For comparative analysis. the cluster positions and their corresponding slopes were also employed to perform source localization using the latest elliptical wavefront shape-based source localization technique [23], based on the initial vertices and the optimization procedure reported in [23].
+
+Fig. 13(c) shows the source coordinates predicted by the EEA, BIA, and the method from [23]. The black dashed lines depict the distance between the actual and predicted sources. It can be observed from Fig. 13(c) that the source locations predicted by the EEA and the method from [23] are identical, yielding a prediction error of 19.62 mm. However, it is important to note that the accuracy of the method from [23] is influenced by the quality of the initial estimates. The source location predicted by the BIA is closer to the actual source, with a prediction error of 14.18 mm. Next, the BIA was used to illustrate the uncertainty in the predicted source location, following the procedure discussed earlier. Fig. 13(d) shows the uncertainty in the predicted source location, with uncertainty bounds along the � and � directions of the order of 2% to 5% around the most probable source location.
+
+Figs. 13(c) and 13(d) collectively demonstrate that the proposed EEA and BIA are reliable for practical AE source localization applications in anisotropic plates.
+
+## 7. Summary and conclusions
+
+In this paper, we proposed two methods, EEA and BIA, for acoustic emission source localization in anisotropic plates where the orientation of the axes of symmetry and material properties are unknown. The EEA method involves constrained optimization of two variables, whereas the BIA method requires unconstrained optimization with respect to four variables of the elliptical wavefront.
+
+To investigate the effectiveness of these methods, the source localization was performed using idealized data with varying numbers of point sensor clusters. The results showed that both EEA and BIA yielded similar predictions under ideal conditions, accurately identifying the source location when errors in arrival angles were absent. However, in the presence of errors, deviations were observed between the predicted and true source locations. Increasing the number of sensor clusters reduced prediction error. Additionally, analyses using idealized data with triangular sensor clusters showed that both cluster geometry and relative positioning significantly impact source localization accuracy. This highlights the potential for optimizing sensor placement, particularly in regions prone to AE activity, to enhance AE source localization precision.
+
+The effectiveness of the proposed methods was further investigated through numerical simulations involving 60 plates with varying degrees of anisotropy. The experimental data obtained from the numerical experiment procedure and the process of determining the slopes using the arrival angles of the sensor clusters involve modeling and measurement errors, thus the AE source localization process was carried out under more realistic conditions encountered in practical applications. The results demonstrated that both the EEA and BIA provided reliable source localization for plates with feasible material properties, confirming their suitability for practical applications. Additionally, the accuracy of TOA estimation was shown to significantly influence localization precision. Numerical simulations also explored different numbers and combinations of sensor clusters. The findings indicated that both the number and placement of the clusters play an important role in achieving accurate source localization, highlighting the importance of optimizing sensor placement alongside the localization method.
+
+Experimental validation was conducted using a highly anisotropic composite plate, comparing EEA and BIA against the state-ofthe-art elliptical wavefront-based localization technique from the literature. Both methods demonstrated accurate source localization, reinforcing their reliability for practical applications in anisotropic plates.
+
+A significant advantage of the BIA approach is its ability to quantify uncertainty associated with the source coordinate predictions. This feature allows for an assessment of the reliability of the source localization, making BIA particularly useful for evaluating the confidence in the predictions. In this study, uncertainty in source localization was assessed using both idealized and numerically simulated data. Analysis of the idealized data indicated that a minimum of 5 sensor clusters is required for practical and reliable localization. Further analysis with numerical data, using the best and worst combinations of 5- and 6-cluster configurations, showed that the best 5-cluster configuration is more reliable than the 6-cluster setup, even when the most probable source locations are similar. This finding suggests that systematic optimization of the sensor cluster network can further enhance the accuracy and reliability of AE source localization.
+
+## CRediT authorship contribution statement
+
+Siddhesh Raorane: Writing – review & editing, Writing – original draft, Validation, Software, Methodology, Formal analysis, Conceptualization. Costas Papadimitriou: Writing – review & editing, Writing – original draft, Supervision, Methodology, Conceptualization. Pawel Packo: Writing – review & editing, Visualization, Supervision, Software, Methodology, Conceptualization.
+
+## Declaration of competing interest
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+## Appendix. Bayesian Inference Approach (BIA) source localization with arbitrary initial vertices
+
+In this section, we evaluate the performance of the BIA (Section 3.2) using arbitrary initial vertices as starting guesses. The cluster positions from cluster combination I<sup>′</sup> (Fig. 12(a)) and their corresponding slopes – obtained from the experimental study detailed in Section 6 – were utilized to for the analysis. Table A.6 presents the source localization errors corresponding to ten different combinations of initial vertices,i.e., ten different sets of $( \lambda , x _ { S } , y _ { S } , \eta )$ values within the variation range of the parameters, used with the BIA. It can be observed form Table A.6 that the localization error remains consistent across all combinations and is identica to the prediction error obtained when the optimal EEA values were used as initial guesses in Section 6 (see Fig. 13(c)). thereby demonstrating the robustness of the BIA.
+
+Table A.6  
+Error in the source coordinates predicted by the BIA with varying initial vertex guesses, using the experimental data from Section 6.
+
+<table><tr><td colspan="4">Initial vertex</td><td rowspan="2">Error [mm]</td></tr><tr><td> $\lambda$ </td><td> $x_S$ [mm]</td><td> $y_S$ [mm]</td><td> $η$ [°]</td></tr><tr><td>1.13</td><td>234.29</td><td>261.76</td><td>28.88</td><td>14.18</td></tr><tr><td>1.56</td><td>201.34</td><td>295.95</td><td>-62.76</td><td>14.18</td></tr><tr><td>0.30</td><td>339.55</td><td>250.53</td><td>46.87</td><td>14.18</td></tr><tr><td>1.42</td><td>259.25</td><td>140.83</td><td>-97.09</td><td>14.18</td></tr><tr><td>0.52</td><td>147.71</td><td>285.43</td><td>28.76</td><td>14.18</td></tr><tr><td>0.89</td><td>171.06</td><td>270.14</td><td>37.14</td><td>14.18</td></tr><tr><td>1.69</td><td>310.67</td><td>388.59</td><td>35.96</td><td>14.18</td></tr><tr><td>0.39</td><td>212.64</td><td>323.83</td><td>-18.57</td><td>14.18</td></tr><tr><td>0.19</td><td>300.11</td><td>298.75</td><td>167.25</td><td>14.18</td></tr><tr><td>0.97</td><td>100.69</td><td>306.99</td><td>4.97</td><td>14.18</td></tr></table>
+
+## Data availability
+
+Data will be made available on request.
+
+## References
+
+[1] M. Wevers, K. Lambrighs, Applications of acoustic emission for SHM: A review, Encycl. Struct. Heal. Monit. (2009).
+
+[2] S. Gholizadeh, Z. Leman, B.H.T. Baharudin, A review of the application of acoustic emission technique in engineering, Struct. Eng. Mech. 54 (6) (2015) 1075-1095.
+
+[3] S. Cantero-Chinchilla, J. Chiachío, M. Chiachío, D. Chronopoulos, A. Jones, A robust Bavesian methodology for damage localization in plate-like structures using ultrasonic guided-waves. Mech. Syst, Signal Process. 122 (2019) 192–205.
+
+[4] G. Zheng, W. Zhao, Y. Tian, C. Liu. B. Zheng, Structural-damage localization using ultrasonic guided waves based on the lossless filtering method, Smart Mater. Struct. 29 (7) (2020) 075024.
+
+[5] Z. Zhou, J. Liu, Z. Cui, T. Kundu, A rapid localization technique for detecting multiple damages in plate-like structures with unknown material properties, Mech. Syst. Signal Process. 199 (2023) 110479.
+
+[6] L. Lomazzi, R. Junges, M. Giglio, F. Cadini, Unsupervised data-driven method for damage localization using guided waves, Mech. Syst. Signal Process. 208 (2024) 111038.
+
+[7] A. Tobias, Acoustic-emission source location in two dimensions by an array of three sensors, Non-Destr. Test. 9 (1) (1976) 9–12.
+
+[8] M. Meo, G. Zumpano, M. Piggott, G. Marengo, Impact identification on a sandwich plate from wave propagation responses, Compos. Struct. 71 (3–4) (2005) 302–306.
+
+[9] T. Kundu, S. Das, K.V. Jata, Point of impact prediction in isotropic and anisotropic plates from the acoustic emission data, J. Acoust. Soc. Am. 122 (4) (2007) 2057–2066.
+
+[10] T. Kundu, S. Das, S.A. Martin, K.V. Jata, Locating point of impact in anisotropic fiber reinforced composite plates, Ultrasonics 48 (3) (2008) 193–201
+
+[11] H. Nakatani, T. Hajzargarbashi, K. Ito, T. Kundu, N. Takeda, Locating point of impact on an anisotropic cylindrical surface using acoustic beamforming technique, Key Eng. Mater. 558 (2013) 331–340.
+
+[12] T. Kundu, H. Nakatani, N. Takeda, Acoustic source localization in anisotropic plates, Ultrasonics 52 (6) (2012) 740–746.
+
+[13] F. Ciampa, M. Meo, A new algorithm for acoustic emission localization and flexural group velocity determination in anisotropic structures, Compos. Part A: Appl. Sci. Manuf. 41 (12) (2010) 1777–1786.
+
+[14] F. Ciampa, M. Meo, E. Barbieri, Impact localization in composite structures of arbitrary cross section, Struct. Heal. Monit. 11 (6) (2012) 643–655
+
+[15] T. Kundu, X. Yang, H. Nakatani, N. Takeda, A two-step hybrid technique for accurately localizing acoustic source in anisotropic structures without knowing their material properties, Ultrasonics 56 (2015) 271–278.
+
+[16] D. Xiao, T. He, Q. Pan, X. Liu, J. Wang, Y. Shan, A novel acoustic emission beamforming method with two uniform linear arrays on plate-like structures, Ultrasonics 54 (2) (2014) 737–745.
+
+[17] B.-W. Jang, C.-G. Kim, Impact localization of composite stiffened panel with triangulation method using normalized magnitudes of fiber optic sensor signals, Compos. Struct. 211 (2019) 522–529.
+
+[18] W.H. Park, P. Packo, T. Kundu, Acoustic source localization in an anisotropic plate without knowing its material properties–a new approach, Ultrasonics 79 (2017) 9–17.
+
+[19] M.G. Baxter, R. Pullin, K.M. Holford, S.L. Evans, Delta T source location for acoustic emission, Mech. Syst. Signal Process. 21 (3) (2007) 1512–1520.
+
+[20] J. Hensman, R. Mills, S. Pierce, K. Worden, M. Eaton, Locating acoustic emission sources in complex structures using Gaussian processes, Mech. Syst Signal Process, 24 (1) (2010) 211–223
+
+[21] M.R. Jones, TJ. Rogers, K. Worden, E.J. Cross, A Bavesian methodology for localising acoustic emission sources in complex structures, Mech, Syst, Signal Process. 163 (2022).108143
+
+[22] N. Sen, T. Kundu. A new wave front shape-based approach for acoustic source localization in an anisotropic plate without knowing its material properties Ultrasonics 87 (2018) 20–32.
+
+[23] N. Sen, T. Kundu, Acoustic source localization in a highly anisotropic plate with unknown orientation of its axes of symmetry and material properties with numerical verification, Ultrasonics 100 (2020) 105977.
+
+[24] N. Sen, M. Gawroński, P. Packo, T. Uhl, T. Kundu, Square-shaped sensor clusters for acoustic source localization in anisotropic plates by wave front shape-based approach, Mech. Syst. Signal Process. 153 (2021) 107489.
+
+[25] C. Ma, J. Liu, Z. Cui, T. Kundu, A damage localization technique using wave front shapes in composite laminates without knowing the velocity profile, Ultrasonics (2024) 107357.
+
+[26] J.L. Beck, Bavesian system identification based on probability logic, Struct, Control. Heal. Monit. 17 (2010) 825–847.
+
+[27] W.-J. Yan. D. Chronopoulos. C. Papadimitriou, S. Cantero-Chinchilla. G.-S. Zhu. Bavesian inference for damage identification based on analytical probabilistic model of scattering coefficient estimators and ultrafast wave scattering simulation scheme. J. Sound Vib. 468 (2020) 115083
+
+[28] S. Raorane, T. Ercan, C. Papadimitriou, P. Packo, T. Uhl, Bayesian optimal sensor placement for acoustic emission source localization with clusters of sensors in isotropic plates. Mech, Syst, Signal Process, 214 (2024) 111342
+
+[29] Z. Zhou, Y. Rui, X. Cai, A novel linear-correction localization method of acoustic emission source for velocity-free system, Ultrasonics 115 (2021) 106458
+
+[30] S. Kim, J.-W. Chong, An efficient TDOA-based localization algorithm without synchronization between base stations, Int. J. Distrib. Sens. Netw. 11 (9) (2015) 832351.
+
+[31] L. Grasboeck, A. Humer, A. Benjeddou, Detection and time-of-arrival estimation of impact-induced waves in composite laminates, Struct. Heal. Monit. (2024) 14759217241260848.
+
+[32] E.T. Jaynes, Information theory and statistical mechanics, Phys. Rev. 106 (4) (1957) 620.
+
+[33] K.-V. Yuen, Bavesian Methods for Structural Dynamics and Civil Engineering, John Wiley and Sons, 2010.
+
+[34] E. Simoen, G. De Roeck, G. Lombaert, Dealing with uncertainty in model updating for damage assessment: A review, Mech. Syst. Signal Process. 56–57 (2015) 123–149.
+
+[35] J.L. Beck, L.S. Katafygiotis, Updating models and their uncertainties. I: Bavesian statistical framework, J. Eng. Mech. 124 (4) (1998) 455–461
+
+[36] R.H. Byrd, J.C. Gilbert, J. Nocedal, A trust region method based on interior point techniques for nonlinear programming, Math. Program. 89 (2000) 149-185.
+
+[37] R. Fletcher, Practical Methods of Optimization, John Wiley & Sons, 2000.
+
+[38] S. Raorane, Multiscale Numerical Modeling and Analysis of Acoustic Emission Phenomena (Ph.D. thesis). 2022
+
+hl k l d b l l f l l d l h f l f l Comput. Methods 19 (06) (2022) 2141010.
+
+[40] J.H. Kurz, C.U. Grosse, H.-W. Reinhardt, Strategies for reliable automatic onset time picking of acoustic emissions and of ultrasound signals in concrete, Ultrasonics 43 (7) (2005) 538–546.
+
+[41] A. Ebrahimkhanlou, S. Salamone, Acoustic emission source localization in thin metallic plates: A single-sensor approach based on multimodal edge reflections, Ultrasonics 78 (2017) 134–145.
+
+[42] W.H. Park, Acoustic Source Localization in an Anisotropic Plate Without Knowing Its Material Properties (Ph.D. thesis), The University of Arizona, 2016.

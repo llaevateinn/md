@@ -1,0 +1,159 @@
+# 各向异性岩体破坏过程声发射测量及其定位实验研究
+
+王述红1 张亚兵1 张 楠1 李正仁2东北大学 资源与土木工程学院 辽宁 沈阳2．首尔国立大学 土木城市岩土系统工程学院韩国 首尔 151742）
+
+摘 要，应用改进后的声发射设备，实验测量了花岗岩试样在单轴压缩加载条件下变形破坏过程中声发射现象 讨论分析了该试样损伤破坏过程中的诱发微裂纹相互作用 积累等 同时采用对速度结构依赖较少的相对定位方法 对非均质岩石试验中的声发射事件进行了定位研究 结果表明 相对定位方法可用于复杂试样和工程岩体的声发射事件定位 其可靠性及精度比以往有所提高 能够初步定量分析岩石在外载荷作用下的破坏过程的定位问题 对于工程岩体破坏问题分析具有很好的借鉴意义
+
+关 键 词：声发射；实验；岩石；各向异性；定位测试
+
+中图分类号：P 631．3
+
+文献标识码：A
+
+文章编号：1005-3026（2007）07-1033-04
+
+# Experimental Study on Acoustic Emission Measurement and Source Location for Anisotropic Rock Failure Process
+
+WA NG Shu-hong1ZHA NG Y a-bing1ZHA NG Nan1LEE Chung-in2 （1．School of Resources ＆ Civil EngineeringNortheastern U niversityShenyang 110004China；2．College of 9 CivilUrban and Geosystem EngineeringSeoul National U niversitySeoul 151742 Korea．Correspondent： WANG Shu-hongE-mail：shwang ＠ mail．neu．edu．cn）
+
+<sup>Abstract：</sup> With an improved experimental setup for AE（acoustic emission）the AE measurement was carried out for the specimens of anisotropic granite in the deformations／failure process under uniaxial compression．Discusses the initiation of microcracks thus induced and their interaction and propagation during damage／failure．A relative source locating method was introduced into the study on the AE occurrences in anisotropic and heterogeneous rock specimensw hich is less dependent on sounding wave velocity．T he results showed that the method is available to AE occurrences in complex specimens and engineering rock mass with higher reliability and accuracy than before．And it can offer preliminarily a quantitative analysis of locating the source of rock failure process under the action of external loadingthus benefiting the analyses of other failures of engineering rock mass
+
+<sup>Key words：</sup> AE（acoustic emission）；experiment；rock；anisotropy；source location
+
+声发射技术是研究岩石 岩体 变形破坏微观机理的重要手段 对研究岩石失稳的机制和前兆具有重要科学和工程意义 而其定位技术是开展声发射研究的关键和难点所在 岩石作为一种复杂的自然地质体 在外界载荷和外界环境的作用下，其中的各种缺陷长大合并，形成裂纹，直到发生宏观破坏 岩石这种内部产生的微破裂诱发的弹性波发射 即为岩石的声发射 工程中 脆性岩石的破坏过程本质上是岩石缺陷 微裂缝 节理断层等 损伤演化到大面积破坏的过程 其产生的机制与实验室岩石加载产生声发射的机制有很多相同之处
+
+关于声发射技术 国内外已经进行了不少实验和数值方面的研究<sup>［1－6］</sup> Mogi 对不同材料的声发射作了实验研究之后认为这些不同的声发射模式与岩石的均质度有关 1933年沃尔科夫就曾经指出 构成物体的材料 从总体上看是可能均质的 但是从微观上看 却是十分不均一的 这些非均质的破坏 只能利用统计的办法来研究 唐春安及其课题组成员通过引入均质度来描述岩石的细观特征 并用物理和数值方法研究了岩石的非均质对其破坏的影响 取得了一些研<sub>究进展</sub>［4－8］ <sub>另一方面 目前有关岩石破坏的数</sub>值计算方法 由于处理岩石破坏问题的复杂性 除了对破坏前的应力状态进行分析外 很难对整个破坏过程中的声发射时间序列和空间分布规律进行分析
+
+本文应用改进后的声发射设备 首先在实验室应用对速度结构依赖较少的相对定位方法 给出了定位测试的数学原理 对非均质岩石试验中的声发射事件进行了定位实验研究 实验测量了花岗岩试样在压缩加载条件下变形破坏过程中声发射现象 分析了该试样损伤破坏过程中的诱发微裂纹相互作用 积累等
+
+## 1 声发射定位方法
+
+岩石声发射定位方式通常包括区域定位 衰减定位 时差定位 包括相关法时差 定位的准确性是衡量一个声发射仪器软硬件性能的一项综合指标 仪器能根据所接收到的波形进行智能分析定位 本次实验主要考虑区域定位
+
+通常声发射位置的确定主要依靠传感器在试件表面的位置 利用不同位置的传感器在同一时间测定某一位置的声发射信号 利用该信号到达各个传感器的时间差来确定 具体计算方法如下
+
+如图 所示 在各向同性介质中建立适当坐标 三维情况下考虑一组传感器 个 传感器位置的坐标已知： $A \ b _ { 1 } \left( \ b _ { x } \ b _ { 1 } \ y _ { 1 } \ z _ { 1 } \right) , \ b _ { A \ b _ { 2 } } \left( \ b _ { x } \ b _ { 2 } \ y _ { 2 } \ z _ { 2 } \right)$ A$(  { x 3 y 3 z 3 } ) , A _ { 4 } \big (  { x 4 y 4 z 4 } \big )$ 并假设 K 点为岩石内部任意声发射发生位置 $K ( \boldsymbol { x } , \boldsymbol { y } , z )$ 声发射信号（ ）从 K 点到达每个传感器的时间可以测量即对于 KA ：
+
+$$
+\begin{array}{l} V _ {\mathrm{P}} \Delta_ {1 2} = \sqrt {(x - x _ {1}) ^ {2} + (y - y _ {1}) ^ {2} + (z - z _ {1}) ^ {2}} - \\ \sqrt {(x - x _ {2}) ^ {2} + (y - y _ {2}) ^ {2} + (z - z _ {2}) ^ {2}}; \end{array} \tag {1}
+$$
+
+$$
+\begin{array}{l} V _ {\mathrm{P}} \Delta_ {2 3} = \sqrt {(x - x _ {2}) ^ {2} + (y - y _ {2}) ^ {2} + (z - z _ {2}) ^ {2}} - \\ \sqrt {(x - x _ {3}) ^ {2} + (y - y _ {3}) ^ {2} + (z - z _ {3}) ^ {2}}; \end{array} \tag {2}
+$$
+
+$$
+\begin{array}{l} V _ {\mathrm{P}} \Delta_ {3 4} = \sqrt {(x - x _ {3}) ^ {2} + (y - y _ {3}) ^ {2} + (z - z _ {3}) ^ {2}} + \\ \sqrt {(x - x _ {4}) ^ {2} + (y - y _ {4}) ^ {2} + (z - z _ {4}) ^ {2}}; \quad (3) \\ \text {对于} K A _ {4}: \end{array}
+$$
+
+$$
+\begin{array}{l} V _ {\mathrm{P}} \Delta_ {4 1} = \sqrt {(x - x _ {4}) ^ {2} + (y - y _ {4}) ^ {2} + (z - z _ {4}) ^ {2}} - \\ \sqrt {(x - x _ {1}) ^ {2} + (y - y _ {1}) ^ {2} + (z - z _ {1}) ^ {2}}. \end{array} \tag {4}
+$$
+
+![](images/52be4912bb8b938ee24a242023df94f1ca6d15d7bd28029fac2594f647f4149f.jpg)  
+图1 声发射位置确定的计算模型  
+Fig．1 Calculating model of locating AE signals
+
+式（ ） 式（ ）中V 为 波速度； $\Delta _ { i j }$ 为声发射信号从 K 点到达各个传感器的时间差 求解上述方程组可以求出 K 点坐标
+
+考虑岩体的各向异性在工程中需要对上述方法进行修正这里建议采用 Dowding 提出的方法<sup>［9］</sup> 比如二维（xy）平面情况下该方法假设P波在主方向的速度分别为 $V _ { \mathrm { P 1 } }$ 和 $V _ { \mathrm { P 2 } } , \mathrm { ~ } k = \frac { V _ { \mathrm { P 1 } } } { V _ { \mathrm { P 2 } } }$ ；θ为该主方向与 x 坐标轴夹角 利用坐标转换则在新坐标转换为各向同性介质新坐标位置为
+
+$\begin{array} { r l r } { \left[ \begin{array} { l } { x ^ { ' } } \\ { y ^ { ' } } \end{array} \right] } & { = } & { \left[ \begin{array} { l l l l } { \cos \theta } & { \sin \theta } & { } & { \cdot } & { \left[ \begin{array} { l l l l } { 1 } & { 0 } & { } \\ { - \sin \theta } & { \cos \theta } & { } \end{array} \right] } & { \cdot } \end{array} \right. . } \end{array}$ $\left[ \begin{array} { l l } { \cos \theta } & { - \sin \theta } \\ { \sin \theta } & { \cos \theta } \end{array} \right] \cdot \left( \begin{array} { l } { x } \\ { y } \end{array} \right)$ 利用该转换后的坐标可以确定各向异性岩体的位置
+
+利用声波测量法确定局部破坏源的位置不能片面依赖仪器的测量结果应把测量结果与传感器的内部结构结合 也可以与传统的变压器油色谱分析法结合起来互相补充以求最佳检测效果
+
+## 2 实验过程
+
+本次研究的实验工作是在韩国首尔国立大学<sub>实验室完成的</sub>［6－7］
+
+实验仪器选用 数据采集系统 用于记录 位移控制为mm／s 声发射测试设备选用 Mistras2001采用高分辨率数码相机记录该试样破坏过程 包括裂纹的产生和相互作用
+
+实验试样取自韩国京畿道的花岗岩 试样采用直径为 高宽比为 的圆柱体 实验试样准备和测试过程按照国际岩石力学 体，实验试样准备和测试过程按照国际岩石力学学会推荐的方法开展 试样表面的平整度为0∙02mm 实验之前试样保持 $1 0 5 ~ \mathrm { { ^ \circ C } }$ 表1为试样的物理力学参数
+
+表1 实验用花岗岩试样物理力学参数  
+Table1 Physical and mechanical properties of granite specimens
+
+<table><tr><td>物理力学参数</td><td>数值</td></tr><tr><td>容重</td><td>2.67</td></tr><tr><td>表象孔隙率/%</td><td>0.79</td></tr><tr><td>P波速率/(m·s-1)</td><td>3770</td></tr><tr><td>S波速率/(m·s-1)</td><td>2250</td></tr><tr><td>单轴抗压强度/MPa</td><td>99.3</td></tr><tr><td>弹性模量/GPa</td><td>42.4</td></tr><tr><td>泊松比</td><td>0.25</td></tr></table>
+
+实验所用的声发射传感器（韩国 HagiSonic公司生产 的直径和厚度分别为 和mm 其主频在100kHz～1MHz 之间 为了确保声发射传感器联接到试样上获得较高的灵敏度采用电子蜡连接传感器和试样 传感器上的声发射信号用 PAC model 1220A 放大到 40 dB，
+
+图 显示了声发射定位测试时 个传感器<sub>在试样上的布置</sub> ＃ ＃<sub>布置在距离底端 处</sub>$2 ^ { \sharp }$ 与 $4 ^ { \sharp }$ 传感器布置在距离底端2／3处
+
+![](images/86e92dc612a19d37f21adedde17c51728c319604db892a479b025c18fe90b616.jpg)
+
+![](images/fb826d97fff48bab3315e2013ab573ea56be37b9911d7803b5570b67af918c40.jpg)  
+图2 传感器在岩石试样中的布置  
+Fig．2 Configuration of AE sensors in specimen for AE experiments
+
+## 3 实验结果
+
+有关该试样的声发射事件和应力 应变曲线如图 所示 显然 声发射事件跟应力 应变曲线具备很好的一致性 在加载初期 应力 应变曲线近似直线 试样中很少发生声发射 随着荷载增大到破坏荷载的 时 声发射变得活跃 当荷载达到极限荷载时 声发射活动异常活跃
+
+图 结果表明 岩石试样在单轴压缩下加载初期也明显地表现出非线性 在峰值之后表现出很强的渐近劣化特征 而对于破坏前的声发射 在破坏之前的应力－应变曲线几乎是完全线性破坏也表现出很强的脆性 需要注意的是 在某段时间接收到的是整个岩石试样的声发射总和 并没有涉及到某一区域的声发射情况 岩石在外载荷作用下达到一定水平时 声发射数发生突跳 从图中可以看出 突跳点基本与应力 应变关系保持一致 这对岩体工程具有指导意义
+
+![](images/9f5f22a4289b147e4f90cc6c07f732667cde7efcf6aa40aef9f14cb246122298.jpg)  
+图3 试样应力－应变曲线及声发射分布与应变关系  
+Fig．3 Stress-strain curve and AE oounts （energy release） in specimen
+
+图 显示了声发射发生的位置 二维情况当外载荷达到最大值时 声发射主要出现在 XZ平面的对角线靠近右侧部位上 图 在 YZ 平面破坏区主要集中在对角线靠近左侧中间 图中圆圈的大小表示声发射位置 可以看到主要集中在 XZ 平面和 YZ 平面的中间部位
+
+![](images/e6a29372f65f1b05417c7eb5dcdde235ed232b0af940ae4c5ce5bdb358c9f29a.jpg)
+
+![](images/f92437f4b1c934fd25ef09b6b8f72296eaae616fa5fc9f14bdfa176c1a174ed5.jpg)  
+图4 声发射位置测量结果  
+Fig．4 Measuring results of AE source location on different coordinate planes  
+（a）－ YZ 平面；（b）－ XZ 平面
+
+整个岩石试样的破坏过程可以通过声发射的位置看出 该试件在外载荷作用下 裂纹大小与对应的声发射位置和活跃程度一致 可以通过声发射测试预测预报岩石破裂发生的位置
+
+## 4 讨 论
+
+合图 可以看出 在加载初期低载荷作用下 声发射随机分布然后随着载荷的增加声发射主要集中在破裂面附近 图 图 尤其当荷载达到峰值、试件破坏时声发射主要集中在试件的中间破裂面附近
+
+。一拉裂纹  
+![](images/c6c9e6fc6f8cc75c4b04ea69a2e3d2d16b3b7a287cd02605ba93142b4071ed28.jpg)  
+(a)
+
+![](images/0c7b0cf4f164b19158f3a91129373e937eea2aae70ce3e055af506bd5584f095.jpg)  
+(b)
+
+![](images/5a0ebe534817f08010deebf9394cc2b81c4b5dbe0688f82cbe1f653e2cb47fac.jpg)  
+(c)  
+△—混合裂纹 →—裂纹扩展方向  
+图5 单轴压缩下花岗岩试件的声发射分布  
+Fig．5 Distribution of AE signals in a granite specimen under uniaxial compression  
+（a）－图3A 点；（b）－图3B 点；（c）－图3C 点
+
+利用相对定位方法 声发射技术通过接收材料破裂时的声波了解发声地点的具体情况 这样就可以在时间和空间上分析岩石破裂过程中各阶段的力学行为同结构变化之间的关系 不但可以了解缺陷的目前状态 形成历史和发展趋势 而且可以探索主破裂发生的前兆信息和破裂后演化规<sub>律</sub>［10］ <sub>由于岩石内部弹性波的释放同岩石内部微</sub>裂纹的产生 损伤 是直接相关的 因此 可以预料 岩石的声发射与岩石的损伤参量 本构关系等之间存在内在的必然联系
+
+图 和图 的实验结果还表明 当应力很小时 声发射现象就在试件整个范围内出现 呈弥散分布 看不出有集中的趋势 直到应力达到某一值时 这种无序的分布才向未来的破裂面逐渐集中而在达到破坏之前声发射数目和能量很少 所有声发射几乎集中在附近突然爆发 积聚的能量在破裂的时候完全释放 在其他部位很少或者没有这种类型的破坏在脆性材料中表现得非常明显由此可以肯定 破坏前裂纹的扩展 相互作用 合并和岩体的各向异性有密切的关系 需要说明的是 图 声发射的圆圈大小代表本图片中的声发射能量大小或者震级大小 不同图片中的圆圈半径标准不同
+
+## 5 结 论
+
+源的位置
+
+（2） 采用相对定位方法对复杂试样和工程岩体的声发射事件进行定位分析 其可靠性及精度比以往有所提高 能够初步定量分析岩石在外载荷作用下破坏过程的定位问题 对于工程破坏问题分析具有很好的借鉴意义
+
+（3） 由于各种因素的干扰检测的灵敏度和定位的精确度都受到一定的影响在未来的发展中不仅要对系统的硬件进行完善 还需要从定位理论 识别方法等方面做进一步研究 同时针对不同应用场合的信号处理手段正在不断完善 对声发射源的定性 定量和定位识别的精度需要进一步提高
+
+## 参考文献：
+
+［1］ 唐绍辉吴壮军 岩石声发射活动规律的理论与试验研究［J］ 矿业研究与开发200220（1）：16－17（ T ang Shao-hui Wu Zhuang-jun． T he theory of sonicemission activity rule of rock mass and relevant experiments［ J］．Mining Research and Development200220（1）：16－17.)
+
+［2］ Heo J SLee C IJeon S．Measurement of acoustic emission and source location considering anisotropy of rock under triaxial compression ［ J ］．Key Engineering Materials2004 271.1574-1579.
+
+［3］ Lavrov A．T he Kaiser effect in rocks：principles and stress estimation techniques ［ J ］． International Journal of Rock Mechanics and Mining Sciences200340（2）：151－171
+
+［4］ 梁正召唐春安黄明利等 岩石破裂过程中声发射模式的数值模拟 东北大学学报 自然科学版（10）：1008－1011（Liang Zheng-zhaoTang Chun-anHuang Ming-liet alNumerical simulation of patterns of acoustic emission in rockfailure process ［ J ］． Journal of Northeastern U niversity：Nat ural Science
+
+［5］ Chang S HLee C I．Estimation of cracking and damage mechanisms in rock under triaxial compression by moment tensor analysis of acoustic emission ［ J ］． International Journal of Rock Mechanics and Mining Sciences200441 (7):1069—1086.
+
+［6］ Wang S HLee C IJeon S W et al． Experimental observation and realistic modeling of initiation and propagation of the rock fracture bv acoustic emission [C ] Korea Academic Conference for Rock Mechanics．Busan： Busan Universiy Press, 2006.79—94.
+
+[7 ] Tang C A, Chen Z H, Xu X H. A theoretical model for Kaiser effect in rock ［ J ］． Pure and Applied Geophysics 1997,48.150-204.
+
+唐春安 王述红 傅宇方 岩石破裂过程数值试验 北京：科学出版社，2003:110—115.（Tang Chun-anWang Shu-hongFu Yu-fang．Numericaltest of rock failure process ［ M ］．Beijing：Science Press2003.110—115.)
+
+［9］ Dowding C HSamama LShah S Pet al．Location of acoustic emissions during fracture of slightly anisotropic granite ［C ］∥26th US Symposium on Rock Mechanics．Rapid City : Sound Press, 1985.731—738.
+
+［10］ Chen L HLabuz J F．Indentation of rock by wedge-shaped International Journal of Rock Mechanics and Mining Sciences, 2006, 43(7):1023—1033.

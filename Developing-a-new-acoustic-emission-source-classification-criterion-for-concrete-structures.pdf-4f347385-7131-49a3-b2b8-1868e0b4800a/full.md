@@ -1,0 +1,402 @@
+# Developing a new acoustic emission source classification criterion for concrete structures based on signal parameters
+
+![](images/82401530e3a1d5e2aa0698bbbccf83e85b245e858f33509547010761932df15c.jpg)
+
+Fengqiao Zhang <sup>a,\*</sup>, Yuguang Yang <sup>a</sup>, Sonja A.A.M. Fennis <sup>b</sup>, Max A.N. Hendriks <sup>a,c</sup>
+
+<sup>a</sup> Department of Engineering Structures, Delft University of Technology, 2628CN Delft, the Netherlands
+
+<sup>b</sup> Rijkswaterstaat, Dutch Ministry of Infrastructure and the Environment, 3526LA Utrecht, the Netherlands
+
+<sup>c</sup> Department of Structural Engineering, Norwegian University of Science and Technology, 7491 Trondheim, Norway
+
+## A R T I C L E I N F O
+
+Keywords: Acoustic emission source classification Wave propagation in concrete Signal parameters Concrete tensile cracking Friction Concrete structures
+
+## A B S T R A C T
+
+Acoustic emission (AE) signal parameters can be used to classify the source type in concrete structures. However, signal parameters are influenced by the wave propagation from the source to the receiver, leading to wrong source classification results, especially for monitoring large concrete structures. This paper experimentally evaluates the influence of wave travel distance on signal parameters on a full-scale shear test of a reinforced concrete beam. The evaluated signal parameters include the RA value, average frequency, peak frequency, frequency centroid, and partial power. The evaluation reveals the limitation of using RA value - average fre quency trends in large scale structural concrete members. Based on the evaluation, we propose a new source classification criterion using peak frequency or partial power, which can effectively classify the source type. The new criterion is also validated in a reinforced concrete slab test, which is another structural type. Based on the new criterion, we suggest a sensor layout that is suitable for source classification for large concrete structures. The results of this paper can help developing a reliable solution for real-time source classification for large concrete structures in general.
+
+## 1. Introduction
+
+Focusing on concrete macro-cracking, acoustic emission (AE) signal from tensile cracking and friction between the crack faces have different features [1]. Tracking features of AE signals can classify the source type, which improves the understanding of concrete cracking. The signal features are often simplified into signal parameters to improve the computing efficiency, for example rise time–amplitude ratio (RA value) and average frequency [1,2].
+
+The signal parameters were originally derived by comparing experimental data on specimens with relatively small dimensions. In those specimens, change of signal parameters due to wave propagation is not pronounced. However, in actual concrete infrastructures with large dimensions, we cannot ignore the influence of wave propagation on signal parameters which can lead to wrong source classification results. In the current literature, the influence of wave propagation on signal parameters were mostly evaluated using simulations [3–5], which simplified the wave propagation in real concrete structures. Experimental validation has confirmed the influence of wave propagation on signal parameters, but most such studies were conducted on laboratory-scale specimens (e.g. within 50 mm) [6–8]. An exception is the research reported by Aggelis et al., in which they evaluated the influence of wave propagation on RA value and average frequency in a relatively large structure (with wave travel distances up to 0.8 m) [21]. They found a linear relationship between the signal parameters and wave travel distance, and proposed a strategy to calibrate the signal parameters for fullscale structures. This strategy needs further validation.
+
+Moreover, classification using RA value and average frequency could not provide a consistent boundary between two types of signals, depending on different specimens. Most studies in literature only use the trend of these two parameters to indicate the transition from bending to shear cracking [10]. Therefore, a different set of source classification criteria need to be formulated, which are less influenced by wave propagation and provide a clear and consistent boundary between signals from different types of sources.
+
+This paper first experimentally evaluates the signal parameters relevant to source classification in concrete structural members with large dimensions, including RA value, average frequency, peak frequency, frequency centroid and partial power. We study the performances of these parameters after waves travel a short distance from the source (<0.3 m) and a long distance (up to 1.5 m). Based on the evaluation, we propose a new source classification criterion, and suggest a sensor layout suitable for source classification. The new source classification criterion is also validated in another type of concrete structure, reinforced concrete slab, which has different geometry, material prop erties and sensor layout. The results show the reliability of the new source classification criterion in monitoring large concrete structures.
+
+## 2. Signal parameters for source classification
+
+During the damaging process of reinforced concrete structures, AE signals could come from tensile cracking, friction between the crack faces, yielding of reinforcement, and bond slip between reinforcement and concrete [9,11]. This paper deals with large-scale concrete structures without shear reinforcements. In this type of structures, only longitudinal reinforcements present at the outer layers where the tensile and compressive stress are maximum. Typical structures with this reinforcement design are concrete slabs. Between the longitudinal reinforcement layers, only bulk unreinforced concrete presents. Thus we can assume most of the AE activities are from macro-cracking of concrete. Therefore, we limit the scope of this paper on studying AE source classification of two main source types: tensile cracking and friction (between the crack faces).
+
+Fig. 1 illustrates the tensile cracking and friction at local crack profile. Tensile cracking occurs when the maximum principal stress exceeds concrete strength and the two crack faces move away from each other. While, friction occurs when the two crack faces slide against each other, due to a protruding aggregate. In some literature, the source type ‘fric tion’ is mentioned as ‘shear cracking’. But, the actual phenomenon of shear cracking is: tensile cracking mixed with friction between crack faces [12]. Concrete cracking (both flexural and shear cracking) are a combination of tensile cracking and friction, with more friction at shear cracking due to more shear displacement [13]. Therefore, we use a more specific description ‘friction’, instead of ‘shear cracking’ to describe the real source of AE signal.
+
+These two types of sources will generate signals with different fea tures. When tensile cracking occurs, the crack faces move away from each other. Most particles’ motion direction is in line with the direction of wave propagation, giving most energy in the form of P-waves at the signal source. However, at friction, the faces of cracks slide against each other. Most particles move perpendicular to the direction of wave propagation, resulting in more energy in the form of S-waves at the signal source. Fig. 2 shows the typical received signals from friction and tensile cracking. In signals from friction, since dominated waves are S waves which arrive later, the major part of energy arrives later. This feature can be described by the signal parameters rise time and peak amplitude: rise time is the time difference between onset and peak amplitude; peak amplitude is the largest amplitude of the signal envelop (Fig. 3a). The ratio between rise time and peak amplitude is larger at signals from friction (when the main energy arrives later). Therefore, the ratio between rise time and peak amplitude, which is called RA value, i suggested for source classification in literature [2].
+
+From another aspect, the wave energy is more attenuated in the form of S-waves than P-waves [14]. And, considering that high frequency components attenuate more than low frequency components, S-waves filter out high frequency components more easily than P-waves. This would result in no or only limited amount of energy at high frequency components in the received S-waves. Since signals from friction origi nally are dominated by S-waves, the received signals would have less energy at high frequency components, compared to the signals from tensile cracking which are originally dominated by P-waves. This has been found in the typical signals shown in Fig. 2 that received signals from friction has less energy at high frequency components (around 100 kHz). To describe this feature, signal parameters related to frequency can be used. A widely-applied parameter is average frequency, which is calculated as counts divided by duration: counts implies number of times the signal amplitude exceeds a threshold; duration is the time duration from the first arrival to the point when the signal envelope decays to the threshold level (Fig. 3a). Experimental work in literature confirms that average frequency is less in signals from friction compared to those from tensile cracking [1,2,15].
+
+Other frequency-related parameters, i.e., peak frequency, frequency centroid and partial power can also be used. These parameters are derived from frequency spectrum as illustrated in Fig. 3b: peak frequency is the point where the frequency spectrum has the maximum amplitude; frequency centroid is the centre of the mass of the frequency spectrum; partial power is a percentage, calculated by summing the frequency spectrum in a specified range of frequencies and dividing it by the total power of all frequencies. In this paper, we use partial power for frequencies over 70 kHz, which is noted as partial power (>70 kHz). The reason of selecting 70 kHz will be explained later.
+
+RILEM advises that the signal sources can be classified by combining RA value and average frequency [2]. However, it does not specify clear and consistent boundaries to distinguish the two types of sources. Mostly, researchers only indicate generally that signals from friction have larger RA values and smaller average frequencies [1,15].
+
+Moreover, wave propagation will influence the RA value and average frequency due to signal amplitude attenuation [4]. The RA value increases with reducing peak amplitude, and the average frequency decreases since high frequency components attenuates faster than low frequency during propagation. Therefore, signals from tensile cracking, which have a smaller RA value and higher frequency, may end up with a large RA value and low average frequency after wave propagation, and falsely be labelled as signals from friction. The parameters will not be reliable after a certain wave travel distance. The wave propagation will be more complicated considering uncertainties in real structures, e.g. internal cracks and interfaces between source and receiver. The influence of these uncertainties are hard to be quantified analytically.
+
+## 3. Evaluation of the signal parameters
+
+To better understand the effect of wave propagation to the signal parameters, experiments have been carried out. According to the above discussion, this paper evaluates the RA value, average frequency, peak frequency, frequency centroid and partial power.
+
+![](images/d365c4d813574fbc241ee0ca162c81185c712a13741ed4dd23c89d3e8ca67277.jpg)  
+Fig. 1. Illustration of tensile cracking and friction at local crack profile.
+
+![](images/cf3ed197f35ba7ebf0e46e728a0ea30ef4a1f650df9a421c1c3be66e35113b5c.jpg)
+
+Fig. 2. Typical AE signals from friction and tensile cracking.  
+![](images/e7038e4b16c45562133ece05ee83f21dca320543eee709a2ad186a359ca4c11e.jpg)  
+(a)
+
+![](images/7f64a02426fd0b8c96a5a4ab4363ce1915fb94918331c852c7ba30fb74b57269.jpg)  
+(b)  
+Fig. 3. Illustration of signal parameters from: (a) time domain and (b) frequency domain.
+
+## 3.1. Introduction of experiments
+
+This study uses signals from a failure test on a large concrete beam with dimension of 10000 mm × 300 mm × 1200 mm (Fig. 4a). The concrete nominal compressive strength is 65 MPa, with maximum aggregate size of 16 mm. The test is a part of a large test program to study the shear behaviour of RC slab strips without shear reinforcement [17]. In the program, the test is named as I123A.
+
+![](images/6df8419c15ce88ac69407cb5cfbbcd9d5cf931cccc2a48e2aa79ea7faa51e404.jpg)  
+(a)
+
+In the test, flexural and shear cracks developed in sequence. AE signals from one flexural crack and one shear crack were used (respectively marked as CR2 and CR4 in Fig. 4b). The crack opening and shear displacement along the cracks were measured using digital image correlation (DIC). The results showed that CR2 had limited shear displacement, while CR4 had a significantly large amount of shear displacement [13]. Therefore, we consider that the majority of AE events at CR2 were due to tensile cracking, and a significantly larger percent of AE events at CR4 were due to friction.
+
+![](images/8b91475faf2089df9f176aef0a6a08aa658d6507ef5ffd48ed7a8c54058258dd.jpg)  
+(b)  
+Fig. 4. Test setup: (a) an overview (photo is taken on the DIC side), and (b) beam configuration, load position, one support position, sensor layout, and crack pattern in AE measuring zone.
+
+The AE signals were detected using 13 AE sensors (R6I with oper ating frequency 40–100 kHz and resonant frequency 55 kHz) (Fig. 4b). We used a constant amplitude threshold of 45 dB for signal detection. A pre-amplification of 40 dB was applied. Due to attenuation, not all sensors were able to detect a signal from a same source. The farthest sensor that can detect a signal was at around 1.5 m from the source. By comparing signals that were originated from a same source but received by sensors at different distances to the source, we study the influence of wave travel distance.
+
+The location of AE events were estimated using the grid search method [11]. We carried out 2D source localization in the x-z plane, as the beam width was small compared to its length and height. The wave speed was estimated as 4100 m/s in a preliminary test on wave propagation [18]. The preliminary test was performed on uncracked concrete. When concrete is cracked, the presence of crack will reduce the wave speed [18] and influence the source localization results [16]. However, inclusion of the effect of presence of crack will complicate the source localization. Therefore, we excluded this effect by limiting the sensor spacing within 0.5 m that only a single crack is covered in a sensor grid.
+
+Based on the estimated location, AE events around the flexural crack CR2 were selected typically for tensile cracking (Fig. 5a), and AE events around the shear crack CR4 were selected for friction (Fig. 5b). Note that the estimated location was scattered around the real crack location, which was due to source localization error. Previous study shows that the source localization error can reach 0.09 m when no crack is between source and sensor [16,19]. A similar magnitude of error was also found in other studies [20]. Consequently, the calculated wave travel distance can have an error of ± 0.09 m. This error was neglected in our study on the influence of wave travel distance on signal parameters. In total, 337 AE events were selected for tensile cracking and 1342 AE events for friction.
+
+## 3.2. Signal parameters from flexural and shear cracks
+
+This section evaluates the parameters of signals that were received by the closest sensor. Around 80% of these signals had a wave travel distance <0.3 m (the other 20% were within 0.5 m). We assume that this wave travel distance did not significantly influence the signal parameters, thus the received signals can represent the signal source.
+
+Fig. 6 compares the distribution of signal parameters from typical AE events for tensile cracking (a) and friction (b). The main observations are listed below:
+
+• The RA values (a.1 and b.1): the distribution was similar in the two types of sources, both having most events with RA values lower than 0.2 ms/V.
+
+• The average frequency (a.2 and b.2): the modal bins were 60–70 kHz and 50–60 kHz in tensile cracking and friction, respectively.
+
+• The peak frequency (a.3 and b.3): the modal bins were 90–100 kHz and 30–40 kHz in tensile cracking and friction, respectively. We could conclude that AE events with peak frequency around 100 kHz were from tensile cracking, and 40 kHz from friction.
+
+• The frequency centroid (a.4 and b.4): the modal bins were 80–100 kHz and 70–80 kHz in tensile cracking and friction, respectively.
+
+• The partial power (a.5 and b.5) was calculated as the percentage of frequencies above 70 kHz. The boundary of 70 kHz was selected in the middle of the two possible peak frequencies (40 kHz and 100 kHz). Though, partial power was more evenly distributed, we can find that more signals had partial power over 0.5 in tensile cracking, and below 0.5 in friction. This indicates that signals from tensile cracking had larger amount of energy in high frequency components (>70 kHz).
+
+![](images/0d6962a600a390e3375a64808e4790b0b66fe1a4c9128f24607ca7dd5e8e9a76.jpg)
+
+The comparison shows that the RA value cannot distinguish signals from tensile cracking and friction. The frequency-related parameters turned out to be reliable. Among them, the peak frequency showed a more significant difference between signals from tensile cracking and friction (which were 100 kHz and 40 kHz respectively).
+
+## 3.3. Influence of wave travel distance on signal parameters
+
+To study the influence of wave travel distance on the signal parameters, we use the parameters from all the recorded signals which covered wave travel distance in range of 0.05 m to 1.5 m.
+
+Fig. 7 exemplifies the change of signal parameters. The signals were from the same single AE event (located at $x = 2 . 5 \ \mathrm { m } , z = 0 . 1 5 \ \mathrm { m } )$ , but received at different distances to the source, i.e. 0.15 m, 0.51 m and 0.88 m (by sensors AE2, AE6 and AE8 respectively). No crack was observed between the sensors and the signal source. The signal parameters are marked in the graph. In the time domain (top row of plots): the peak amplitude reduced and arrived later as the wave travelled further, resulting in an increase of RA values from 0.03 ms/V to 0.62 ms/V; the average frequency decreased from 69 kHz to 51 kHz. In the frequency domain (bottom row of plots): at 0.15 m to the source, high frequency components (>70 kHz) had a large percentage of energy, giving larger peak frequency, frequency centroid and partial power; at 0.51 m, the energy in high frequency components (>70 kHz) significantly reduced, but the low frequency components remained comparable to 0.15 m; at 0.88 m, the energy in low frequency components also reduced.
+
+We find that high and low frequency components attenuated differently, which influenced the frequency-based parameters. To study the different attenuation in high and low frequency components, we separate the frequency components above and below 70 kHz by applying a high-pass filter and a low-pass filter (Fig. 8a). Then, the amount of energy in the filtered signals are calculated. Here, the energy is calculated as the area under the signal envelop in Vμs. Next, we calculate the change of energy at different distances in dB, comparing to the energy of the closest signal (which is the reference). Here, AE events from CR2 are taken. Fig. 8b and c show the energy changes of the filtered signals by high pass filter and low pass filter respectively. We find that higher frequency components attenuated more during wave propagation, which meets our expectation.
+
+(a)  
+![](images/f7d90ab1b6ecadab908d2e4f8e7f6e3a4c7934e7d4b33a9cfbaa1df436b8ec85.jpg)  
+(b)  
+Fig. 5. Selection of typical AE events for (a) tensile cracking (around flexural crack CR2 at load 150-200kN), and (b) friction (around shear crack CR4 at load 250-300kN).
+
+![](images/9b87380f202f01de3fc60ab4b39b7a873af96bb34218c571364c949aca22b4bd.jpg)  
+(a.1)
+
+![](images/25f6025e44c5108bcdea6e62d68131c8389755787a6092f795888ac06448bd74.jpg)  
+(b.1)
+
+![](images/5aa76ee0a5d2b40260f6c8796adad37c2343e914a2525bfbbc2288a6d78b1a21.jpg)  
+(a.2)
+
+![](images/99d0883c023eee0535146537e7fc5c89cf16a5214e3a66c7c00ac483b7a8aa4f.jpg)  
+(b.2)
+
+![](images/e2bcf0cd5cd088ec3d99905a8309e8634dd355a902bdc2f0506edde1d456189b.jpg)  
+(a.3)
+
+![](images/06dd172520fa27a1a4a029f1c0408aa5f890bc31ade816f3d86020f9a02b0566.jpg)  
+(b.3)
+
+![](images/c87808c43b7508ad81bdcd8096c56a74efab6d4e59e7ef997de496e11a0584ba.jpg)  
+(a.4)
+
+![](images/707b80e567b706ffd15cccbeac79a6d7cb78d94b71a8bdc26c3950c09a69d6fd.jpg)  
+(b.4)
+
+![](images/68ba16bf5c63858d1251e12fecfbc4e9cb43a58a98d7a5ef50d1e968ceff431c.jpg)  
+(a.5)  
+(a)
+
+![](images/028fbf2d31e67f3883142f4d9dae25cdbbc135ecfe24bcd97642ec24d6ec8bce.jpg)  
+(b.5)  
+(b)  
+Fig. 6. Distribution of the parameters from signals received by the closest sensors in (a) tensile cracking and (b) friction, with (a.1) (b.1) RA value, (a.2) (b.2) average frequency, (a.3) (b.3) peak frequency, (a.4) (b.4) frequency centroid, (a.5) (b.5) partial power (>70 kHz).
+
+![](images/357ed5d9a7435b2db27456c768a4d0a06d31a6dba624b3dc5435cecd1ebf31f3.jpg)
+
+![](images/7393bcdcd9666d265384c01868b8ac57c018e0b6e4923319e73f6f0800a56725.jpg)
+
+![](images/44c64c1c47ff3408561801e18807c5fcd00f10b48bafb58a70c5a995bed67c85.jpg)
+
+![](images/c821467c51725e0c7be966d9f3fca7dcb37622723e1a0e295a8659bc9272d776.jpg)  
+(a)
+
+![](images/ff866b8e3725b33900a8428ef3bee6ca0afa202c65e9b4143b6f51f68971a59d.jpg)  
+(b)
+
+![](images/cfed8f3273e7ff42fee616589b45bf2cb437d8b4d213c67bf47713067e4c00f8.jpg)  
+(c)  
+Fig. 7. Signals from an AE event (x = 2.5 m, z = 0.15 m) received at different distances: (a) 0.15 m, (b) 0.51 m and (c) 0.88 m.
+
+In the above examples, the signal parameters change with increasing wave travel distances in the following manner: increasing RA value and decreasing frequency-related parameters (i.e. average frequency, peak frequency, frequency centroid and partial power of high frequency components).
+
+Including all signals, Fig. 9 shows the distribution of signal parameters varying with the wave travel distance. We compared the results in tensile cracking (a) and friction (b):
+
+• The RA value (a.1 and b.1): the modal bin increased with increasing wave travel distance in both tensile cracking and friction. No clear difference can be found between signals from tensile cracking and friction.
+
+• The average frequency (a.2 and b.2): the modal bin reduced from 60 to 70 kHz to 50–60 kHz after around 0.5 m in tensile cracking. After 0.5 m, the average frequency in signals from tensile cracking and friction were comparable.
+
+• The peak frequency (a.3 and b.3): the modal bin in tensile cracking changed from 90 to 100 kHz to 30–40 kHz after 0.5 m. In friction, the modal bin remained 30–40 kHz.
+
+• The frequency centroid (a.4 and b.4): the modal bin gradually reduced with increasing wave travel distance in both tensile cracking and friction. In tensile cracking, the modal bin reduced from 90 to
+
+![](images/b37201122257e979f781fa6dfe1427ac2f866e5dcb72f1626a64abd4f4eb3d14.jpg)  
+(a)
+
+![](images/14ab4197f1520a9a4df844b30743f671dbc5c474e9bfd689b7d445de25484de0.jpg)  
+(b)
+
+![](images/8a0bf0837bc759dbb6638210735b9c75ad0bc2777f5a286765336391e0af304c.jpg)  
+(c)  
+Fig. 8. (a) High-pass filter and low-pass filter, energy changes of the filtered signals by (b) high pass filter, and (c) low pass filter.
+
+![](images/d270a00de37650e681385b4ba04345f7ca495d91198e3ad1dbb70321afe8c2f1.jpg)  
+(a.1)
+
+![](images/2a20572ad0f8fcd3d66da9b10a2acf869d67f47f2e917230e603839a80b02205.jpg)  
+(b.1)
+
+![](images/8daddf3e34479aa388967546caa61439002c822d65f0e060aba0651c86aeae0e.jpg)  
+(a.2)
+
+![](images/2f41890bdff0fc74d8706cdf4ee3e45d09fa7d367a9e9dcbb0dbb47ef69d3b4f.jpg)  
+(b.2)
+
+![](images/17ccd0a08440be3a59ae80fee77144e12b532e809eb5aaca8fa755761952db7d.jpg)  
+(a.3)
+
+![](images/b0b36aba12cf6512e61e9c862ba60f371eeeca97bd317e470f001acdd87d48a6.jpg)  
+(b.3)
+
+![](images/696df9b7484016900c515e410a9ef78f1066b1581d2139fbbf5ec1e46f717fac.jpg)  
+(a.4)
+
+![](images/4d8bf4c526bde4d8f793a607d0062b88ede04efe8c5e206683b1ddd4e09d30fc.jpg)  
+(b.4)
+
+![](images/44fd20572f88d60c71ef851d61bccd128fed29e5ab10a3f8b807c93a1afbaa76.jpg)  
+(a.5)  
+(a)
+
+![](images/a246f15e90542a71ad6ad47b0e2e9b98abe57c35db120db958ecd99fadddbf36.jpg)  
+(b.5)  
+(b)  
+Fig. 9. Distribution of the parameters of all the signals, varying with wave travel distance, in AE events (a) for tensile cracking and (b) friction, with (a.1) (b.1) RA value, (a.2) (b.2) average frequency, (a.3) (b.3) peak frequency, (a.4) (b.4) frequency centroid, (a.5) (b.5) partial power.
+
+100 kHz to 60–70 kHz after a wave travel distance of 0.5 m. In friction, the reduction was from 80 to 90 kHz to 60–70 kHz after a distance of 0.5 m.
+
+• The partial power (>70 kHz) (a.5 and b.5): the modal bin reduced with increasing wave travel distance in both tensile cracking and friction. But, in tensile cracking, the modal bin was initially above 0.5. In friction, the value remained below 0.5.
+
+We can find that 0.5 m is a critical wave travel distance. After 0.5 m, high frequency components significantly attenuate and are not dominant anymore, even in signals from tensile cracking. As a result, signals from tensile cracking may be falsely distinguished as signals from friction. Therefore, the first requirement for source classification is to use signals that are within 0.5 m to the source. The value of 0.5 m depends on the distance within which the high frequency components can dominate, thus, may vary with different materials.
+
+RA value and average frequency seem to linearly relate to the wave travel distance. This is in line with the findings of Aggelis et al. [21]. But, the magnitudes of the parameters in the two studies are different, due to different materials, sensor coupling and type of sensors. Moreover, in our study, RA value could not distinguish signals from tensile cracking and friction. Average frequency showed a different modal bin in signals from tensile cracking and friction, which were 60–70 kHz and 50–60 kHz respectively. But, this difference can be mask by the large scatterings.
+
+The peak frequency shows a significant difference between tensile cracking (around 100 kHz) and friction (around 40 kHz). We can define a boundary of 70 kHz considering the possible scatterings of peak fre quency. When the peak frequency is >70 kHz (which represents the cases when the frequency component around 100 kHz is dominant), the signal is from tensile cracking. Otherwise, the signal is from friction. The partial power may also be used, by determining whether the energy in high frequency components (>70 kHz) is more than that in low frequency components. But, the other two parameters, average frequency and frequency centroid, ‘average’ the high and low frequency components, indicating less difference between signals from tensile cracking and friction. This adds difficulty in defining a clear boundary to separate the signals from the two types of sources.
+
+Therefore, we suggest a new criterion for source classification: the signals with peak frequency >70 kHz or partial power (>70 kHz) >0.5 are considered from tensile cracking; otherwise, the signals are from friction. A requirement is that the source and receiver distance should be within 0.5 m. The conformance of the source classification using the two parameters, peak frequency and partial power, are evaluated in the following section.
+
+## 4. Validation of the new criterion
+
+In this section, we validate the source classification criterion on other cracks of the same beam and a different type of concrete structure, a reinforced concrete slab.
+
+## 4.1. Validation on other cracks of the same beam
+
+Fig. 10a–c show the source classification results using peak frequency from first cracking to failure of the beam (considering the load intervals 150–200 kN, 200–250 kN and 250–300 kN respectively). The red dots are AE events classified as friction and the blue dots are tensile cracking.
+
+• At 150–200 kN, only flexural cracks CR1 and CR2 formed (a). More AE events were classified as tensile cracking.
+
+• At 200–250 kN, the shear crack CR3 formed (b). At upper part of CR3, more AE events were classified as tensile cracking, while at bottom part, more AE events as friction. This is expected as the secondary crack in the bottom was more inclined (marked in b), which generated more friction between two crack faces.
+
+![](images/acf22438390de5cd97463077f2a0a6aae503e707e87388cfa4a94afb17b9579d.jpg)  
+(a)
+
+![](images/9626cc52cd3a1fa2028222ae8746cbfc2f9941c30964e0ede556f5b4a0b8542b.jpg)  
+(c)
+
+![](images/01dcc7ac7cc8ea9096a60b6562a2bed8bf791ef989bf9c6f27abc1d368178605.jpg)  
+(b)
+
+![](images/e52e31802eeaf40fe83f0103f30297bd7bbd167c69e55e9f66cc10622ec61dd6.jpg)  
+(d)  
+Fig. 10. Source classification using peak frequency in the beam: (a) at 150–200 kN, (b) at 200–250 kN, (c) at 250–300 kN, and (d) ratio of number of AE events as friction at different load ranges. (Blue dots are AE events classified as tensile cracking, and red dots are as friction).
+
+• At 250–300 kN, the shear crack CR4 formed (c). The shear crack CR4 generated a large amount of AE events of friction. Moreover, the existing crack CR3 also had many AE events of friction. This means that both CR3 and CR4 had larger crack sliding (or shear displacement) when close to shear failure (at 300 kN). The classification results are in line with the critical shear displacement theory that near failure, critical crack would have large shear displacement [22].
+
+Fig. 10d shows the ratio of the number of AE events classified as friction to the total number of AE, varying with the load ranges. With increasing load, the ratio of friction within each load increment increased. This was due to the formation of new shear cracks and the sliding between crack surfaces of the existing cracks. The source classification criterion performs well in all the cracks of the reinforced concrete beam during the whole loading process.
+
+The above results were obtained from peak frequency. Using the other parameter partial power may provide different results in some cases. An example signal is provided in Fig. 11. The signal had a peak frequency at 105 kHz which was >70 kHz, thus was classified as from tensile cracking. However, since the peak was very narrow, the energy in the frequency range of over 70 kHz was not large. This results in a partial power (>70 kHz) of only 0.41 which was lower than 0.5. Consequently, the signal was classified as friction by partial power. Therefore, a further study to check the differences between the two criteria are made below.
+
+Table 1 counts the signals that, according to the two parameters, had matching and contrary source classification results. The number of signals that resulted in matching source classification from the two parameters are greyed out in the table. The percentages of matching classification were 87%, 89% and 91% in the three load increments respectively. Around 10% of the signals resulted in contrary classifica tion. This paper considers the two parameters equivalent. Without further mentioning, we use peak frequency by default in the study presented below.
+
+## 4.2. Validation on a reinforced concrete slab test
+
+We evaluate the obtained source classification criterion in a different type of structure, a reinforced concrete slab. The slab had dimension of 5000 mm × 2500 mm × 300 mm, with concrete nominal compressive strength of 45 MPa and maximum aggregate size of 16 mm. The slab was loaded by a point load till failure (Fig. 12a and b). The test is taken from a series of shear tests on reinforced concrete slabs [23]. In the series, the test is named as SR1M1.
+
+Thirty-two AE sensors (R6I with central frequency 60 kHz) were installed on the top and bottom surfaces of the specimen (Fig. 12b). The crack pattern at the bottom surface in the sensor enclosed zone is marked in Fig. 12b.
+
+![](images/9be7aa853b2fe067839b89b4bf8306915eddc8e6d0b2b802afdbdbed935ef436.jpg)  
+Fig. 11. Frequency spectrum of a typical signal that was sorted as from tensile cracking by peak frequency (105 kHz > 70 kHz), but friction by partial power (0.41 < 0.5).
+
+Comparing to the beam test, the slab was much wider. Therefore, the crack distribution could not be simplified as a 2D case as in the beam. We used 3D source localization, which brought a larger source localization error compared to 2D [16]. Moreover, the slab had smaller crack spacing relative to the sensor spacing (Fig. 12b). Consequently, more than one crack is expected between two sensors, which also increased the source localization error.
+
+We applied the proposed source classification criterion. Fig. 13a shows the ratio of number of AE events classified as friction to the total AE events within each load increment (around 50 kN). The first crack opened at 150 kN. Afterwards, the ratio of AE events as friction increased with loading. This meets our expectation that more shear displacement occurred with increasing load, which generated more AE events of friction. We also observe a relatively larger ratio of AE events as friction before 150 kN. These events were around the loading plate from the source localization results (Fig. 13b). They could come from the friction between the loading plate and the structural surface during the setting of contact.
+
+We also validate if the distance limit of 0.5 m in the source classification criterion can be applied in the slab test. AE events from the first cracking was used, as at first cracking, signals were most from tensile cracking (which included both high and low frequency components), and not influenced by the existing cracks between source and receiver. Fig. 14 shows the distribution of the two parameters, varying with the distance. We find a clear difference of peak frequency after 0.5 m: the modal bin changed from 90 to 100 kHz to 30–40 kHz. The modal bin of partial power also reduced to values lower than 0.5 after 0.5 m.
+
+The above results prove the applicability of the proposed source classification criterion in the reinforced concrete slab.
+
+## 5. Discussion
+
+The proposed source classification criterion substantially improves the applicability and reliability of source classification. First, the applied signal parameters, peak frequency or partial power, can be calculated in real time by commercially available AE systems like MISTRAS [24]. The computational time is much less compared to source classification methods based on the whole waveform, for example, moment tensor analysis [25], hierarchical clustering [26] or even artificial intelligencebased methods [27]. This is important for real-time monitoring. Secondly, compared to the traditional method of using RA value and average frequency, the proposed source classification criterion is more reliable, and calibrated with the influence of the wave propagation. Moreover, the proposed source classification criterion provides a clearer and more consistent boundary between signals from the two types of sources, while, in the traditional method, no consistent boundary can be distinguished.
+
+The distance limit of 0.5 m in the criterion limits the maximum sensor spacing for source classification. In our case, the sensor spacing should be smaller than 1 m to ensure the closest sensor is within 0.5 m from the source. This also means that we could increase the current sensor spacing from 0.5 m to 1 m, to reduce the applied number of sensors. But, a trade-off would be receiving less amount of AE events. And, if more than one crack presents in a sensor grid due to larger sensor spacing, the estimated source location would have larger error.
+
+An important assumption made in this paper is that we considered the signal received by the closest sensor representative of the source signal. However, these signals are still attenuated. Signal attenuation would result in lower frequency, which is more pronounced for signals from friction (dominated by S-waves). Therefore, for signals from friction, it is hard to determine to which extend the observed lower frequency is from the original source signal features or signal attenuation. A possible solution is to further reduce the distance of the closest sensor to limit the influence from attenuation. For now, irrespective to the reason of lower frequency of received signals from friction, the proposed criterion can be used.
+
+Table 1  
+Number of signals that had matching and contrary source classification results using peak frequency and partial power (>70 kHz).
+
+<table><tr><td>Load increment</td><td colspan="2">150-200 kN</td><td colspan="2">200-250 kN</td><td colspan="2">250-300 kN</td></tr><tr><td> $\begin{array}{c}\text{Peak frequency}\\ \text{Partial power}\end{array}$ </td><td>Tensile cracking</td><td>Friction</td><td>Tensile cracking</td><td>Friction</td><td>Tensile cracking</td><td>Friction</td></tr><tr><td>Tensile cracking</td><td>311</td><td>17</td><td>232</td><td>17</td><td>555</td><td>57</td></tr><tr><td>Friction</td><td>54</td><td>158</td><td>52</td><td>342</td><td>127</td><td>1219</td></tr><tr><td>Matching classification*</td><td colspan="2">87%</td><td colspan="2">89%</td><td colspan="2">91%</td></tr></table>
+
+\*The percentage of signals that had matching source classification results according to peak frequency and partial power (>70 kHz). The number of signals that had matching results from the two parameters is greyed out.
+
+![](images/8bdc30a23514031f63f00eaa1632db0d4a7a676420a8d5ec52f409f5a8b7aa5e.jpg)  
+(a)
+
+![](images/9c7cce99c0986c32b6627aacdfbe0e53316683a3334bf9ea32838b6125cbcc7c.jpg)  
+(b)  
+Fig. 12. Test setup: (a) a photo taken from top, and (b) dimension of the slab, load and support position, sensor layout and crack pattern in the AE measuring zone.
+
+![](images/aa4fd3b1c3abea2b6bef0729a135afea54214bc0bb799dbecadce8cad234aefe.jpg)  
+(a)
+
+![](images/e12df4b2cdacbce8afa16dd440bacda4dd6b7b24002c1b82d32997c685e0c879.jpg)  
+(b)  
+Fig. 13. Source classification results using peak frequency in the slab: (a) ratio of number of AE events form friction at different load increments and (b) at 50–80 kN (blue dots are AE events classified as tensile cracking, and red dots are classified as friction).
+
+We should also consider the influence from sensor frequency response. Though the sensor operating frequency covers the two frequency components 40 kHz and 100 kHz [28], the sensitivity at 40 kHz can be 5 dB more than that at 100 kHz [29], which is around 1.7 times larger. In this case, applying a factor of 0.6 (1/1.7) to the amplitude at
+
+40 kHz may be more reasonable to determine the peak frequency. The same applies to the partial power calculation, a factor from the sensor frequency response should be multiplied to the amplitude of each frequency component in the received signal. When another type of sensor is used, it is suggested to modify this factor according to the sensor frequency response. It is a benefit of the proposed criterion that it can be calibrated for the sensor type.
+
+![](images/d2094ef253cc231b1ee77a010c3d8d24d5992aa8c0e2c56a3e9f654f0edf6122.jpg)  
+(a)
+
+![](images/417f2809ebe486ef8976ec4ed78e3c986ebf24e223b9aecdae591bee7532aafc.jpg)  
+(b)  
+Fig. 14. Influence of wave travel distance on the signal parameters in the slab test: (a) peak frequency, and (b) partial power (>70 kHz).
+
+Moreover, the proposed criterion needs to be verified in more ex periments, with different concrete composition and geometry.
+
+## 6. Conclusion
+
+This paper experimentally evaluated the available signal parameters for source classification in full-scale concrete structures, including RA value, average frequency, peak frequency, frequency centroid and partial power. The performances of these parameters with short travel distances (<0.3 m) and long travel distances (up to 1.5 m) were studied. We found that the RA value, recommended by RILEM AE standard, was strongly influenced by wave attenuation, thus not reliable for source classification in large concrete structural members. Among the other frequency-related parameters, peak frequency and partial power can provide a clear boundary between signals from two types of sources. Therefore, they were used to develop the new source classification cri terion: in case the peak frequency was over 70 kHz, or the partial power (>70 kHz) was >0.5, the signal was identified as from tensile cracking; otherwise, the signal was from friction. In a real test, we suggest that only the signal received by the closest sensor should be used, and the distance should be within 0.5 m. This distance limit suggests that the sensor spacing for a reliable source classification should be smaller than 1 m. The proposed source classification criterion was validated by AE signals from other cracks of the same concrete beam and from a concrete slab test.
+
+The new source classification criterion has great potential in real time AE monitoring. Using the selected signal parameters saves computational time compared to more sophistic classification using waveforms or even artificial intelligence-based methods, and provides more reliable results than traditional signal parameters for source classification.
+
+Further study can consider the calibration of the frequency spectrum according to the sensor frequency response. Moreover, the proposed criterion also needs to be verified in other types of concrete.
+
+## Funding
+
+This work was supported by Rijkswaterstaat, the Dutch Ministry of Infrastructure and Water Management.
+
+## CRediT authorship contribution statement
+
+Fengqiao Zhang: Conceptualization, Methodology, Software, Vali dation, Formal analysis, Investigation, Data curation, Writing – original draft, Visualization. Yuguang Yang: Conceptualization, Methodology, Resources, Writing – review & editing, Supervision, Project adminis tration, Funding acquisition. Sonja A.A.M. Fennis: Resources, Super vision, Funding acquisition. Max A.N. Hendriks: Methodology, Resources, Writing – review & editing, Supervision, Project adminis tration, Funding acquisition.
+
+## Declaration of Competing Interest
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+## References
+
+[1] D.G. Aggelis, Classification of cracking mode in concrete by acoustic emission parameters, Mech. Res. Commun. 38 (3) (2011) 153 157.
+
+[2] M. Ohtsu, Recommendation of RILEM TC 212-ACD: Acoustic emission and related NDE techniques for crack detection and damage evaluation in concrete: Test method for classification of active cracks in concrete structures by acoustic emission, Mater. Struct./Materiaux et Constructions 43 (9) (2010) 1187 1189.
+
+[3] D. Polyzos, A. Papacharalampopoulos, T. Shiotani, D.G. Aggelis, Dependence of AE parameters on the propagation distance, J. Acoust. Emission 29 (2011) 57+
+
+[4] D.G. Aggelis, T. Shiotani, A. Papacharalampopoulos, D. Polyzos, The influence of propagation path on elastic waves as measured by acoustic emission parameters, Struct. Health Monitor. 11 (3) (2011) 359 366.
+
+[5] F. Zhang, Evaluation of Acoustic Emission Monitoring of Existing Concrete Structures, Delft University of Technology, Delft, the Netherlands, Civil Engineering and Geosciences, 2017.
+
+[6] G. Livitsanos, N. Shetty, E. Verstrynge, M. Wevers, D. Hemelrijck, D. Aggelis, Numerical simulation of elastic wave propagation in masonry compared with acoustic emission experimental results, Arch. Civil Mech. Eng. 20 (2020).
+
+[7] D.G. Aggelis, A.C. Mpalaskas, D. Ntalakas, T.E. Matikas, Effect of wave distortion on acoustic emission characterization of cementitious materials, Constr. Build. Mater. 35 (2012) 183 190.
+
+[8] D.G. Aggelis, A.C. Mpalaskas, T.E. Matikas, Investigation of different fracture modes in cement-based materials by acoustic emission, Cem. Concr. Res. 48 (2013) 1–8.
+
+[9] D.G. Aggelis, S. Verbruggen, E. Tsangouri, T. Tysmans, D. Van Hemelrijck Characterization of mechanical performance of concrete beams with external reinforcement by acoustic emission and digital image correlation, Constr. Build. Mater. 47 (2013) 1037–1045.
+
+[10] D. Soulioti, N.M. Barkoula, A. Paipetis, T.E. Matikas, T. Shiotani, D.G. Aggelis, Acoustic emission behavior of steel fibre reinforced concrete under bending, Constr. Build. Mater. 23 (12) (2009) 3532 3536
+
+[11] C. Grosse, M. Ohtsu, Acoustic emission testing: Basics for Research-Applications, Civ. Eng. (2008)
+
+[12] Y. Yang, Shear Behaviour of Reinforced Concrete Members without Shear Reinforcement, Delft University of Technology, Delft, the Netherlands, 2014.
+
+[13] G. Zarate Garnica, Analysis of shear transfer mechanisms in concrete members without shear reinforcement based on kinematic measurements, Civil Engineering and Geoscience, Delft University of Technology, Delft, 2018.
+
+[14] P. Bormann, B. Engdahl, R. Kind, Seismic Wave Propagation and Earth models, in: P. Bormann (Ed.), New Manual of Seismological Observatory Practice 2 (NMSOP2), GFZ German Research Centre for Geosciences, 2012.
+
+[15] F. Zhang, G.I. Zarate Garnica, Y. Yang, E. Lantsoght, H. Sliedrecht, Monitorin Shear Behavior of Prestressed Concrete Bridge Girders Using Acoustic Emission and Digital Image Correlation, Sensors 20 (19) (2020) 5622.
+
+[16] F. Zhang, L. Pahlavan, Y. Yang, Evaluation of acoustic emission source localization accuracy in concrete structures, Struct. Health Monitor. 19 (6) (2020) 2063 2074.
+
+[17] Y. Yang, H. van der ham, M. Naaktgeboren, Shear capacity of RC slab structures with low reinforcement ratio-an experimental approach, fib Symposium, Lisbon, Portugal, 2021.
+
+[18] L. Pahlavan, F. Zhang, G. Blacqui\`ere, Y. Yang, D. Hordijk, Interaction of ultrasonic waves with partially-closed cracks in concrete structures, Constr. Build. Mater. 167 (2018) 899–906.
+
+[19] F. Zhang, Y. Yang, M.A.N. Hendriks, Probability density field of acoustic emission events: damage identification in concrete structures, review.
+
+[20] E. Tsangouri, G. Karaiskos, A. Deraemaeker, D. Van Hemelrijck, D. Aggelis, Assessment of Acoustic Emission localization accuracy on damaged and healed concrete, Constr. Build. Mater. 129 (Supplement C) (2016) 163 171.
+
+[21] D.G. Aggelis, E. Tsangouri, D. Van Hemelrijck, Influence of propagation distance on cracking and debonding acoustic emissions in externally reinforced concrete beams, Meccanica 50 (5) (2015) 1167–1175.
+
+[22] Y. Yang, J. den Uijl, J. Walraven, Critical shear displacement theory: on the way to extending the scope of shear design and assessment for members without shear reinforcement, Struct. Concr. 17 (5) (2016) 790–798.
+
+[23] G. Zarate Garnica, Y. Yang, E.O.L. Lantsoght, Nonlinear Finite Element Analysis of Tests of Reinforced Concrete Slabs, International Association for Bridge and Structural Engineering (IABSE), Ghent, Belgium, 2021.
+
+[24] MISTRAS, AEwin SOFTWARE, Installation, Operation and User’s Referenc Manual, Products Systems Division, Princeton Junction, NJ, USA, 2011.
+
+[25] K. Ohno, M. Ohtsu, Crack classification in concrete based on acoustic emission Constr. Build. Mater. 24 (12) (2010) 2339 2346.
+
+[26] C. Van Steen, L. Pahlavan, M. Wevers, E. Verstrynge, Localisation and characterisation of corrosion damage in reinforced concrete by means of acoustic emission and X-ray computed tomography, Constr. Build. Mater. 197 (2019) 21–29.
+
+[27] J. Srivastava, Estimation of Energy Released from Crack in Concrete using Acousti Emission and Comparison with the Numerical Results, Delft University of Technology, Delft, the Netherlands, Civil Engineering and Geoscience, 2020.
+
+[28] ASTM E1106–86, Standard Method for Primary Calibration of Acoustic Emission Sensors, ASTM 1997 West Conshohocken, PA, USA.
+
+[29] MISTRAS, R6I-AST Sensor, MISTRAS Group Inc., Princeton Junction, NJ 08550, 2008.

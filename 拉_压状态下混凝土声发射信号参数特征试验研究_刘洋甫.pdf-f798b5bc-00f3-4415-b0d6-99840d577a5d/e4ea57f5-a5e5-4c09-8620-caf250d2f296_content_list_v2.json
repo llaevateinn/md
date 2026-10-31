@@ -1,0 +1,2210 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "doi：10.3969/j.issn.1002-3550.2023.02.003"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                89,
+                334,
+                102
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "拉/压状态下混凝土声发射信号参数特征试验研究"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                112,
+                146,
+                872,
+                174
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "刘洋甫，刘思孟，陈 坤，陈 强，蒲于立，谈俊杰（重庆交通大学 土木工程学院，重庆 400074）"
+                    }
+                ]
+            },
+            "bbox": [
+                302,
+                193,
+                682,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "摘 要： 声发射信号特征与力学状态的内在联系，是推动声发射技术发展和完善的重要理论基础，但是目前相关的工作尚待加强。从理论角度分析了声发射现象、损伤与应变 应力之间的内在联系，开展了混凝土梁的加载试验，利用实测数据深入探讨了这些物理量的关联。试验数据显示，以振铃计数为代表的计数类参数和以幅值为代表的能量类参数与应力状态演化强度相关，而信号频率与拉/压应力类型之间的关联不明显；混凝土受拉区产生的信号，其振铃计数和幅值随着荷载值增长呈现波动上升态势，参数值通常较受压产生的信号更大；当试件进入到带裂缝阶段的后期，受压区信号参数才表现出与荷载增长一致的趋势。沿梁高方向上，声发射信号的振铃计数和幅值的分布与应变之间存在显著的相关性；在梁截面的中性轴处，上述两个参数在分布形态和数值方面都出现了明显的跳跃。上述结果表明，声发射信号的参数具有刻画混凝土结构内部力学状态的潜力。"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                244,
+                890,
+                355
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "关键词： 混凝土；应力状态；声发射；振铃计数；幅值；频率"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                356,
+                497,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "中图分类号： TU528.01"
+                    }
+                ]
+            },
+            "bbox": [
+                99,
+                372,
+                255,
+                385
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "文献标志码： A"
+                    }
+                ]
+            },
+            "bbox": [
+                290,
+                372,
+                401,
+                386
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "文章编号： 1002-3550（2023）02-0010-05"
+                    }
+                ]
+            },
+            "bbox": [
+                436,
+                372,
+                700,
+                386
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Study on characteristics of parameters of acoustic emission signals from concrete in tensile or compressive states"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                107,
+                404,
+                877,
+                419
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "LIU Yangfu, LIU Simeng, CHEN Kun, CHEN Qiang, PU Yuli, TAN Junjie （School of Civil Engineering，Chongqing Jiaotong University，Chongqing 400074，China）"
+                    }
+                ]
+            },
+            "bbox": [
+                235,
+                438,
+                749,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Abstract: The relationship between acoustic emission（AE）signal features and mechanical parameters is an important physical basis to develop and improve acoustic emission-based technology，however，relevant work needs to reinforce.The relations among AE phenomenon， damage and strain/stress were analyzed theoretically，and an experiment on a concrete beam was carried out.The experimental data showed that counts-like parameters（such as counts）and the energy-based parameters represented by amplitude correlated strongly with the stress，while the correlation between signal frequency and stress types was not significant.For signals from concrete in the tensile state，parameters counts and amplitude demonstrated the same trend as load values，and magnitudes of these features were usually relatively larger than those of the signals form compression zones.Along the specimen<sup>′</sup> s depth direction，the distributions of counts and amplitude correlated significantly with the strain.Near the neutral axis of the specimen cross section，the distributions and values of these two parameters showed a huge jump.These results revealed that AE signal features had the great potential to characterise internal mechanical states of concrete structures."
+                    }
+                ]
+            },
+            "bbox": [
+                95,
+                488,
+                890,
+                640
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Key w ords: concrete；stress state；acoustic emission（AE）；counts；amplitude；frequency"
+                    }
+                ]
+            },
+            "bbox": [
+                97,
+                642,
+                621,
+                657
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "0 引言"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                690,
+                147,
+                707
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "混凝土材料的广泛应用使得混凝土结构的安全性显得极为重要，但及时发现结构内部的损伤和病害是一项极具挑战性的任务。声发射（Acoustic Emission，简称 AE）技术是快速获取混凝凝土内部信息的一种重要手段<sup>[1</sup>-<sup>5]</sup>，分析声发射信号来判断混凝土结构的损伤状态是实现声发射检测的主要途径之一。因此，对声发射信号参数的研究有利于提升人们对声发射现象的认识，也能够有力地推动相关技术的研发和完善<sup>[6</sup>-<sup>7]</sup>。"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                715,
+                480,
+                850
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对于声发射信号参数的研究已有很多，也取得了一些较为有价值的成果。文明秀等针对标准混凝土试件分别进行了轴向受压和劈裂受拉试验，发现在受拉试件中声发射信号的幅值更高<sup>[8]</sup>。陈兵等开展了混凝土试件单轴受压试验，发现声发射率分别在20%和 70%~90%极限压应力处均出现双峰现象<sup>[9]</sup>。林峰等对不同配合比的试件进行单轴抗压试验，再以 Dai模型为基础建立了损伤变量和声发射累计数之间的关系<sup>[10]</sup>。李为杜等对不同骨料的试件进行拉、压、弯试验，发现声发射累计量、声发射率与受力方式、材料本身及形变有关<sup>[11]</sup>。Dai 对损伤程度不同的混凝土和岩石进行单轴压缩试验，得出声发射活性随着损伤严重程度而减少的结论<sup>[12]</sup>。李博等对干燥和饱和的岩石裂隙进行了研究，发现了干燥状态下两种岩石声发射振铃计数、累计计数均高于饱和状态下<sup>[13]</sup>。文献分析表明，既有成果中针对单受拉/压等简单受力状态下的研究较为丰富（例如文献[6]），而围绕同一试件中复杂应力状态或不同损伤形式下混凝土声发射信号的工作很少；其次，现有研究中关联到的因素很多（例如声发射累计量、声发射率和损伤变量），但围绕信号参数与力学量之间内在联系的工作较少<sup>[14]</sup>。另一方面，早在20世纪60年代，人们就已经意识到选择合适的声发射信号参数来表征混凝土结构内部的状态等问题的重要性，但是目前在信号参数与力学量之间建立联系等工作尚待加强。"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                852,
+                480,
+                901
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                504,
+                683,
+                917,
+                902
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "2023 年 第 2 期（ 总 第 400 期）Number 2 in 2023（Total No.400）"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                53,
+                295,
+                79
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "混 凝 土 Concrete"
+                    }
+                ]
+            },
+            "bbox": [
+                431,
+                49,
+                596,
+                83
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "理 论 研 究THEORETICAL RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                726,
+                53,
+                900,
+                80
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "收稿<sup>日</sup>期：2021-1 1-23"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                904,
+                215,
+                917
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "基金项目：国家重点研发计划“低交通影响下既有城市桥梁快速维修加固关键技术和应急装置”（2017YFC0806007）"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                919,
+                779,
+                934
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                940,
+                124,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                78,
+                85,
+                489,
+                187
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "混凝土梁在受载后，结构内部同时出现拉、压两种应力状态，AE信号的产生也贯穿始终。为了探究在不同应力状态下混凝土材料产生的声发射信号的演化规律、研究信号参数与力学量之间的内在关联，本研究开展了混凝土梁加载试验，基于试验数据分析了拉压两种应力状态下的AE信号参数特征及其随应力 / 应变的变化。本研究的主要创新体现在两方面。首先，本研究围绕钢筋混凝土梁而非轴向受力的标准试件而展开，因此与实际的工程应用联系更紧密。其次，受拉和受压状态下的声发射信号都来自相同的构件，因此更利于分析信号参数与受力状态之间的内在联系及其变化。"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                189,
+                490,
+                361
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1 理论分析与研究基础"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                370,
+                299,
+                386
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.1 声发射信号与应力状态的内在联系"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                395,
+                403,
+                412
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "在荷载等外因作用之下，材料内部将产生应力，在不同区域存在不同的应力分布（甚至应力集中）。当应力水平超过其强度时，材料发生局部的损伤（对于混凝土等脆性材料）或形变（例如金属材料晶格的位错等），其存储的部分能量被快速释放、产生弹性波并在介质中传播，这就是声发射现象<sup>[15]</sup>。上述定义表明，脆性材料中的声发射现象及其产生的 AE 信号与损伤直接相关。由此可知：在典型的脆性材料——混凝土中，不同类型损伤的发生和发展过程中所产生的声发射信号存在差异。损伤力学和结构理论等都表明：在拉应力或压应力作用下，混凝土结构的破坏过程和形态均呈现显著差异<sup>[16]</sup>。因此，考虑到受力状态、损伤演化与声发射现象之间的内在联系，应力与声发射信号之间的相关性是一个既有趣又极有价值的课题。"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                414,
+                490,
+                638
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "混凝土梁结构，是研究上述问题的良好载体。由力学分析可知，梁是一种以受弯为主的结构；在梁的纯弯段中，截面中性轴一侧为受压区、其内为压应力，而在另一侧的受拉区内材料处于受拉状态<sup>[17]</sup>。因此，从混凝土梁的纯弯段中可以同步获取分别来自压应力区和拉应力区的声发射信号；更为重要的是，在截面上应变是连续变化的，这也为定量分析信号参数与力学量之间的变化规律提供了有利条件。因此，本研究开展了混凝土梁的加载试验，利用获取的实测数据分析应力状态与典型的声发射信号参数之间的相关性及其演化规律。"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                640,
+                490,
+                812
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1.2 声发射信号参数简介与分类"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                814,
+                349,
+                829
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "常见的 信号参数有振铃计数、幅值、持续时间、上升时间、信号强度、绝对能量和频率等。这些信号参数可以分为过程参数和状态参数两大类，两类参数从不同的角度反应材料破坏过程与结构内部（力学）物理量的变化；过程参数包括累计数、参数分布，状态参数包括振铃计数、幅值、频率、上升时间、持续时间、信号能量<sup>[18]</sup>。"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                832,
+                490,
+                935
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "本研究中，从这些参数分别选取振铃计数和幅值作为代表，以分析信号参数与应力状态之间的关系；此外，考虑到频率反映了信号源的重要特征，在本研究中也对其进行了分析。如图 1 所示，振铃计数（Counts）指波形超过预设阈值的脉冲个数，表征声发射活动性。幅值（Amplitude）指AE信号中的电压峰值，代表了振动的强度，其与信号能量水平直接相关。频率指声发射源处单位时间振动的次数。"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                85,
+                926,
+                204
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/078281d6143e4f27f9f2780e2fd1d139a3d79d1e1179818ef76e7dee8cc91687.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "图 1 典型的声发射信号参数示意图"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                566,
+                206,
+                873,
+                344
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2 模型试验"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                515,
+                366,
+                633,
+                382
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.1 试件设计、传感器与测点布置"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                515,
+                390,
+                794,
+                405
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "试件采用尺寸为 1 850 mm（长）×200 mm（高）×100 mm（宽）的矩形截面钢筋混凝土梁，主要设计参数如图2所示。受拉区的纵向受力主筋采用直径 10 mm 的 HRB400 螺纹钢筋，箍筋为直径8mm的HPB300钢筋、间距150mm，混凝土强度等级为C30。加载前，在跨中切割深20 mm、宽5 mm的预裂缝，以诱导结构破坏发生的位置。"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                409,
+                926,
+                511
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "声发射传感器、应变片及加载点布置如图 2 所示。声发射传感器为 PAC R6α 型，其频带范围是 10~120 kHz，在梁的纯弯段受压区和受拉区各布置了4个、共8个。在梁的顶面、底面与前后 2个表面，分别了布置了混凝土应变片，图2示出了前表面上粘贴的应变片。同时，在跨中区段也布置了 3个千分表以测量挠曲变形。"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                513,
+                926,
+                615
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/5d3604ce38a50a97e564d5f8dc32990ae17f06a0d03f2b7f2b8f1e2348b61c96.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "图2 混凝土梁试件尺寸和配筋、测点布置及"
+                    }
+                ],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "信号提取区域示意图（单位：mm）"
+                    }
+                ]
+            },
+            "bbox": [
+                517,
+                618,
+                922,
+                901
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                873,
+                940,
+                895,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2.2 加载程序"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                86,
+                191,
+                99
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "采用四点弯曲加载方式，剪跨比为 2，纯弯段长度400 mm。利用液压千斤顶施加荷载，并以力传感器实时读取荷载值并监测加载过程。加载过程分为预加载和正式加载 2 个阶段。预加载时，峰值取 40 kN，分 2 级，每级加载20 kN，加载速度为 10 kN/min，持荷 5 min，预加载 2 次。观察梁体有无初始裂缝，读取位移计读数，记录并清零。"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                104,
+                480,
+                206
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "正式加载过程中，试验前期采用力控制，每级荷载为预计最大承载力的 10%，加载速度为 20 kN/min，持荷 5 min。当荷载接近开裂荷载时，每级荷载为预计最大承载力的5%，加载速度为10 kN/min，持荷5 min，开裂后持荷改为15 min。当裂缝明显发展或跨中位移斜率明显下降时，改为位移控制，每级位移 0.5 mm，加载速度 0.5 mm/min，持荷 5 min，直到试件破坏。"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                209,
+                480,
+                329
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3 试验数据分析与讨论"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                337,
+                290,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如图 3所示，试件破坏特征与典型的适筋梁失效模式相同。以下利用实测数据，分析与讨论应力与声发射信号参数之间的关系。"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                361,
+                480,
+                411
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/dd275f336b40ce3f98c31df7ba4f5c894c737d703c6d31cbd778d7ade92307fa.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "图 3 试验梁破坏形态"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                117,
+                414,
+                430,
+                551
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.1 受压/ 拉区声发射信号提取与数据处理方法"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                570,
+                468,
+                585
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "提取声发射信号之前，先根据声发射源定位算法<sup>[19]</sup>，将试件的纯弯段划分为若干个子区域；其次，结合应变片的数据，确定各个子区域的受拉 / 压状态；最后，将从受压应力或拉应力子区域发出的声发射信号分别提取出来用于后续分析。在加载过程中，部分子区域由受压转变为受拉状态；为此，在数据处理时，根据混凝土应变数据的变化作相应调整。"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                588,
+                480,
+                707
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "为分析声发射信号参数与应力之间的内在联系，采用了以下方法处理声发射信号。首先，将整个加载历程等分为若干个时段；其次，针对每个时段，分别提取出受压区和受拉区产生的声发射信号；再次，对每个区的各个信号作快速 Fourier变换（FFT），再从频谱图上提取幅值峰值所对应频率；最后，计算该时段内、该区的全部信号的峰值频率的算术平均值即为本时段的频率表征值。对于声发射信号的振铃计数和幅值等参数，除未进行 FFT 外，其余处理流程均相同<sup>[20]</sup>。"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                709,
+                480,
+                863
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.2 声发射信号参数与应力类型之间的相关性"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                866,
+                450,
+                881
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "图 4 所示的是受拉区和受压区声发射信号的频率的对比，从中可得到以下两点结论。首先，随着加载进程的推移，受拉区和受压区发出的信号的频率都围绕着某一值波动，并没有呈现上升或下降的趋势。其次，信号频率的波动幅度也基本相同。考虑到信号频率是反映信号源特性的基本特征，由此可推断：在受拉和受压状态下，声发射信号产生机制有某种相似性。此外，部分参数（例如上升时间、撞击时间）的变化规律与频率相同、未展现出显著的差异。"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                884,
+                480,
+                934
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5e7f6600a3b4097c6f9a689af84fa692ef6667b85fdce6728c7cd9a460d3b835.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "图 4 拉/压应力区产生的声发射信号的频率对比"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                521,
+                84,
+                899,
+                219
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                504,
+                237,
+                915,
+                323
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如图 5所示，在加载过程中声发射信号的振铃计数和幅值展现出了截然不同的变化规律。首先，从变化趋势上看，2个参数存在显著的不同。在受拉区，信号的振铃计数和幅值呈现出较为明显的波动上升态势，其拟合表达式更接近以时间为自变量的单调增线性函数；在受压区，只有当试件进入到带裂缝工作阶段的后期，2 个参数才表现出相似的趋势。其次，在量值上，受拉区的信号参数值通常较受压区的值大很多。从图5可发现，在弹性阶段和带裂缝工作阶段的前期，受拉区和受压区的信号参数值相当；在此之后，随着荷载增长，受拉区产生的信号具有更大的幅值和振铃计数。本次试验结果显示：受压产生的信号的振铃计数平均值介于 3.875~26.2之间，受拉区信号的振铃计数则是4.5~34.275之间，后者变化范围的上限是前者的 1.308 倍。受压区信号幅值的期望在 0.0027~0.020之间，受拉区信号的幅值均值则处于0.00278~0.078之间，受拉状态下信号幅值可比受压状态下高 。这表明：在混凝土材料损伤过程中，受拉区的声发射源释放出了更多的能量。上述结果与文献[6]的结论一致，但是该文献是通过对比不同试件上捕获的信号而得出结论的，这是其与本研究工作的差异。同时，对比图 4、5，可发现：不同的声发射信号参数对材料的受力状态的刻画能力存在明显的差别。"
+                    }
+                ]
+            },
+            "bbox": [
+                504,
+                325,
+                917,
+                619
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/936ab3e0288a7ce1296c48e5e0267720ecaa9e847d91f6a78dac943d1cf01330.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "(a)振铃计数"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                512,
+                620,
+                907,
+                765
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/937dd8a0f952b6073262d0d4f300bba4ca4e0b1c506b979c58d17ab5854596af.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "图 5 拉/压应力区产生的声发射信号振铃计数和幅值对比"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                514,
+                772,
+                907,
+                917
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                940,
+                122,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                78,
+                85,
+                489,
+                152
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "以上分析表明，受拉 /压区产生信号的幅值、振铃计数总体上低于受拉区信号，这种差异也反映在了受拉 / 压区采集到的信号的波形图上。如图 6 所示，拉应力产生信号的幅值远远高于压应力区的信号幅度，前者的振铃计数也显著大于后者。"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                155,
+                490,
+                239
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/61f1f36783628bbdd46b0582050807bb41943c41c86f579cfc16336f2f177ab9.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                142,
+                243,
+                428,
+                368
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/02ddc4ce3ed15d14b6f7d6d22e57c6722fea2e5d0a1366174406c93384ec6d68.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "图 6 受拉区和受压区采集的典型声发射信号的波形"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                144,
+                373,
+                426,
+                497
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "对获取的所有信号幅值和振铃计数进行了定量分析。以信号来自于受拉区、受压区为对照，计算累计振铃计数、累计幅值和均值的对比如图7所示。数据显示：受拉区信号振铃计数累计比受压区累计数多出来了 38.73%，幅值受拉区比受压区高出了 81.56%。平均每个受拉区信号振铃计数要比受压区信号的要多出 5.40 个，幅值平均高出 0.005 9。上述结果表明：在受拉和受压状态下混凝土材料中产生的声发射信号参数存在显著的差异，即应力的（拉/压）性质与幅值、振铃计数等信号参数之间存在较强的相关性。"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                518,
+                490,
+                671
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.3 声发射信号参数与应变水平之间的相关性"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                80,
+                675,
+                460,
+                690
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "为了分析信号参数与应力水平之间的相关性，对试验数据进行了以下处理。首先，获取从图2所示的拉压提取区中发出的声发射信号，再从力传感器上取得荷载值。其次，按 3.1节所述方法，分析各个声发射信号参数，并插值得对应的荷载值。最后，计算全部受拉区与受压区信号参数值的绝对值之和，并将其作为纵坐标，以对应时刻的荷载值代替拉 /压应力水平作为横坐标绘制了图 8。"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                693,
+                490,
+                813
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "由图 8 可以看出，在整个加载过程中，声发射信号的振铃计数和幅值都随着荷载值即混凝土中的应力水平的增长而增大，但是它们的增速变化趋势存在显著差异。这种差异可从这两个参数本身的物理含义的角度加以解释。如图 1 所示，振铃计数是波形超过预设阈值的脉冲个数，它既随信号的幅值增大而增长，也与信号的持续时间正相关。在加载的前半程（荷载小于 时），受拉的信号明显多于受压产生的信号；从图6上可看出，受拉状态下的信号持续时间和幅值都显著高于受压信号的参数；因此，此阶段振铃计数随荷载增长的速度更快。当荷载超过90 kN后，中性轴上移到一定的高度后其位置不再明显变化；更为重要的是，此后受压区的信号量显著地多于受拉区；结合图 6所示的拉 / 压区典型信号的差异，故此阶段振铃计数的增速逐渐趋于平缓。"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                815,
+                490,
+                935
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0da89c25e1b687d2cbe10aeee57a7b0d5875775a1595fede25ee2d4a4b0f83b4.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                539,
+                84,
+                887,
+                225
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c91093aaa654ca2063862aea38e0f6e42b0447e3935dc5920466c1ba7eafcb70.jpg"
+                },
+                "content": "",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "bbox": [
+                561,
+                231,
+                902,
+                363
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4400b2e9fc6ba8d596a1076758379484e8dffe10c06c3796fd854f6f1d2856c3.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "图 7 受拉/压区的声发射信号参数的统计特征对比"
+                    },
+                    {
+                        "type": "text",
+                        "content": "图 8 加载过程声发射信号参数的变化"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                556,
+                382,
+                887,
+                533
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                514,
+                551,
+                927,
+                671
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3.4 声发射信号参数沿截面的变化"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                515,
+                674,
+                805,
+                689
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "力学理论表明：在梁截面上应变呈线性变化；在截面中性轴处应变 / 应力为零，在受拉区和受压区的边缘分别达到最大的拉应变与压应变值。为分析在梁截面不同高度处采集的声发射信号的参数的变化规律并考查其与应变分布之间的联系，从图 2 所示的竖向提取区中，获取了试验梁的受拉主筋屈服之前 300s的声发射信号与应变片数据，再绘制了图 9。"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                692,
+                926,
+                812
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "如图 9 所示，在同一试验梁段上，声发射信号的振铃计数和幅值沿梁高方向上的变化规律与应变分布之间都存在显著的相关性。首先，从定性上，压应变区捕获的信号的参数值较受拉区的信号低。这一点与第 3.2 和第 3.3 节所得到的结论吻合。其次，从总体趋势上，信号参数沿梁高度方向上的波动增长形态与应变的线性变化一致。这再一次表明声发射信号参数与应变之间存在显著的相关性。另"
+                    }
+                ]
+            },
+            "bbox": [
+                514,
+                814,
+                926,
+                934
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                873,
+                940,
+                895,
+                952
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "应变沿截面高度的变化"
+                    }
+                ]
+            },
+            "bbox": [
+                201,
+                259,
+                349,
+                272
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/08926792fc9dd72afdfa39ab17aae4a8532f700f12cd79594a05c9d4d1cb0dc0.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "图 9 声发射信号的振铃计数、幅值与混凝土"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "bbox": [
+                73,
+                86,
+                477,
+                240
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "一方面，对比应变分布与声发射数据，在中性轴处两者存在明显差异。如图 9所示，在中轴性处应变值为零；对于幅值和振铃计数，在此位置都出现了显著的降低。"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                275,
+                478,
+                326
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "4 结论"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                332,
+                149,
+                348
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "本研究首先从理论角度分析了声发射现象、损伤与应变 /应力之间的内在联系，揭示了声发射信号参数与力学量之间的相关性。在此基础上，开展钢筋混凝土梁的加载试验，利用实测数据深入探讨了这些物理量的关联，所得的主要结论如下："
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                355,
+                480,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "（1）在物理上，声发射现象、材料内部损伤与其力学状态之间存在深刻的内在联系，因此应力 / 应变与某些声发射信号参数之间必然存在相关性。试验数据显示，声发射信号的振铃计数和幅值与应力状态演化规律较吻合，而信号的频率与受力之间的关联不明显。"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                443,
+                478,
+                527
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "（2）在加载过程中，声发射信号的振铃计数和幅值展现出了不同的变化规律。对于来自受拉区的信号，其振铃计数和幅值呈现出较明显的波动上升态势，参数值通常更高；当试件进入到带裂缝阶段的后期，受压区信号参数才表现出与荷载增长相似的趋势。"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                530,
+                480,
+                614
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "（3）沿梁高方向上，声发射信号的振铃计数和幅值与应变之间存在显著的相关性。从定性上，受压区捕获的信号的参数值较受拉区的信号低。从总体趋势上，信号参数沿梁高度方向上的波动增长形态与应变的线性变化一致。"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                615,
+                480,
+                684
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "参考文献："
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                70,
+                697,
+                139,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "[1] 沈功田.声发射检测技术及应用[M].北京：科学出版社，2015."
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                709,
+                453,
+                724
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "·上接第 9 页"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                73,
+                731,
+                169,
+                745
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "（）当再生骨料替代率超过 后，即便采用预湿与附加用水组合处理方式，混凝土减水剂用量仍显著增大，混凝土流动性能受到明显影响，同时混凝土 7、28 d抗压强度均显著降低。"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                749,
+                478,
+                816
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "（3）SEM 扫描电镜测试结果表明，高红砖含量再生粗骨料对混凝土骨料与浆体界面结构的弱化作用，是其替代率过大时，混凝土抗压强度降低的主要原因。"
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                819,
+                478,
+                869
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "参考文献："
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                72,
+                881,
+                139,
+                894
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[1] 李飞，张晓奇，董汇标，等.再生废砖粗骨料对混凝土性能的影响[J].混凝土，2015（2）：56-58."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                895,
+                478,
+                920
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[2] 赵亚松.废弃黏土砖再生轻骨料混凝土的性能研究[D].南京：东"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                921,
+                478,
+                934
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[2] 佟剑杰，崔永建，张飞.浅谈声发射技术在混凝土结构检测中的应用[J].产业与科技论坛，2012（11）：73-74."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                86,
+                914,
+                111
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[3] 陈洋.声发射技术在混凝土结构检测中的应用[J].中国水运（学术版），2007，7（8）：74-75."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                111,
+                914,
+                136
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[4] OHTSU M.The history and development of acoustic emission in con －crete engineering[J].Concrete Library of Jsce，1995（25）：121-134."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                137,
+                915,
+                161
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[5] 丁幼亮，邓扬，李爱群.声发射技术在桥梁结构健康监测中的应用研究进展[J].防灾减灾工程学报，2010，30（3）：341-351."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                162,
+                914,
+                186
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[6] 赖于树，熊燕，程龙飞.混凝土受载试验全过程声发射特性研究与应用[J].建筑材料学报，2015，18（3）：380-386."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                187,
+                914,
+                212
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[7] 纪洪广，张天森，张志勇，等.无损检测中常用声发射参数的分析与评价[J].无损检测，2001，23（7）：289-291，294."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                212,
+                914,
+                237
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[8] 文明秀，徐世烺，刘毅.声发射技术在混凝土中的应用[J].混凝土及加筋混凝土，1983（4）：56-62."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                237,
+                912,
+                263
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[9] 陈兵，姚武，吴科如.声发射技术在混凝土研究中的应用[J].无损检测，2000，22（9）：387-390，396."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                263,
+                914,
+                288
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[10]林峰，李庶林，薛云亮.混凝土材料声发射参数与力学参数及其损伤程度的关系[J].厦门大学学报（自然科学版），2010，49（4）：526-530."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                288,
+                914,
+                326
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[11]李为杜，童寿兴.混凝土受力声发射特性[J].无损检测，1987（5）：125-128."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                326,
+                912,
+                351
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[12]S.T.Dai.J.F.Labuz damage and failure analysis of brittle materialsby acoustic emission[J].Journal of Materials in Civil Engineering ，1997，9（4）：200-205."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                353,
+                914,
+                388
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[13]李博，叶鹏进，黄林，等.干燥与饱和岩石裂隙受压变形与声发射特性研究[J].岩土工程学报，2021，43（12）：2249-2257."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                390,
+                912,
+                414
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[14]苏怀智，张林海，佟剑杰.混凝土结构损伤声发射检测进展[J].无损检测，2015，37（1）：90-95."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                416,
+                914,
+                439
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[15]羊成柱，韩建德，王曙光，等.声发射技术在钢筋混凝土中的研究进展[J].混凝土，2016（10）：152-157，160."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                441,
+                914,
+                466
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[16]李杰，吴建营，陈建兵.混凝土随机损伤力学[M].北京：科学出版社，2014."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                467,
+                914,
+                491
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[17]东南大学，天津大学，同济大学.混凝土结构设计原理[M].北京：中国建筑工业出版社，2016."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                492,
+                912,
+                516
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[18]纪洪广.混凝土材料声发射性能研究与应用[M].北京：煤炭工业出版社，2004."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                518,
+                914,
+                542
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[19]SHANG X，WANG Y，MIAO R.Acoustic emission source locationfrom p -wave arrival time corrected data and virtual field opti －mization method [J].Mechanical Systems and Signal Processing ，2022，163（7）：108129."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                509,
+                544,
+                914,
+                592
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[20]邹云屏，李潇.信号变换与处理[M].武汉：华中理工大学出版社，1993."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                593,
+                912,
+                618
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "第一作者： 刘洋甫（1997-），男，硕士研究生，研究方向为桥梁健康监测、检测及评估。"
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                632,
+                914,
+                658
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "联系地址： 重庆市南岸区学府大道 66号 重庆交通大学（400074）联系电话： 15723411503"
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                658,
+                912,
+                683
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "通讯作者： 刘思孟（1977-），男，博士，教授，研究方向为桥梁健康监测、检测及评估。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                683,
+                914,
+                708
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "联系电话： 13648308285"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                708,
+                668,
+                722
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "南大学."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                529,
+                749,
+                579,
+                762
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[3] MD.Shariful Islam，Mohammad Al Amin Siddique.Behavior of low grade steel fiber reinforced concrete made with fresh and recycled brick aggregates[J].Hindawi Advances in Civil Engineering ，2017 （14）：1812363."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                764,
+                914,
+                816
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[4] 顾月芹.废弃砖再生骨料在混凝土中的应用研究[D].合肥：安徽建筑大学，2015."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                819,
+                914,
+                846
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "reference_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "[5] 肖绪文，冯大阔，田伟.我国建筑垃圾回收利用现状及建议[J].施工技术，2015，44（10）：6-8."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                847,
+                914,
+                873
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "第一作者： 宋宇峰（1979-），男，高级工程师。"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                890,
+                789,
+                903
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "联系地址： 陕西省西安市未央区红旗东路 3号（030024）"
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                904,
+                855,
+                917
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "联系电话： 13927186183"
+                    }
+                ]
+            },
+            "bbox": [
+                507,
+                919,
+                668,
+                932
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                100,
+                941,
+                122,
+                952
+            ]
+        }
+    ]
+]

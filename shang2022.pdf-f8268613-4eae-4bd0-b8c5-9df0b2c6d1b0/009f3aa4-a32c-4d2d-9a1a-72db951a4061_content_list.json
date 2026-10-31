@@ -1,0 +1,2714 @@
+[
+    {
+        "type": "text",
+        "text": "Acoustic emission source location from P-wave arrival time corrected data and virtual field optimization method",
+        "text_level": 1,
+        "bbox": [
+            64,
+            216,
+            731,
+            262
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/f8dee8c7b20832a2bb1586ed28ab08def8716ff0c3506b56c7b2082cab028d38.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            821,
+            194,
+            875,
+            233
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Xueyi Shang <sup>a,\\*</sup>, Yi Wang <sup>b,\\*</sup>, Runxue Miao",
+        "bbox": [
+            66,
+            276,
+            452,
+            296
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "<sup>a</sup> State Key Laboratory of Coal Mine Disaster Dynamics and Control, School of Resource and Safety Engineering, Chongqing University, Chongqing 400044, China",
+        "bbox": [
+            64,
+            303,
+            795,
+            327
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "<sup>b</sup> State Key Laboratory of Geodesy and Earth’s Dynamics, Innovation Academy for Precision Measurement Science and Technology, Chinese Academy of Sciences, Wuhan 430077, China",
+        "bbox": [
+            64,
+            327,
+            768,
+            351
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A R T I C L E I N F O",
+        "text_level": 2,
+        "bbox": [
+            66,
+            382,
+            216,
+            394
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Keywords: Acoustic emission (AE) Source location P-wave arrival time system error Bayesian inversion Virtual field optimization method (VFOM)",
+        "bbox": [
+            66,
+            408,
+            299,
+            479
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A B S T R A C T",
+        "text_level": 2,
+        "bbox": [
+            358,
+            381,
+            470,
+            396
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Acoustic emission (AE) event location plays an important role in structural safety assessments. However, accurately locating an AE event is usually difficult, especially for a small structure. Interestingly, a pencil-lead break (PLB) experiment shows that the P-wave arrival time of a sensor is always significantly different (\\~260 µs) from that of the other sensors. This time difference is much greater than the P-wave travel time in the range of the experimental sample. Therefore, it can be inferred that there is a P-wave arrival time system error (PATSE) for each sensor. The PATSE may be due to a combined result of the sensor site effect and signal transfer delay time from the sensor to the signal storage. To handle this, a Bayesian inversion framework was built to estimate PATSEs. A synthetic test demonstrated the effectiveness of the proposed Bayesian method for noisy P-wave arrival time data. Then, Bayesian inversion was applied to 15 PLB events, which confirmed the existence of PATSE in an AE experiment for the first time. The average PATSE reached 1.47 µs without considering the P-wave arrival time significantly different sensor. The average location error of 25 PLB events was 14.30 mm and 6.58 mm for PATSE unremoved and removed data, respectively. To achieve this, a high-precision virtual field optimization location method (VFOM) was used. This demonstrates the necessity of removing the PATSEs. Finally, the AE event location performance for the PATSE unremoved and removed data was compared, where the AE events were obtained from the uniaxial compression of a red sandstone sample. The results indicated that there was a higher location detection success rate for the corrected data. The AE locations based on the corrected data were in a better correlation with the rock sample failure mode than that without correction. Moreover, increase the signal sampling frequency for AE event identification, use a real-time inverted 3D velocity model and update the PATSEs in real time could be used to further improve the AE event location accuracy.",
+        "bbox": [
+            356,
+            408,
+            931,
+            695
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1 Introduction",
+        "text_level": 2,
+        "bbox": [
+            88,
+            743,
+            189,
+            757
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Acoustic emission (AE) monitoring takes advantage of the transient elastic wavefield generated by rapid released energy of the material. Then, the recorded AE signals are then used for further monitoring investigations, such as waveform analysis, AE event location, magnitude calculation, focal mechanism inversion and velocity tomography. AE waveform analysis and event location are two effective ways to study material crack growth. For the AE waveform analysis, Bhuiyan has made a great contribution [1–5]. Their results show a new avenue of using the piezoelectric wafer active sensors (PWAS) transducer, by capturing more frequency information contained in the AE waveform than conventional AE sensors. Moreover, the waveform evolution is highly related to the physica boundary conditions of the cracks, as well as the fatigue crack growth mechanism. This study focused on the AE event location, which can provide good guidance for monitoring structural health and analysing material fracture processes [6]. However, for conventiona location methods, the AE location result distribution may be negatively correlated with the material failure mode [7]. Currently, an AE event location is usually performed based on P-wave travel time and ray tracing-based location methods. These location results are largely dependent on the quality of the P-wave arrival time data and location techniques.",
+        "bbox": [
+            64,
+            770,
+            931,
+            801
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            310,
+            41,
+            683,
+            57
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "",
+        "bbox": [
+            68,
+            76,
+            178,
+            150
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Contents lists available at ScienceDirect",
+        "bbox": [
+            367,
+            76,
+            632,
+            92
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing",
+        "bbox": [
+            253,
+            110,
+            746,
+            133
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "ELSEVIER",
+        "bbox": [
+            68,
+            152,
+            180,
+            169
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "journal homepage: www.elsevier.com/locate/ymssp",
+        "bbox": [
+            316,
+            152,
+            683,
+            168
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "",
+        "bbox": [
+            821,
+            68,
+            928,
+            168
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "\\* Corresponding authors. E-mail addresses: shangxueyi@cqu.edu.cn (X. Shang), wangyi@apm.ac.cn (Y. Wang).",
+        "bbox": [
+            75,
+            824,
+            591,
+            853
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "https://doi.org/10.1016/j.ymssp.2021.108129 Received 27 October 2020; Received in revised form 28 April 2021; Accepted 6 June 2021 Available online 16 June 2021 0888-3270/© 2021 Elsevier Ltd. All rights reserved.",
+        "bbox": [
+            64,
+            866,
+            608,
+            917
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            64,
+            67,
+            933,
+            196
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1.1 P-wave arrival time determination",
+        "text_level": 2,
+        "bbox": [
+            88,
+            208,
+            345,
+            222
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The automatic picking of the absolute P-wave arrival time has been widely studied owing to its convenience. Allen [8] proposed the short-term average to long-term average (STA/LTA) method, which considers the instantaneous characteristics of the first P-wave arrival amplitude and frequency content. Sleeman and van Eck [9] assumed that the signals before and after the P-wave arrival time have different statuses. Based on the maximum likelihood derivation, they proposed the autoregressive Akaike information criterion (AR-AIC) picking method. In addition, the Kurtosis method, fractal dimension method and predominant period method have also been proposed for absolute P-wave arrival time picking. These methods take advantage of the take-off amplitude of a single waveform. However, background noise and signal propagation attenuation can affect the take-off amplitude [10].",
+        "bbox": [
+            64,
+            237,
+            931,
+            336
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "To handle the above problem, researchers began to determine the P-wave relative delay time by performing cross-correlation on two windowed characteristic waveforms. The cross-correlation method is mainly dependent on the main peaks of the windowed waveforms. Compared with the absolute P-wave arrival time picking methods, cross-correlation picking is less affected by background noise and signal attenuation. Studies have shown the effectiveness of the waveform cross-correlation method in determining the relative delay times of earthquake waveforms [11,12] and microseismic signals [13]",
+        "bbox": [
+            64,
+            336,
+            931,
+            405
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The above P-wave arrival time picking methods treat the time difference between the observed waveforms as the trigger time difference. These picking methods either set the delay time from sensor to signal storage to the same value or neglect this relative delay time difference. However, it can be different because of the following factors: First, the sensor response time can be influenced by the sensor checking level and sensor contacting state with the material [14]. Then, the sensor monitored signal is transmitted to an amplifier, AE data pre-processing and storage equipment. In addition, the system synchronisation time may exhibit a different shift. The delay time difference from sensor to signal storage is marked as the P-wave arrival time system error (PATSE). To the best of our knowledge, PATSE has yet to be examined or estimated in an AE event location study.",
+        "bbox": [
+            64,
+            405,
+            933,
+            506
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1.2 AE event location methods",
+        "text_level": 2,
+        "bbox": [
+            88,
+            518,
+            295,
+            532
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "For the ray tracing-based location methods, through totally summed difference between observed and theoretical arrival times is usually adopted to build the objective function for source location. Since P-wave propagates fastest in seismic signal phases, the direct P-wave arrival time has been widely used in locating seismic sources [6,15]. In contrast, S-wave usually has more energy and is less affected by waveform attenuation, which has prompted researchers to locate seismic event using S-wave arrival time. Kuang et al. [16] found that a common location result can be obtained from S-wave arrival times. The location result was enhanced after including the correction incident angle. Gomberg et al. [17] and Engdahl et al. [18] carried out source location based on P- and S-wave arrival time difference, while Zhou et al. [19] established a P–S phase arrival time difference and P-wave arrival time combined location method. In addition, Zhou et al. [20] found that good location results can be obtained, by combining S-wave arrival time with one or multiple Pwave arrival time. The above multiple seismic phase arrival time-based location methods are all conducted in large-scale structures However, there usually equipped with three phases, S-wave, reflected wave and surface wave, for a small-size structure AE event excitation. This will significantly increase the complexity of P-wave coda. Therefore, it had better only use P-wave arrival time data for AE event location has a small-size structure.",
+        "bbox": [
+            64,
+            545,
+            933,
+            716
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Going back to classical location theory by single-phase arrival time. Geiger’s location method [21] is widely used for the determination of seismic locations. It converts the travel time difference equation into a linear equation to calculate the source location. Geiger s location method adopts a one-step gradient descent inversion, which is fast but can be affected by the initial iteration point Some researchers [22,23] have improved the objective functions and solution techniques of Geiger’s method. Another commonly employed travel time difference-based location method is the double-difference location method [24]. This method assumes that the wavefield propagation paths of two adjacent seismic events are similar, which reduces the influence of structural anomalies on the signal travel time. Li et al. [25] introduced a differential azimuth in the double-difference location method and further improved the location determination accuracy. Another study by Li et al. [26] constructed a hyperboloid and exponential attenuation-based objective function for source location (virtual field optimisation method, VFOM), which reduces the effect of large P-wave arriva time picking errors on location precision. They used the Quasi-Newton iteration method for a quick solution, which may sometimes result in an unstable location result. Thurber [23] and Li et al. [27] separately utilized a second-order partial derivative-based Newton method and the Gauss-Newton method for seismic source location. It improved the location stability to a certain extent, but the secondorder Hessian matrix is computationally expensive. To address the above problems, more stable global inversion methods (e.g., the simplex method, grid search-based method, particle swarm optimization (PSO) algorithm, genetic algorithm and simulated annealing algorithm) have been proposed to solve the location objective function. In addition, time reverse imaging methods have also been proposed for source location [28–30], which successfully predicted the crack size and orientation. It provides more information than pure AE source location and plays an important role in structural health monitoring. A review of AE location methods can be found in Kundu [31] and He et al. [32].",
+        "bbox": [
+            62,
+            715,
+            933,
+            929
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            492,
+            943,
+            503,
+            952
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/59f784a161f481a78ac2e01cdcda1228fa095deb66d1b4559b903e3a8cac1d68.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            529,
+            777,
+            900,
+            901
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            64,
+            67,
+            931,
+            110
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "1.3 Novelties",
+        "text_level": 2,
+        "bbox": [
+            88,
+            123,
+            181,
+            138
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The above introduction shows that it had better use P-wave arrival time for an AE event location strictly speaking. The observed Pwave arrival time should be the summation of AE event occurrence time, travel time from source location to sensor location and PATSE from sensor to signal storage where the PATSEs can be different between sensors. Furthermore, a multi-scale grid search strategy wil be combined with the VFOM method [26] to thoroughly locate an AE event. A global view of the content and adopted strategy of this study is shown in Fig. 1. The main innovations and contributions of this study are as follows: A distinct PATSE was observed through pencil-lead break (PLB) tests (e.g., Fig. 1a). Then, a Bayesian inversion framework using Markov Chain Monte Carlo (MCMC) sampling was established to estimate the PATSEs (Fig. 1b). Moreover, a multi-scale grid search and the PATSE-corrected data-based VFOM (MS-VFOM) location method was proposed to locate an AE event (Fig. 1c), which achieved better location results than the conventiona time difference location method. Finally, the MS-VFOM location method was applied to locate the PLB and AE events of the real data. Both location results show that the location results with PATSEs removed are better than those with PATSEs unremoved. The average location error of the PLB events with PATSEs removed is only 6.58 mm. In addition, the AE event distribution based on the PATSE removed data has a good correlation with the finally observed sample failure mode.",
+        "bbox": [
+            64,
+            152,
+            931,
+            322
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The remainder of this paper is arranged as follows: Section 2 constructs the Bayesian inversion framework for PATSE inversion. Travel-time-based location objective functions were also introduced. Then, the feasibility of the Bayesian PATSE inversion and MS-VFOM location is synthetically tested in Section 3. Section 4 calculates the PATSEs using PLB experimental data. Then, the PLB and AE event location results before and after removing the PATSEs were compared. Section 5 discusses the factors influencing the PATSE inversion and AE event location accuracy. The summary and prospects of this study are presented in Section 6.",
+        "bbox": [
+            64,
+            320,
+            931,
+            394
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2 Methodology",
+        "text_level": 2,
+        "bbox": [
+            88,
+            405,
+            194,
+            420
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "2.1 Bayesian framework for the PATSE inversion",
+        "text_level": 2,
+        "bbox": [
+            108,
+            420,
+            435,
+            433
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The PATSE is defined as the summation of difference of sensor response time, signal delay time from sensor to AE signal storage system and system synchronisation relative difference time between sensors. Assuming that all AE signals have stable PATSEs (i.e., each sensor corresponds to a fixed PATSE), the relationship between the AE event propagation distance, P-wave travel time and PATSE can be expressed as follows:",
+        "bbox": [
+            64,
+            447,
+            931,
+            505
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\sqrt {\\left(x _ {j} - x _ {0}\\right) ^ {2} + \\left(y _ {j} - y _ {0}\\right) ^ {2} + \\left(z _ {j} - z _ {0}\\right) ^ {2}} = v _ {\\mathrm{P}} (t _ {j} - t _ {0} - T _ {j})\\tag{1}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            110,
+            513,
+            444,
+            535
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "where $\\left( x _ { 0 } , y _ { 0 } , z _ { 0 } \\right)$ and $\\left( x _ { j } , y _ { j } , z _ { j } \\right)$ indicate the location of an AE event and the jth sensor, respectively; v<sub>P</sub> represents the P-wave velocity; $t _ { 0 } , \\ t _ { j }$ and $T _ { j }$ denote the AE event occurrence time, manually picked P-wave arrival time and PATSE of the jth sensor, respectively.",
+        "bbox": [
+            86,
+            544,
+            930,
+            563
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bddbd8d280d08fe5b64328725c14ceb9c92d7b72c597d4981efe0987393c79c6.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            91,
+            594,
+            465,
+            738
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/beb16c7ed1e218bab8069205fc0a5b761cba5c0bdd916fd2f1ba7a7612d8c005.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            533,
+            598,
+            902,
+            761
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/43886931dd9d78eef5239a31668b87aad556c98763590c07ce204ca23f688568.jpg",
+        "content": "",
+        "chart_caption": [
+            "(d) AE location result analysis",
+            "Fig. 1. Global view about the content and adopted strategy of the study."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            95,
+            758,
+            468,
+            901
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            41,
+            933,
+            55
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            492,
+            943,
+            503,
+            952
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            64,
+            67,
+            930,
+            95
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Then, assume that there are n sensors, m AE events and p P-wave arrival times in the PATSE inversion. When the 3D coordinates $( x _ { 0 } ^ { i } , y _ { 0 } ^ { i } , z _ { 0 } ^ { i } )$ ) and origin time $t _ { 0 } ^ { i }$ of the ith AE event are unknown parameters $( i = 1 , 2 , . . . , m ,$ , where m is the number of AE events in the inversion). The total number of unknowns are 4 $m _ { \\mathnormal { , } }$ which requires high-dimensional search space in the inversion. Therefore, known and accurate $( x _ { 0 } ^ { i } , y _ { 0 } ^ { i } , z _ { 0 } ^ { i } )$ PLB events were adopted to reduce the number of unknowns to m + n.",
+        "bbox": [
+            66,
+            97,
+            930,
+            156
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The following Bayesian framework was built to estimate the PATSEs, which is suitable for solving a relatively high-dimensiona question. The observed data $d _ { i j }$ corresponds to the picked P-wave arrival time $t _ { i j }$ of the jth sensor in the ith event. The model data $G _ { i j } ( m )$ is equal to the theoretical P-wave arrival time $t _ { 0 } ^ { i } + t _ { 0 } ^ { i j } + T _ { j }$ of the jth sensor in the ith event, where $t _ { 0 } ^ { i }$ and $t _ { 0 } ^ { i j }$ indicate the AE event occurrence time of the ith event and P-wave travel time from the ith event location to the jth sensor location, respectively. For simplicity, the difference between the calculated and observed data is usually treated as a Gaussian distribution [33]. Therefore, the Bayesian posterior probability density function can be constructed as follows:",
+        "bbox": [
+            64,
+            156,
+            931,
+            245
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\np (\\boldsymbol {d} | \\boldsymbol {m}) = \\frac {1}{\\sqrt {(2 \\pi) ^ {p} | \\boldsymbol {C} _ {e} |}} e x p \\left[ - \\frac {1}{2} (\\boldsymbol {G} (\\boldsymbol {m}) - \\boldsymbol {d}) ^ {\\mathrm{T}} \\boldsymbol {C} _ {e} ^ {- 1} (\\boldsymbol {G} (\\boldsymbol {m}) - \\boldsymbol {d}) \\right]\\tag{2}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            108,
+            252,
+            476,
+            283
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "where $C _ { e }$ represents the covariance matrix of ${ \\cal G } ( m ) - d .$",
+        "bbox": [
+            64,
+            295,
+            428,
+            309
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The $t _ { 0 } ^ { i j }$ in Eq. (2) can be calculated using the ray tracing method. The Monte Carlo sampling method is usually adopted to solve such an inversion [34]. In this study, the Monte Carlo sampling method-MCMC sampling and Eq. (3) were used to estimate the $t _ { 0 } ^ { i }$ and $T _ { j }$ as well as their distributions. When $\\alpha ( \\pmb { m } ^ { ' } | \\pmb { m } ) \\geqslant \\ b { u } ,$ the new model m<sup>′</sup> is accepted; otherwise, the new model is rejected. Each time, $u \\in [ 0$ , 1] denotes a random number in the range of 0–1, which follows a uniform distribution.",
+        "bbox": [
+            64,
+            311,
+            930,
+            371
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\alpha (\\boldsymbol {m} ^ {\\prime} | \\boldsymbol {m}) = \\min \\left[ 1, \\frac {p (\\boldsymbol {d} | \\boldsymbol {m} ^ {\\prime})}{p (\\boldsymbol {d} | \\boldsymbol {m})} \\right]\\tag{3}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            108,
+            380,
+            305,
+            409
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2.2 VFOM location method considering the PATSEs",
+        "text_level": 2,
+        "bbox": [
+            88,
+            429,
+            430,
+            444
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Section 1.1 shows that the PATSEs should be added to the location objective function. Referring to a study by Li et al. [26], the L1 norm and L2 norm trigger time-based location methods that consider the PATSEs can be constructed as Eqs. (4) and (5) (referred to as TL1 and TL2). The L1 and L2 norm time difference-based location methods that consider the PATSEs can be constructed using Eqs. (6) and (7) (referred to as DL1 and DL2)",
+        "bbox": [
+            64,
+            458,
+            930,
+            514
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\min T L 1 \\left(x _ {0}, y _ {0}, z _ {0}, t _ {0}\\right) = \\sum_ {j = 1} ^ {n} \\left| t _ {j} - t _ {0} - T _ {j} - \\frac {l _ {j} \\left(x _ {0} , y _ {0} , z _ {0}\\right)}{v _ {\\mathrm{P}}} \\right|\\tag{4}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            108,
+            522,
+            437,
+            555
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\min T L 2 \\left(x _ {0}, y _ {0}, z _ {0}, t _ {0}\\right) = \\sum_ {j = 1} ^ {n} \\left(t _ {j} - t _ {0} - T _ {j} - \\frac {l _ {j} \\left(x _ {0} , y _ {0} , z _ {0}\\right)}{v _ {\\mathrm{P}}}\\right) ^ {2}\\tag{5}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            108,
+            568,
+            459,
+            601
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\min D L 1 \\left(x _ {0}, y _ {0}, z _ {0}\\right) = \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {n} \\left| t _ {j} - t _ {k} - \\frac {l _ {j} \\left(x _ {0} , y _ {0} , z _ {0}\\right)}{v _ {\\mathrm{P}}} + \\frac {l _ {k} \\left(x _ {0} , y _ {0} , z _ {0}\\right)}{v _ {\\mathrm{P}}} \\right|\\tag{6}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            108,
+            615,
+            507,
+            646
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\min D L 2 \\left(x _ {0}, y _ {0}, z _ {0}\\right) = \\sum_ {j = 1} ^ {n} \\sum_ {k = 1} ^ {n} \\left(t _ {j} - t _ {k} - \\frac {l _ {j} \\left(x _ {0} , y _ {0} , z _ {0}\\right)}{v _ {\\mathrm{P}}} + \\frac {l _ {k} \\left(x _ {0} , y _ {0} , z _ {0}\\right)}{v _ {\\mathrm{P}}}\\right) ^ {2}\\tag{7}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            108,
+            661,
+            527,
+            694
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "where j and k indicate sensor identity, $l _ { j } ( x _ { 0 } , y _ { 0 } , z _ { 0 } ) \\ = \\ \\sqrt { ( x _ { j } - x _ { 0 } ) ^ { 2 } + ( y _ { j } - y _ { 0 } ) ^ { 2 } + ( z _ { j } - z _ { 0 } ) ^ { 2 } } \\ ~ \\mathrm { a n d } \\ l _ { k } ( x _ { 0 } , y _ { 0 } , z _ { 0 } ) \\ ,$ y<sub>0</sub> $z _ { 0 } ) = \\sqrt { ( x _ { k } - x _ { 0 } ) ^ { 2 } + ( y _ { k } - y _ { 0 } ) ^ { 2 } + ( z _ { k } - z _ { 0 } ) ^ { 2 } } .$",
+        "bbox": [
+            64,
+            711,
+            926,
+            752
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The DL1 and DL2 methods can eliminate the influence of AE event occurrence time $t _ { 0 } ,$ , which are more widely used than the TL1 and TL2 methods. However, when there are large P-wave arrival time errors, all four methods may have poor location results (an example is shown in Section 3.2). Therefore, VFOM [26] was adopted for the AE event location. The VFOM considering the PATSEs is based on Eq. (8).",
+        "bbox": [
+            64,
+            754,
+            931,
+            809
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\sqrt {\\left(x _ {j} - x _ {0}\\right) ^ {2} + \\left(y _ {j} - y _ {0}\\right) ^ {2} + \\left(z _ {j} - z _ {0}\\right) ^ {2}} - \\sqrt {\\left(x _ {k} - x _ {0}\\right) ^ {2} + \\left(y _ {k} - y _ {0}\\right) ^ {2} + \\left(z _ {k} - z _ {0}\\right) ^ {2}} = v _ {\\mathrm{P}} \\left(t _ {j} - T _ {j} - t _ {k} + T _ {k}\\right)\\tag{8}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            110,
+            820,
+            716,
+            840
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The hyperboloid-based equation shown in $\\operatorname { E q . } \\left( 8 \\right)$ can be rewritten in a local coordinate system as follows $( X , \\quad Y , \\quad Z )$ :",
+        "bbox": [
+            88,
+            847,
+            865,
+            862
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "equation",
+        "text": "$$\n- \\frac {X ^ {2}}{b _ {j k} ^ {2}} - \\frac {Y ^ {2}}{b _ {j k} ^ {2}} + \\frac {Z ^ {2}}{a _ {j k} ^ {2}} = 1\\tag{9}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            113,
+            867,
+            238,
+            901
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            492,
+            943,
+            503,
+            952
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "where $\\begin{array} { r } { a _ { j k } = \\frac { 1 } { 2 } \\nu _ { \\mathrm { P } } ( t _ { j } - T _ { j } - t _ { k } + T _ { k } ) , b _ { j k } ^ { 2 } = c _ { j k } ^ { 2 } - a _ { j k } ^ { 2 } } \\end{array}$ and $\\begin{array} { r } { c _ { j k } = \\frac { 1 } { 2 } \\sqrt { \\left( x _ { j } - x _ { k } \\right) ^ { 2 } + \\left( y _ { j } - y _ { k } \\right) ^ { 2 } + \\left( z _ { j } - z _ { k } \\right) ^ { 2 } } . } \\end{array}$",
+        "bbox": [
+            66,
+            71,
+            687,
+            90
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Then the continuous field in an exponential attenuation form (Eq. (10)) is established in the local coordinate system. The function value decreased as the distance increased.",
+        "bbox": [
+            64,
+            91,
+            930,
+            119
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "$$\nf _ {j k} (X, Y, Z) = \\operatorname{Exp} \\left(- \\frac {d _ {j k} ^ {2}}{\\sigma}\\right)\\tag{10}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            106,
+            126,
+            277,
+            161
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "where Exp indicates the e exponent and $d _ { j k }$ represents the Z-direction distance from the space point (X, Y, Z) to the hyperboloid, namely $\\begin{array} { r } { d _ { j k } = \\bigg | a _ { j k } \\sqrt { \\frac { X ^ { 2 } } { b _ { j k } ^ { 2 } } + \\frac { Y ^ { 2 } } { b _ { j k } ^ { 2 } } + 1 } - Z \\bigg | . } \\end{array}$",
+        "bbox": [
+            66,
+            168,
+            928,
+            216
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The basis function $f _ { j k } ( X , Y , Z )$ in the local coordinate system can be transformed into a global coordinate system $f _ { j k } ( x , y , z )$ using the following equation:",
+        "bbox": [
+            64,
+            219,
+            930,
+            249
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\left\\{ \\begin{array}{l} X \\\\ Y \\\\ Z \\end{array} \\right\\} = R _ {j k} ^ {- 1} \\left(\\left\\{ \\begin{array}{l} x \\\\ y \\\\ z \\end{array} \\right\\} - \\left\\{ \\begin{array}{l} \\frac {x _ {j} + x _ {k}}{2} \\\\ \\frac {y _ {j} + y _ {k}}{2} \\\\ \\frac {z _ {j} + z _ {k}}{2} \\end{array} \\right\\}\\right)\\tag{11}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            112,
+            254,
+            349,
+            336
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\text { where } R = \\left[ \\begin{array}{c c c} \\frac {z ^ {\\prime} l}{| z ^ {\\prime} | c} & 0 & \\frac {x ^ {\\prime}}{c} \\\\ - \\frac {x ^ {\\prime} y ^ {\\prime} z ^ {\\prime}}{| z ^ {\\prime} | l c} & \\frac {| z ^ {\\prime} |}{l} & \\frac {y ^ {\\prime}}{c} \\\\ \\frac {| z ^ {\\prime} | x ^ {\\prime}}{l c} & \\frac {y ^ {\\prime} z ^ {\\prime}}{| z ^ {\\prime} | l} & \\frac {z ^ {\\prime}}{c} \\end{array} \\right], x ^ {\\prime} = \\frac {x _ {j} - x _ {k}}{2}, y ^ {\\prime} = \\frac {y _ {j} - y _ {k}}{2}, z ^ {\\prime} = \\frac {z _ {j} - z _ {k}}{2}, l = \\sqrt {y ^ {\\prime 2} + z ^ {\\prime 2}} \\text { and } c = \\sqrt {x ^ {\\prime 2} + y ^ {\\prime 2} + z ^ {\\prime 2}}; (x, y, z) \\text { indicates   the   point }\n$$",
+        "text_format": "latex",
+        "bbox": [
+            66,
+            347,
+            930,
+            452
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "coordinates in the global coordinate system.",
+        "bbox": [
+            66,
+            454,
+            360,
+            467
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The total closeness field (TCF) is obtained by averaging the transformed basis functions in the global coordinate system and is expressed as follows:",
+        "bbox": [
+            64,
+            467,
+            930,
+            495
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/f70360a1f4809bf53ad2f5ea15910487059ddb0367cf73e34f12bcb8667ca4a0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            170,
+            539,
+            503,
+            877
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/c19785852a56a96f6574dee6de02835b0d96a1461e89021a352fae150e9fcc2d.jpg",
+        "image_caption": [
+            "Fig. 2. Sensor and synthetic event locations for the Bayesian inversion test (a) and VFOM location performance test (b). The blue triangle and red star correspond to sensor and synthetic event locations, respectively. The green line connects the sensor location and synthetic event location. (For interpretation of the references to colour in this figure legend, the reader is referred to the web version of this article.)"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            496,
+            539,
+            827,
+            878
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            613,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            492,
+            943,
+            503,
+            952
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "1.0",
+        "bbox": [
+            218,
+            545,
+            242,
+            557
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "equation",
+        "text": "$$\nT C F (x, y, z) = \\frac {2}{n (n - 1)} \\sum_ {j = 2} ^ {n} \\sum_ {k = 1} ^ {j - 1} f _ {j k} (x, y, z)\\tag{12}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            108,
+            68,
+            367,
+            103
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "where n is number of triggered sensors in this AE event.",
+        "bbox": [
+            64,
+            115,
+            437,
+            130
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "In this study, a multi-scale grid search method was proposed to replace the gradient-based Newton iteration method used in [26] The location corresponding to the maximum TCF in the model space is considered as the location result. The multi-scale grid search method first uses coarse grids to obtain an approximate AE event location; then, fine grids are adopted to further improve the location accuracy.",
+        "bbox": [
+            64,
+            130,
+            931,
+            187
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3 Synthetic test",
+        "text_level": 2,
+        "bbox": [
+            88,
+            200,
+            198,
+            214
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3.1 Bayesian inversion of the PATSEs",
+        "text_level": 2,
+        "bbox": [
+            108,
+            215,
+            360,
+            229
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Referring to the experiment shown in Section 4, the locations of eight sensors and 15 PLB events (Fig. 2) were selected to test the feasibility of the Bayesian framework. In the synthetic test, all the occurrence times $t _ { 0 } ^ { i }$ were set to 0 $\\mu { \\sf s } ,$ the PATSEs were set to 1 µs and the P-wave velocity was set to 3.6 mm/us. Then, the theoretical travel time $t _ { 0 } ^ { i j }$ can be calculated using the travel distance and P-wave velocity. In addition, a Gaussian distribution error (u = 0 and σ = 1 us) was added to $t _ { 0 } ^ { i j }$ for testing the effect of the P-wave arrival time quality on the inversion results.",
+        "bbox": [
+            64,
+            243,
+            931,
+            322
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The PATSE Bayesian inversion results before and after adding noise are shown in Fig. 3(a) and (b), respectively. The results showed that the PATSEs were perfectly inversed when no noise was added in the travel time. When there was noise in the travel time, the MCMC converged after 500 iterations, which demonstrates the effectiveness of the Bayesian framework in inversing the PATSEs. It should be mentioned that the inversed PATSEs were different from the preset value of 1 µs. Eqs. (1) and (2) show that the PATSE $T _ { j }$ and AE event occurrence time $t _ { 0 } ^ { i }$ were considered as a whole in the inversion; that is, only the relative $T _ { j }$ rather than absolute $T _ { j }$ will be obtained. In fact, only relative $T _ { j }$ and occurrence times $t _ { 0 } ^ { i }$ are required to locate an AE event.",
+        "bbox": [
+            64,
+            320,
+            931,
+            411
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "3.2 VFOM location performance for synthetic events",
+        "text_level": 2,
+        "bbox": [
+            88,
+            424,
+            437,
+            439
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "For simplicity, the PATSEs were set to the same value (i.e., ignoring the effect of the PATSEs). Two typical source locations (Fig. 2 (b)) were selected to test the VFOM location method. Event 1 with coordinates of (30, 20, 45) mm was located inside the sensor array and had good ray coverage, while Event 2 with coordinates of (50, 10, 10) mm was located on the sample surface and had poor ray coverage. The sensor locations, velocity model and computation method of ${ { t } _ { 0 } ^ { i j } }$ were the same as those described in Section 3.1. P-wave arrival time errors can occur because of the effects of low signal sampling frequency, waveform propagation attenuation and P-wave arrival time picking method. Therefore, Gaussian noise with a mean value of zero and standard deviations of 1 µs and 2 µs were added to each P-wave arrival time to test the noise resistance. Furthermore, AE signals of adjacent events may be misclassified into one event and the P-wave arrival time picking can be unstable [35], which can result in a large P-wave arrival time picking error. Thus, a large noise of 100 µs added to one P-wave arrival time was also tested. For each event test, the noise addition and event location procedures were repeated 500 times.",
+        "bbox": [
+            64,
+            452,
+            931,
+            528
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/37b78b8409791ed7a3ce85734d91fb3aeb04eb1fd07690fdcf4bb461721d40f3.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 3. PATSE time series of the Bayesian inversion before (a) and after (b) adding system error noises to the P-wave travel time. The time series after 1000 MCMC iterations have been zoomed in."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            187,
+            547,
+            808,
+            892
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            492,
+            943,
+            503,
+            952
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            64,
+            67,
+            931,
+            138
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The location result distributions and error boxplots of the VFOM, DL1 and DL2 methods are shown in Fig. 4. Overall, the location results for AE events distributed within the range of the sensor array (Event 1) were better than those outside the array (Event 2). When there was no large P-wave arrival time picking error, these three location methods achieved good results. The location results of the VFOM and DL2 methods were slightly superior than the DL1 method. When a large picking error exists in the P-wave arrival time data, both the DL1 and DL2 location errors increased, which is similar to the results obtained in previous studies [36,37]. The VFOM location results remained good in the presence of a large picking error. Overall, the VFOM location errors of the 1 us Gaussian noise test were within 5 mm, which can provide a good basis for analysing the fracturing process of a rock sample (sized $5 0 \\times 5 0 \\times 1 0 0 ~ \\mathrm { m m } ^ { 3 } )$ Comparatively, the overall VFOM location errors of the 2 µs Gaussian noise test reach 15 mm, which makes it difficult to effectively analyse the fracture processes of a small-size rock sample. The above results indicate the importance of an accurate P-wave arrival time picking in locating an AE event in a small-sized sample; thus, a PATSE with an amplitude order of 1 µs may seriously affect the location result. Moreover, the VFOM method can provide a stable location result than the DL1 and DL2 methods.",
+        "bbox": [
+            64,
+            138,
+            931,
+            293
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4 Application",
+        "text_level": 2,
+        "bbox": [
+            88,
+            307,
+            183,
+            320
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "4.1 Experimental setup",
+        "text_level": 2,
+        "bbox": [
+            108,
+            320,
+            268,
+            335
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "To verify the existence of the PATSE and test the effectiveness of the MS-VFOM location based on the PATSE-removed data, PLB events and AE events from a uniaxial compression test (Fig. 5). The AE monitoring process is demonstrated as follows: an AE event produced by rock compression or PLB transmits its energy to sensors in the form of stress waves. The signal was then transmitted to the amplifier. Finally, the amplified signal is transmitted to the data processing centre, which realises waveform display, source location,",
+        "bbox": [
+            64,
+            349,
+            931,
+            408
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/5d42ca2c69c24f12a4a629a8c9ccd97130429933e0a6798c6f58d9287faf7e6f.jpg",
+        "image_caption": [
+            "(a) Without the 100us large P-wave arrival time picking error",
+            "(b) With the 100us large P-wave arrival time picking error"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            189,
+            443,
+            808,
+            642
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2676631cd230512ca708220ee62af96adb17c1a4862ce8bc22bb616974f63936.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 4. Distribution of location results and error boxplots of the VFOM, DL1 and DL2 methods for synthetic events shown in Fig. 2(b). (a) Without the 100 µs large P-wave arrival time picking error; (b) With the 100 $\\mu { \\boldsymbol { s } }$ large P-wave arrival time picking error. The star and dot correspond to the synthetic event location and location results, respectively."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            189,
+            665,
+            808,
+            880
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            492,
+            943,
+            503,
+            952
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/d580caac6a8504701481dd52d4374532942a4200751a16aff4a60edb02fc04c6.jpg",
+        "image_caption": [
+            "AE monitoring"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            137,
+            68,
+            485,
+            261
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/e015172af1a2f48828f9439fd2692ede17d2041b3006a6ceaeb2df8269304703.jpg",
+        "image_caption": [
+            "Loading test"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            516,
+            70,
+            860,
+            261
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/061b420805b0c8469be8f292699789c09ed82e8e3682ac30398ebef9027739ed.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            134,
+            278,
+            487,
+            431
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b86496d5a14f1e9eb2f03bd1aab1bbcfac0c467a5506892282217ae7433e4374.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            505,
+            287,
+            678,
+            435
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/ace5d03636fbcb9bccc8a9155ebf9efed726e81116a327b388bcc6c605557f2b.jpg",
+        "table_caption": [
+            "Fig. 5. Experimental setup of the PLB and uniaxial compression test. (a) Experimental picture of PCI-2 monitoring system. (b) Experimental picture of the MTS-815 system. (c) PLB test (c1) and loading test (c2 and c3) on the red sandstone sample. (d) Schematic diagram and coordinates of sensor locations for the PLB and uniaxial compression tests. (For interpretation of the references to colour in this figure legend, the reader is referred to the web version of this article.)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\">Sensor id</td><td colspan=\"3\">Sensor location (mm)</td></tr><tr><td>X</td><td>Y</td><td>Z</td></tr><tr><td>1</td><td>50</td><td>25</td><td>85</td></tr><tr><td>2</td><td>25</td><td>0</td><td>85</td></tr><tr><td>3</td><td>0</td><td>25</td><td>85</td></tr><tr><td>4</td><td>25</td><td>50</td><td>85</td></tr><tr><td>5</td><td>50</td><td>25</td><td>15</td></tr><tr><td>6</td><td>25</td><td>0</td><td>15</td></tr><tr><td>7</td><td>0</td><td>25</td><td>15</td></tr><tr><td>8</td><td>25</td><td>50</td><td>15</td></tr></table>",
+        "bbox": [
+            680,
+            293,
+            862,
+            431
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "etc. While acquiring the AE data, the threshold and preamplification were set to 35 dB and 40 dB, respectively. A PCI-2 AE monitoring system and a nano30 sensor were used in this experiment. The Nano30 sensor has a peak sensitivity of 62 dB and a good frequency response in the range of 125–750 kHz. It has dimensions of 8 mm × 8 mm (diameter × height), which makes the sensor a good candidate for applications where small size is important. The sensor was bonded to a sample with petroleum jelly. Then, the sensor was fixed using a rubber band, as shown in Fig. 5c. The sampling frequency of all sensors was set to 1 MHz, owing to the maximum data receiving rate of 10 MHz. The (X, Y, Z) locations of sensors 1 8 were (50, 25, 85), (25, 0, 85), (0, 25, 85), (25, 50, 85), (50, 25, 15), (25, 0, 15), (0, 25, 15) and (25, 50, 15) mm (Fig. 5d), respectively. The P-wave velocity was measured using a ZBL-U5100 ultrasonic detector. The sandstone had a velocity of 3621 m/s in the vertical direction and 3583 m/s in the horizontal direction. For simplicity, the velocity was set to 3600 m/s for isotropy simplification in calculating the AE source location. The PLB experiment was performed based on the location of the grid points in Fig. 5(c1). To avoid misclassification of AE events, the time interval between PLB events was set to be larger than 10 s. In rock mechanics experiments, granite, marble and sandstone are the most commonly used ones and red sandstone was selected in this study. A uniaxial compression test on red sandstone was carried out using the MTS-815 system (Fig. 5b). MTS loading was performed in displacement mode at a loading rate of 0.1 mm/min. The stress and displacement data of the rock sample were recorded using the loading system.",
+        "bbox": [
+            64,
+            512,
+            931,
+            654
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/36ad2d548532e0bcf4b050a56ed2e66ec6f5568c76b2fdeba918a908b4c9eb30.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 6. AE waveforms and manually picked P-wave arrival time of a PLB event. The distance is straight-line distance from the PLB event to sensor location, while the vertical line and number correspond to the manually picked P-wave arrival time."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            306,
+            669,
+            691,
+            890
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            492,
+            943,
+            503,
+            952
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            64,
+            67,
+            931,
+            125
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "4.2 PATSE inversion based on the PLB events",
+        "text_level": 2,
+        "bbox": [
+            88,
+            138,
+            391,
+            152
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The PLB experiment showed that the P-wave arrival time corresponding to sensor 8 was always evidently different (about 260 µs) from that of other sensors, a typical waveform example is shown in Fig. 6. The P-wave travel time in such a small-sized sample should be less than 260 µs. This illustrates the existence of a P-wave arrival time system error. Furthermore, it may be inferred that PATSEs also exist among the other sensors.",
+        "bbox": [
+            64,
+            165,
+            931,
+            222
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The Bayesian inversion proposed in Section 2.1, was conducted to estimate the PATSEs. The inversion was performed based on the 15 PLB events shown in Fig. 2(a). PLB events can largely reduce the spatial dimensions of Bayesian inversion and accelerate the convergence speed. Furthermore, the PLB events have accurate locations, which ensures the estimation accuracy of the PATSEs. To accelerate the convergence speed of the MCMC iterations, the initial value of sensor 8 was set at −260 µs, while those of sensors 1–7 were randomly generated around 0 µs, as shown by the black circles in $\\mathrm { F i g . } 7 ( \\mathbf { a } )$ . In the MCMC iteration, one parameter was updated each time. The update speed followed a Gaussian distribution sampling, which had a mean value of zero and a standard deviation of 0.25.",
+        "bbox": [
+            64,
+            222,
+            931,
+            320
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The PATSEs, log (likelihood) and acceptance ratio in the MCMC iterations are shown in Fig. 7(a) and (c). A scatterplot of the last 20,000 MCMC iterations is shown in Fig. 7(b). There are some variations of the PATSEs in the MCMC iteration, but they are convergent overall. Then, the likelihood value in the post-burn-in period was much larger than its initial value, indicating that the PATSE-removed data can better fit the observed data. Furthermore, there was a low correlation between PATSEs. The PATSEs approximately followed Gaussian distributions (Fig. 7(b)), which confirmed the reliability of the Bayesian inversion. The Bayesian inversion result was based on the mean value of the last 20,000 MCMC iterations. The approximate PATSEs of sensors 1–8 were $1 . 8 6 , - 0 . 9 5 , - 1 . 4 2 , - 0 . 5 9 , 3 . 1 4$ −1.31, −0.40 and −256.90 µs, respectively. PATSE variations were observed among all sensors; in particular, the PATSE difference between sensors 3 and 5 reached 4.66 µs. According to Section 3.2, ignoring this PATSE would distort the AE event location result in a small rock sample.",
+        "bbox": [
+            64,
+            320,
+            931,
+            408
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/dcd76d7b41c0cdd0650fb2fa9801171dbd9f3ab7320f2995733289f191c63b67.jpg",
+        "content": "",
+        "chart_caption": [
+            "(a)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            80,
+            436,
+            488,
+            876
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/601941bd671ff377ec19aa4c4922888a67ee6dc2ed9f1b72608b304e7125d51c.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            490,
+            436,
+            902,
+            680
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d84532efc9a22c7526f450f8345452c630e5294d8d42d0b244b8bc7f02b43682.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 7. Bayesian inversion results based on the 15 PLB events. (a) Initial iteration point (black circle) and MCMC iteration time series of the PATSEs. (b) Scatterplot and histogram for the post burn-in iterations of the PATSEs. (c) MCMC iterations for the log(likelihood) function without considering the constant part $1 / \\sqrt { ( 2 \\pi ) ^ { p } }$ (top) and acceptance ratio (bottom)."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            496,
+            679,
+            920,
+            877
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            492,
+            943,
+            503,
+            952
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            64,
+            67,
+            931,
+            110
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "4.3 MS-VFOM location performance for PLB events",
+        "text_level": 2,
+        "bbox": [
+            88,
+            123,
+            428,
+            138
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "In this section, the PATSEs obtained from the 15 PLB events were adopted to test the location performance. Moreover, 10 new PLB events were also included in the location test, which will help demonstrate the applicability of removing PATSEs better. The PLB event at (50, 20, 50) mm was taken as an example to illustrate the MS-VFOM location result before and after removing the PATSEs and the TCF and location results are shown in Fig. 8. The TCF values without removing the PATSEs were more scattered and smaller than those with PATSE removed. The location error decreased from 17.85 to 4.82 mm. Furthermore, the TCF values and location errors of the 25 PLB events based on the PATSE unremoved and removed data are shown in Fig. 9(a) and (b), respectively. The TCF values after removing the PATSEs were larger than those without removing the PATSEs. Correspondingly, the MS-VFOM location results after removing PATSEs were better and the average location error reduced from 14.31 to 6.58 mm. Notably, only 15 PLB events were used in the PATSE inversion, but all 25 PLB events obtained good location results, which verified that the PATSEs obtained through the Bayesian inversion has good applicability.",
+        "bbox": [
+            64,
+            152,
+            931,
+            293
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Furthermore, PLB tests on a glass cylindrical shell structure were also conducted to verify the proposed MS-VFOM method. The experimental setup is shown in Fig. S1. It should be mentioned that the shortest ray path on the cylindrical shell structure follows the method in [38]. The location results of the 22 PLB events are listed in Table S1. It can be seen that the MS-VFOM location error after removing the PATSEs is much more stable than with PATSEs unremoved. The average location error before and after removing the PATSEs separately are 10.41 cm and 3.15 cm, which is larger than that of the red sandstone and may be due to the effects of a heavier signal attenuation for longer travel distance and poor connection between the sensor and non-flat cylindrical shell structure.",
+        "bbox": [
+            64,
+            293,
+            931,
+            380
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "4.4 AE application",
+        "text_level": 2,
+        "bbox": [
+            88,
+            392,
+            216,
+            407
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The stress–time curve of the red sandstone uniaxial compression and cumulative number of AE signals of each sensor are shown in Fig. 10. In the initial uniaxial compression stage, there were a few AE signals that were generated from the rock fracture closure. Then, there is a small AE event number in the elastic stage, but it quickly increases in the later yield stage. In particular, when the stress was close to the failure point, the number of AE events increased rapidly. Finally, the red sandstone exhibited an X-type shear failure mode Green lines were used to depict the main fracture outlines, which can provide a good basis for analysing the correlation between the AE event distribution and rock failure mode.",
+        "bbox": [
+            64,
+            420,
+            931,
+            504
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Based on the increasing trend of AE events as shown in Fig. 10, the AE events were divided into five stages [0, 40), [40, 485), [485, 550), [550,590] and [590, 620) s to study the AE distributions before (Fig. 11) and after (Fig. 12) removing the PATSEs. There are some",
+        "bbox": [
+            64,
+            504,
+            931,
+            533
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/3a5423daebb36bf0eb644ddf991662bc95a03e9cda6cb68c1eb477fdf94433df.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            159,
+            557,
+            501,
+            904
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/89fc5ecbdd76ef18b6a23a9affcb3f8ca65439a61bb8291240927db6803aa630.jpg",
+        "image_caption": [
+            "(b)",
+            "Fig. 8. MS-VFOM location example of a PLB event based on PATSEs unremoved (a) and removed (b) data."
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            477,
+            561,
+            841,
+            901
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            490,
+            943,
+            507,
+            952
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d09f2e97c65b3bbc28413d6e0d2b80210d806cc6c1ffb588ebe168bf6a1244de.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            181,
+            71,
+            816,
+            219
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a74fc912446106f56d453d7c609b9ed86c74f29905bb4787889796569db944b7.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 9. TCF values (a) and location errors (b) of the 25 PLB events before and after removing PATSEs."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            181,
+            227,
+            814,
+            409
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b0524de26178a981c3db8b3e67d9939ad089e59209198cdde2a639f63fa5f80d.jpg",
+        "content": "",
+        "chart_caption": [
+            "Time (s)",
+            "Fig. 10. Time series of stress and calculative AE event number recorded by each sensor and failure picture of the red sandstone. (For interpretation of the references to colour in this figure legend, the reader is referred to the web version of this article.)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            189,
+            456,
+            806,
+            773
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "similarities between the location results of these two cases: AE events were mainly distributed on both ends of the rock sample in the early stage and propagated to the middle. This phenomenon is consistent with the strong end effects shown in the red sandstone failure mode (Fig. 10). Furthermore, it indicated that the X-type failure is a result of compression from both ends to the middle, which was also observed in numerical simulations of rock mechanics [39]. There were more AE events located on the rock sample surface when using the PATSE unremoved data. In the grid search based VFOM location, the grids were set within the rock sample, which means that the location results on the surface were less reliable. Therefore, the AE event location results after removing the PATSEs should be better and more reliable.",
+        "bbox": [
+            64,
+            827,
+            931,
+            927
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            488,
+            943,
+            507,
+            954
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b0c2afc407612b1a02619b18912cc5796c459a9ae05611b34102581a648feba1.jpg",
+        "content": "",
+        "chart_caption": [
+            "VFOM location results without removing the PATSEs",
+            "Fig. 11. AE event location distribution before PATSE removed at different time periods (a) (e) and AE locations under the space constraints of $t \\geq$ 590 s and $X \\ \\geq 3 5$ mm (f). The blue star and red dot represent sensor location and AE location, respectively. The green curves show the outlines of rock failure mode shown in Fig. 10. (For interpretation of the references to colour in this figure legend, the reader is referred to the web version of this article.)"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            95,
+            88,
+            909,
+            750
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Many studies have shown that the distribution pattern of AE events is usually consistent with the failure progress pattern [6,40]. The space constraints of $t \\geq 5 9 0 :$ s and $X ~ \\geq 3 5$ mm were selected to obtain Fig. 11(f) and 12(f). The AE event distribution without removing the PATSEs did not show a stable distribution, which was negatively correlated with the rock failure mode. The AE event distribution after removing the PATSEs indicated that there was an obvious end effect (especially in the lower part of the rock sample), which was consistent with the rock sample corner failure (Fig. 10). In addition, the AE distribution in the upper part of the rock sample correlates well with the rock shear failure mode shown in Fig. 5c3. In conclusion, the VFOM location results based on PATSE-removed data can provide a more reasonable constraint and a better way to analyse the correlation between AE event distribution and rock failure mode.",
+        "bbox": [
+            64,
+            834,
+            931,
+            919
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            488,
+            943,
+            507,
+            952
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d7f5e875a0f9fadee65914c62e501fc928a68607e41bdcb14e266c0595418c04.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            90,
+            92,
+            378,
+            428
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/361a90bf3effdd6e0f6ca4c1dedb1814b7bf98ea924e4cdbda75c7169927107b.jpg",
+        "content": "",
+        "chart_caption": [
+            "VFOM location results with the PATSEs removed"
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            375,
+            90,
+            643,
+            425
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c726cd3e1c809f093d9acbbab74fac0382dc79a316e89bddb1c603100a410735.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            639,
+            86,
+            909,
+            425
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6d4d86beb98256c0f09afc36831f39f20cfe4a890840363e0dfeaeb988227c3a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            90,
+            429,
+            378,
+            761
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ed3f4a86b5a164d7135b396770ff2ce51be61cac16979b283ac1bffa93d45d1a.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            375,
+            429,
+            641,
+            760
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e3f55d9666aa9dc9efb8123b741cc1375af001b86731bd67132986ed37056bf3.jpg",
+        "content": "",
+        "chart_caption": [
+            "Fig. 12. AE event location distribution after PATSE removed at different time periods (a)–(e) and AE locations under the space constraints of t ≥ 590 s and $X ~ \\geq 3 5$ mm (f). For other details see the caption of Fig. 11."
+        ],
+        "chart_footnote": [],
+        "bbox": [
+            637,
+            435,
+            909,
+            761
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            64,
+            814,
+            930,
+            842
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "5 Discussions",
+        "text_level": 2,
+        "bbox": [
+            88,
+            855,
+            183,
+            870
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "5.1 Improvement of the PATSE inversion",
+        "text_level": 2,
+        "bbox": [
+            108,
+            870,
+            384,
+            884
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "In the most simplified case, a PATSE does not change with time was adopted in the study. However, the PATSE may change with the testing time. If the PATSE was treated as a variable with the time and event locations were treated as unknown parameters in the",
+        "bbox": [
+            64,
+            898,
+            931,
+            927
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            490,
+            943,
+            507,
+            954
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "PATSE inversion, the inversion dimension would sharply increase (dimension curse). Even after treating the event locations as known parameters, there are still more than 10 dimensions (eight PATSEs plus the number $t _ { 0 } ^ { i }$ of PLB events). The commonly used Newton iteration method and quasi-Newton iteration method converge quickly. However, they are highly dependent on the initial value and easily fall into a locally optimum solution, especially for high-dimensional inversions [37]. Therefore, researchers have begun to use global search algorithms, such as genetic algorithm, simulated annealing, PSO and Bayesian inversion. These methods can jump out of local optimum solutions. However, they usually use random searches with low efficiency to obtain an optimum solution. Currently, grid search is considered the most stable global inversion method, but its search speed is quite slow. Wang et al. [13] proposed a multi scale grid search (coarse and fine grids) for inversion, which reduced the computation cost to some extent. Furthermore, research has combined coarse grid search with a genetic algorithm, simulated annealing and Bayesian inversion; the coarse grid search can provide a good initial solution for these global inversion algorithms [41]. In actual experiments or observation data, there may be no PLB events, then the 3D locations, occurrence time of AE events and PATSEs of AE signals are related parameters in the high-dimension inversion. Then, advanced inversion methods (e.g., trans-dimensional Bayesian inversion [33] and Hamiltonian Monte Carlo [42]) can be used for these high-dimensional inversions.",
+        "bbox": [
+            64,
+            67,
+            931,
+            253
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "5.2 Influencing factors on AE event location accuracy",
+        "text_level": 2,
+        "bbox": [
+            88,
+            266,
+            444,
+            281
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "For an AE experiment on a small rock sample, the most common difficulty is that the AE location results are not consistent with the failure mode of the rock sample. The AE location accuracy is affected by multiple factors. First, the data transmission rate is limited by the AE monitoring system. With a signal sampling frequency of 1 MHz (i.e., 1 µs) and P-wave velocity of 3.6 mm/µs, the accumulation effects of multiple P-wave sampling time errors may lead to a relatively large location error. Therefore, a higher signal sampling frequency is necessary for a small sample test. Then, P-wave arrivals usually have small energy and the noise and propagation attenuation can make the P-wave arrival unclear [10], which can lead to accumulation of errors. Our results showed that the average PATSE (excluding sensor 8) reached 1.47 µs when the sensor 3 was taken as the reference, which is enough to complicate the AE event location results in a small-size rock sample.",
+        "bbox": [
+            64,
+            295,
+            931,
+            407
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Meanwhile, the source location result is closely related to the objective location function. For example, the VFOM method is more stable than the DL1 and DL2 methods (Fig. 4). Notably, the P-wave velocities in the rock compression process are different at various times and locations. Owing to the stress differences and rock fractures, the velocity difference can reach 2,000 m/s [43,44]. In this study, a homogeneous velocity model is adopted to reduce the location accuracy. In a future study, AE tomography can be applied to obtain a real-time heterogeneous distributed 3D velocity model for the rock sample, then 3D velocity model-based location (e.g., 3D ray shooting method [13]) can provide better location results.",
+        "bbox": [
+            64,
+            407,
+            931,
+            491
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "6 Conclusions",
+        "text_level": 2,
+        "bbox": [
+            88,
+            506,
+            187,
+            520
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "To address the inferior location accuracy of AE events in a small sample, a Bayesian framework was established to invert the PATSEs of AE signals and a multi-scale grid search algorithm was proposed for the VFOM location. The main conclusions are as follows: (1) The existence of PATSE was found through PLB events and calculated using the proposed Bayesian inversion. (2) The average location error of 25 PLB events was 14.30 mm and 6.58 mm, for PATSEs unremoved and removed data, respectively. This has shown the necessity of removing PATSEs. (3) The combination of multi-scale grid search and VFOM location method was applied to an AE event location, which had a better noise resistance to large P-wave arrival time picking errors than the DL1 and DL2 methods. (4) The AE event location results with PATSE removed were in good correlation with the failure mode of the rock sample, which provides a good approach for analysing the failure process of a small sample. Furthermore, improving the signal sampling frequency, developing efficient global inversion algorithms and using a high-resolution 3D velocity model can improve the AE event location accuracy.",
+        "bbox": [
+            64,
+            533,
+            931,
+            663
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "CRediT authorship contribution statement",
+        "text_level": 2,
+        "bbox": [
+            66,
+            675,
+            371,
+            688
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Xueyi Shang: Software, Writing - original draft. Yi Wang: Methodology. Runxue Miao: Data curation.",
+        "bbox": [
+            86,
+            703,
+            768,
+            718
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Declaration of Competing Interest",
+        "text_level": 2,
+        "bbox": [
+            66,
+            731,
+            312,
+            745
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.",
+        "bbox": [
+            64,
+            760,
+            930,
+            787
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The authors gratefully acknowledge the financial support of the China Postdoctoral Science Foundation under Grant 2020M683247, the National Natural Science Foundation of China under Grant 52004041, the Key Natural Science Foundation Project of Chongqing (cstc2020jcyj-zdxmX0023) and the Chongqing Postdoctoral Science Foundation under Grant cstc2020jcyj-bshX0106.",
+        "bbox": [
+            64,
+            788,
+            931,
+            831
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Appendix A. Supplementary data",
+        "text_level": 2,
+        "bbox": [
+            66,
+            843,
+            310,
+            858
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Supplementary data to this article can be found online at https://doi.org/10.1016/j.ymssp.2021.108129.",
+        "bbox": [
+            86,
+            871,
+            777,
+            886
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            490,
+            943,
+            507,
+            952
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "References",
+        "text_level": 2,
+        "bbox": [
+            66,
+            68,
+            148,
+            80
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[1] M.Y. Bhuiyan, V. Giurgiutiu, Multiphysics simulation of low-amplitude acoustic wave detection by piezoelectric wafer active sensors validated by in-situ AEfatigue experiment, Materials 10 (2017) 962, https://doi.org/10.3390/ma10080962.",
+        "bbox": [
+            73,
+            94,
+            926,
+            115
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[2] M.Y. Bhuiyan, B. Lin, V. Giurgiutiu, Acoustic emission sensor effect and waveform evolution during fatigue crack growth in thin metallic plate, J. Intel. Mat. Syst. Str. 29 (7) (2018) 1275–1284, https://doi.org/10.1177/1045389X17730930",
+        "bbox": [
+            73,
+            115,
+            926,
+            138
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[3] M.Y. Bhuiyan, V. Giurgiutiu, The signatures of acoustic emission waveforms from fatigue crack advancing in thin metallic plates, Smart Mater. Struct. 27 (1) (2018) 015019, https://doi.org/10.1088/1361-665X/aa9bc2.",
+        "bbox": [
+            75,
+            137,
+            926,
+            159
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[4] Y. Bhuiyan, B. Lin, V. Giurgiutiu, Characterization of piezoelectric wafer active sensor for acoustic emission sensing, Ultrasonics 92 (2019) 35 49, https://doi. org/10.1016/j.ultras.2018.08.020.",
+        "bbox": [
+            73,
+            157,
+            924,
+            180
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[5] M.Y. Bhuiyan, J. Bao, B. Poddar, V. Giurgiutiu, Toward identifying crack-length-related resonances in acoustic emission waveforms for structural health monitoring applications, Struct. Health Monit. 17 (3) (2018) 577–585, https://doi.org/10.1177/1475921717707356.",
+        "bbox": [
+            73,
+            180,
+            902,
+            202
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[6] M. Naderloo, M. Moosavi, M. Ahmadi, Using acoustic emission technique to monitor damage progress around joints in brittle materials, Theor. Appl. Fract. Mec. 104 (2019) 102368, https://doi.org/10.1016/j.tafmec.2019.102368.",
+        "bbox": [
+            73,
+            202,
+            924,
+            223
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[7] A.i. Ting, Z. Ru, L. Jianfeng, R. Li, Space–time evolution rules of acoustic emission location of unloaded coal sample at different loading rates, Int. J. Min. Sci. Techno. 22 (6) (2012) 847–854, https://doi.org/10.1016/j.ijmst.2012.12.001.",
+        "bbox": [
+            73,
+            223,
+            926,
+            243
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[8] R.V. Allen, Automatic earthquake recognition and timing from single traces, B. Seismol. Soc. Am. 68 (1978) 1521–1532.",
+        "bbox": [
+            73,
+            243,
+            737,
+            254
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[9] C.D. Saragiotis, L.J. Hadjileontiadis, S.M. Panas, PAI-S/K: A robust automatic seismic P phase arrival identification scheme, IEEE. Trans. Geosci. Remote 40 (6) (2002) 1395 1404, https://doi.org/10.1109/TGRS.2002.800438.",
+        "bbox": [
+            71,
+            254,
+            926,
+            277
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[10] Y. Luo, G.T. Schuster, Wave-equation travel time inversion, Geophysics 56 (5) (1991) 645–653, https://doi.org/10.1190/1.1443081",
+        "bbox": [
+            68,
+            277,
+            801,
+            288
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[11] W.X. Du, C.H. Thurber, D. Eberhart-Phillips, Earthquake relocation using cross-correlation time delay estimates verified with the Bispectrum method, B. Seismol. Soc. Am. 94 (2004) 856–866, https://doi.org/10.1785/0120030084.",
+        "bbox": [
+            68,
+            288,
+            889,
+            309
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[12] E. Hauksson, P. Shearer, Southern California hypocenter relocation with waveform cross-correlation, Part 1: results using the double-difference method, B. Seismol. Soc. Am. 95 (2005) 896 903, https://doi.org/10.1785/0120040167.",
+        "bbox": [
+            68,
+            309,
+            900,
+            330
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[13] Y. Wang, X. Shang, K. Peng, Relocating mining microseismic earthquakes in a 3-D velocity model using a windowed cross-correlation technique, IEEE Access 8 (2020) 37866–37878, https://doi.org/10.1109/Access.628763910.1109/ACCESS.2020.2974762.",
+        "bbox": [
+            68,
+            331,
+            926,
+            351
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[14] J.C. VanDecar, R.S. Crosson, Determination of teleseismic relative phase arrival times using multi-channel cross-correlation and least squares, B. Seismol. Soc. Am. 80 (1990) 150 169.",
+        "bbox": [
+            68,
+            351,
+            926,
+            373
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[15] R. Madarshahian, P. Ziehl, J.M. Caicedo, Acoustic emission Bayesian source location: Onset time challenge, Mech. Syst. Signal Pr. 123 (2019) 483–495, https:// doi.org/10.1016/j.ymssp.2019.01.021.",
+        "bbox": [
+            68,
+            373,
+            926,
+            394
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[16] W.H. Kuang, W. Zhang, J. Zhang, Locating microseismic events with S-wave data only, SEG Technical Program Expanded Abstracts. (2013) 2243–2247, https:// doi.org/10.1190/segam2013-0993.1.",
+        "bbox": [
+            68,
+            394,
+            926,
+            416
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[17] J.S. Gomberg, K.M. Shedlock, S.W. Roecker, The effect of S-wave arrival times on the accuracy of hypocenter estimation, B. Seismol. Soc. Am. 80 (1990) 1605 1628.",
+        "bbox": [
+            68,
+            416,
+            908,
+            436
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[18] E.R. Engdahl, R. van der Hilst, R. Buland, Global teleseismic earthquake relocation with improved travel times and procedures for depth determination, B. Seismol. Soc. Am. 88 (1998) 722–743.",
+        "bbox": [
+            68,
+            438,
+            902,
+            459
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[19] W. Zhou, L. Wang, L. Guan, Q. Guo, S. Cui, B. Yu, Microseismic event location using an inverse method of joint P-S phase arrival difference and P-wave arriva difference in a borehole system, J. Geophys. Eng. 12 (2) (2015) 220–226, https://doi.org/10.1088/1742-2132/12/2/220.",
+        "bbox": [
+            68,
+            459,
+            926,
+            481
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[20] H. Zhou, W. Zhang, J. Zhang, Downhole microseismic monitoring for low signal-to-noise ratio events, J. Geophys. Eng. 13 (5) (2016) 805–816, https://doi.org/ 10.1088/1742-2132/13/5/805.",
+        "bbox": [
+            68,
+            479,
+            926,
+            502
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[21] L. Geiger, Probability method for the determination of earthquake epicenters from the arrival time only, Bull. St. Louis Univ. 8 (1912) 60 71.",
+        "bbox": [
+            68,
+            502,
+            849,
+            513
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[22] R. Buland, The mechanics of locating earthquakes, B. Seismol. Soc. Am. 66 (1976) 173–187.",
+        "bbox": [
+            68,
+            513,
+            590,
+            524
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[23] C.H. Thurber, Nonlinear earthquake location: Theory and examples, B. Seismol. Soc. Am. 75 (1985) 779–790.",
+        "bbox": [
+            68,
+            524,
+            681,
+            533
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[24] F. Waldhauser, W.L. Ellsworth, A double-difference earthquake location algorithm: method and application to the northern Hayward fault, California, B. Seismol. Soc. Am. 90 (2000) 1353–1368, https://doi.org/10.1785/0120000006.",
+        "bbox": [
+            68,
+            533,
+            891,
+            555
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[25] J. Li, H. Zhang, W.L. Rodi, M.N. Toksoz, Joint microseismic location and anisotropic tomography using differential arrival times and differential backazimuths, Geophys. J. Int. 195 (2013) 1917–1931, https://doi.org/10.1093/gji/ggt358.",
+        "bbox": [
+            68,
+            555,
+            924,
+            578
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[26] X.B. Li, Z.W. Wang, L.J. Dong, Locating single-point sources from arrival times containing large picking errors (LPEs): the virtual field optimization method (VFOM), Sci. Rep.-UK 6 (2016) 19205, https://doi.org/10.1038/srep19205.",
+        "bbox": [
+            69,
+            576,
+            922,
+            599
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[27] G. Li, J. Chen, M. Han, A. Gajraj, Y. Xing, F. Wu, H. Liu, C. Yin, Accurate microseismic event location inversion using a gradient-based method, Society of Petroleum Engineers (2012), https://doi.org/10.2118/159187-MS.",
+        "bbox": [
+            68,
+            599,
+            917,
+            619
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[28] A. Migot, Y. Bhuiyan, V. Giurgiutiu, Numerical and experimental investigation of damage severity estimation using Lamb wave–based imaging methods, J. Intel. Mat. Syst. Str. 30 (4) (2019) 618–635, https://doi.org/10.1177/1045389X18818775.",
+        "bbox": [
+            68,
+            619,
+            924,
+            642
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[29] A. Migot, H. Mei, V. Giurgiutiu, Numerical and experimental investigation of delaminations in a unidirectional composite plate using NDT and SHM, techniques J. Intel. Mat. Syst. Str. (2020), https://doi.org/10.1177/1045389X20978294, 1045389X2097829.",
+        "bbox": [
+            68,
+            642,
+            926,
+            664
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[30] Y. Wang, X. Shang, K. Peng, Locating mine microseismic events in a 3D velocity model through the Gaussian beam reverse-time migration technique, Sensors. 20 (2020) 2676, https://doi.org/10.3390/s20092676.",
+        "bbox": [
+            68,
+            663,
+            926,
+            684
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[31] T. Kundu, H. Nakatani, N. Takeda, Acoustic source localization in anisotropic plates, Ultrasonics 52 (6) (2012) 740–746, https://doi.org/10.1016/j. ultras.2012.01.017.",
+        "bbox": [
+            68,
+            684,
+            878,
+            704
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[32] Y. He, M. Li, Z. Meng, S. Chen, S. Huang, Y.i. Hu, X. Zou, An overview of acoustic emission inspection and monitoring technology in the key components of renewable energy systems, Mech. Syst. Signal Pr. 148 (2021) 107146, https://doi.org/10.1016/j.ymssp.2020.107146.",
+        "bbox": [
+            69,
+            706,
+            926,
+            727
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[33] M. Sambridge, K. Gallagher, A. Jackson, P. Rickwood, Trans-dimensional inverse problems, model comparison and the evidence, Geophys. J. Int. 167 (2006) 528 542, https://doi.org/10.1111/j.1365-246X.2006.03155.x.",
+        "bbox": [
+            69,
+            727,
+            924,
+            749
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[34] X. Luo, A. Kareem, Deep convolutional neural networks for uncertainty propagation in random fields, Comput.-Aided Civ. Inf. 34 (12) (2019) 1043 1054, https://doi.org/10.1111/mice:v34.1210.1111/mice:12510.",
+        "bbox": [
+            68,
+            749,
+            913,
+            770
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[35] A. Carpinteri, J. Xu, G. Lacidogna, A. Manuello, Reliable onset time determination and source location of acoustic emissions in concrete structures, Cement. Concrete Comp. 34 (4) (2012) 529–537, https://doi.org/10.1016/j.cemconcomp.2011.11.013.",
+        "bbox": [
+            68,
+            770,
+            922,
+            792
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[36] K. Peng, H. Guo, X. Shang, Data field application in removing large P-phase arrival picking errors and relocating a mine microseismic event, Soil Dyn. Earthq. Eng. 139 (2020) 106359, https://doi.org/10.1016/j.soildyn.2020.106359.",
+        "bbox": [
+            68,
+            793,
+            924,
+            814
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[37] N. Li, E. Wang, M. Ge, Z. Sun, A nonlinear microseismic source location method based on Simplex method and its residual analysis, Arab. J. Geosci. 7 (11) (2014) 4477 4486, https://doi.org/10.1007/s12517-013-1121-0.",
+        "bbox": [
+            68,
+            812,
+            920,
+            835
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[38] E. Dehghan Niri, A. Farhidzadeh, S. Salamone, Determination of the probability zone for acoustic emission source location in cylindrical shell structures, Mech. Syst. Signal Pr. 60 61 (2015) 971 985, https://doi.org/10.1016/j.ymssp.2015.02.004.",
+        "bbox": [
+            69,
+            835,
+            924,
+            855
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[39] S. Cao, E. Yilmaz, W. Song, E. Yilmaz, G. Xue, Loading rate effect on uniaxial compressive strength behavior and acoustic emission properties of cemented tailings backfill, Constr. Build. Mater. 213 (2019) 313–324, https://doi.org/10.1016/j.conbuildmat.2019.04.082.",
+        "bbox": [
+            69,
+            855,
+            917,
+            878
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[40] G. Shi, X. Yang, H. Yu, C. Zhu, Acoustic emission characteristics of creep fracture evolution in double-fracture fine sandstone under uniaxial compression, Eng. Fract. Mech. 210 (2019) 13–28, https://doi.org/10.1016/j.engfracmech.2018.09.004.",
+        "bbox": [
+            69,
+            878,
+            924,
+            898
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[41] X. Shang, H. Tkalˇci´c, Point-source inversion of small and moderate earthquakes from P-wave polarities and P/S amplitude ratios within a hierarchical Bayesian framework: Implications for the Geysers earthquakes, J. Geophys. Res. Solar. Earth 125 (2020), https://doi.org/10.1029/2019JB018492 e2019JB018492.",
+        "bbox": [
+            69,
+            898,
+            926,
+            921
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            66,
+            43,
+            145,
+            55
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            43,
+            933,
+            55
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            490,
+            943,
+            507,
+            952
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "ref_text",
+        "text": "[42] A. Fichtner, A. Zunino, L. Gebraad, Hamiltonian Monte Carlo solution of tomographic inverse problems, Geophys. J. Int. 216 (2019) 1344–1363, https://doi. org/10.1093/gji/ggy496.",
+        "bbox": [
+            69,
+            68,
+            924,
+            90
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "ref_text",
+        "text": "[43] A. Behnia, H.K. Chai, M. Yorikawa, S. Momoki, M. Terazawa, T. Shiotani, Integrated non-destructive assessment of concrete structures under flexure by acoustic emission and travel time tomography, Constr. Build. Mater. 67 (2014) 202–215, https://doi.org/10.1016/j.conbuildmat.2014.05.011.",
+        "bbox": [
+            69,
+            90,
+            924,
+            111
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "ref_text",
+        "text": "[44] A. Cao, C. Wang, G. Jing, W.u. Cai, G. Zhu, J. Li, Passive velocity tomography for mudstone under uniaxial compression using acoustic emission, Geosci. J. 21 (1) (2017) 93–109, https://doi.org/10.1007/s12303-016-0139-1.",
+        "bbox": [
+            69,
+            111,
+            924,
+            132
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "X. Shang et al.",
+        "bbox": [
+            68,
+            44,
+            145,
+            53
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Mechanical Systems and Signal Processing 163 (2022) 108129",
+        "bbox": [
+            615,
+            44,
+            931,
+            53
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            490,
+            944,
+            507,
+            952
+        ],
+        "page_idx": 15
+    }
+]
